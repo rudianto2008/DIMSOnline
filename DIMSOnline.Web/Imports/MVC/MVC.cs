@@ -44,6 +44,11 @@ namespace MVC
 
         public static class Configuration
         {
+            public static class BinLocation
+            {
+                public const string BinLocationIndex = "~/Modules/Configuration/BinLocation/BinLocationIndex.cshtml";
+            }
+
             public static class City
             {
                 public const string CityIndex = "~/Modules/Configuration/City/CityIndex.cshtml";

@@ -12,8 +12,8 @@
 @light-blue: #3c8dbc;
 //Danger
 @red: #dd4b39;
-//Success
-@green: #00a65a;
+//Success change as kmicolor
+@green: #04a49c;
 //Info
 @aqua: #00c0ef;
 //Warning
@@ -29,6 +29,8 @@
 @maroon:     #D81B60;
 @black:      #111;
 @gray:       #d2d6de;
+//KMI
+@kmicolor: #04a49c;
 
 //LAYOUT
 //--------------------------------------------------------
@@ -53,20 +55,38 @@
 //Dark sidebar
 @sidebar-dark-bg:                  #222d32;
 @sidebar-dark-hover-bg:            darken(@sidebar-dark-bg, 2%);
-@sidebar-dark-color:               lighten(@sidebar-dark-bg, 60%);
-@sidebar-dark-hover-color:         #fff;
+@sidebar-dark-color: #04a49c;//lighten(@sidebar-dark-bg, 60%);
+@sidebar-dark-hover-color: #fff;
 @sidebar-dark-submenu-bg:          lighten(@sidebar-dark-bg, 5%);
 @sidebar-dark-submenu-color:       lighten(@sidebar-dark-submenu-bg, 40%);
 @sidebar-dark-submenu-hover-color: #fff;
 
 //Light sidebar
-@sidebar-light-bg:                  #f9fafc;
+/*@sidebar-light-bg:                  #f9fafc;
 @sidebar-light-hover-bg:            lighten(#f0f0f1, 1.5%);
 @sidebar-light-color:               #444;
 @sidebar-light-hover-color:         #000;
 @sidebar-light-submenu-bg:          @sidebar-light-hover-bg;
 @sidebar-light-submenu-color:       #777;
-@sidebar-light-submenu-hover-color: #000;
+@sidebar-light-submenu-hover-color: #000;*/
+
+//Kmi sidebar
+@sidebar-light-bg: #edf6f6;
+@sidebar-light-hover-bg: darken(#edf6f6, 35%);
+@sidebar-light-color: lighten(@sidebar-dark-bg, 60%);
+@sidebar-light-hover-color: #fff;
+@sidebar-light-submenu-bg: @sidebar-light-hover-bg;
+@sidebar-light-submenu-color: #fff;
+@sidebar-light-submenu-hover-color: darken(#edf6f6, 80%);
+
+
+/*@kmi-sidebar-bg: #edf6f6;
+@kmi-sidebar-hover-bg: darken(#edf6f6, 35%);
+@kmi-sidebar-color: lighten(@sidebar-dark-bg, 60%);
+@kmi-sidebar-hover-color: #fff;
+@kmi-sidebar-submenu-bg:  @sidebar-light-hover-bg;//lighten(@sidebar-dark-bg, 5%);
+@kmi-sidebar-submenu-color: #fff;
+@kmi-sidebar-submenu-hover-color: darken(#edf6f6, 80%);*/
 
 //CONTROL SIDEBAR
 //--------------------------------------------------------

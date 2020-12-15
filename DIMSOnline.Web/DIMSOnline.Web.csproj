@@ -890,6 +890,7 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="wkhtmltopdf-license.txt" />
     <Content Include="Modules\Configuration\Company\CompanyIndex.cshtml" />
+    <Content Include="Content\site\site.configuration.less" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
@@ -1096,6 +1097,9 @@
     <Content Include="tools\Node\node.exe" />
     <Content Include="tsconfig.json" />
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.PermissionKeys.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.BinLocationColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CityColumns.ts">
@@ -1699,7 +1703,6 @@
     <TypeScriptCompile Include="Scripts\serenity\slick\serenity-slick.d.ts" />
     <TypeScriptCompile Include="Scripts\serenity\widget\serenity-widget.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\serenity\Serenity.CoreLib.d.ts" />
-    <Content Include="Content\site\site.default.less" />
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.IslandRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1734,6 +1737,18 @@
     <TypeScriptCompile Include="Modules\Configuration\City\CityDialog.ts" />
     <TypeScriptCompile Include="Modules\Configuration\City\CityGrid.ts" />
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CityForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.BinLocationRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.BinLocationService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\BinLocation\BinLocationIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\BinLocation\BinLocationDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\BinLocation\BinLocationGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.BinLocationForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
   </ItemGroup>
@@ -1895,6 +1910,12 @@
     <Compile Include="Modules\Configuration\City\CityPage.cs" />
     <Compile Include="Modules\Configuration\City\CityColumns.cs" />
     <Compile Include="Modules\Configuration\City\CityForm.cs" />
+    <Compile Include="Modules\Configuration\BinLocation\BinLocationRow.cs" />
+    <Compile Include="Modules\Configuration\BinLocation\BinLocationRepository.cs" />
+    <Compile Include="Modules\Configuration\BinLocation\BinLocationEndpoint.cs" />
+    <Compile Include="Modules\Configuration\BinLocation\BinLocationPage.cs" />
+    <Compile Include="Modules\Configuration\BinLocation\BinLocationColumns.cs" />
+    <Compile Include="Modules\Configuration\BinLocation\BinLocationForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

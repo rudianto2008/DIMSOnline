@@ -12,6 +12,8 @@ namespace DIMSOnline.Configuration {
 
         constructor(container: JQuery) {
             super(container);
+
         }
+
     }
 }

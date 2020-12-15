@@ -1685,12 +1685,12 @@ button.ui-state-hover .ui-button-text {
 }
 .grid-title,
 .panel-titlebar {
-  font-size: 16px;
-  font-weight: 600;
-  padding: 6px 0;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #e7e7e7;
-  color: #0090d9;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 6px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e7e7e7;
+    color: #04a49c;
 }
 .s-Panel {
   padding: 10px;
@@ -3262,13 +3262,13 @@ a.s-LinkDropDown input {
   background-clip: padding-box;
 }
 .s-QuickSearchBar .quick-search-icon {
-  display: inline-block;
-  float: left;
-  padding: 0 0 0 8px;
-  border-radius: 5px 0 0 5px;
-  background: #0090d9;
-  height: 28px;
-  width: 36px;
+    display: inline-block;
+    float: left;
+    padding: 0 0 0 8px;
+    border-radius: 5px 0 0 5px;
+    background: #04a49c;
+    height: 28px;
+    width: 36px;
 }
 .s-QuickSearchBar .quick-search-icon i {
   display: inline-block;

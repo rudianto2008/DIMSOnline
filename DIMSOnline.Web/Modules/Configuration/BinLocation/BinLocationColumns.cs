@@ -9,12 +9,11 @@ namespace DIMSOnline.Configuration.Columns
     using System.Collections.Generic;
     using System.IO;
 
-    [ColumnsScript("Configuration.Island")]
-    [BasedOnRow(typeof(Entities.IslandRow), CheckNames = true)]
-    public class IslandColumns
+    [ColumnsScript("Configuration.BinLocation")]
+    [BasedOnRow(typeof(Entities.BinLocationRow), CheckNames = true)]
+    public class BinLocationColumns
     {
         [EditLink]
-        public String IslandCode { get; set; }
-        public String IslandName { get; set; }
+        public String BinLocation { get; set; }
     }
 }

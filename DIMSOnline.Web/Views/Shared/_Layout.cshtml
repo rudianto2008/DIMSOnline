@@ -4,7 +4,7 @@
     var hideNav = Request["hideNav"] == "1";
     var logged = Serenity.Authorization.Username;
     var themeCookie = Request.Cookies["ThemePreference"];
-    var theme = themeCookie != null && !themeCookie.Value.IsEmptyOrNull() ? themeCookie.Value : "green";
+    var theme = themeCookie != null && !themeCookie.Value.IsEmptyOrNull() ? themeCookie.Value : "greenlight";
     var darkSidebar = theme != null && theme.IndexOf("light") < 0;
     var rtl = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
     var user = (UserDefinition)Serenity.Authorization.UserDefinition;
@@ -42,7 +42,7 @@ else
     <header class="main-header">
         <a href="~/" class="logo">
             <span class="logo-mini"><i></i></span>
-            <span class="logo-lg"><i></i><b>@LocalText.Get("Navigation.SiteTitle")</b></span>
+            <span class="logo-lg"><b>@LocalText.Get("Navigation.SiteTitle")</b></span>
         </a>
         <nav class="navbar navbar-static-top" role="navigation">
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">

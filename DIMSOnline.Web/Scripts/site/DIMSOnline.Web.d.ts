@@ -442,6 +442,69 @@ declare namespace DIMSOnline.Common {
 declare namespace DIMSOnline.Configuration {
 }
 declare namespace DIMSOnline.Configuration {
+    interface BinLocationForm {
+        BinLocation: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+    }
+    class BinLocationForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface BinLocationRow {
+        BinLocationId?: number;
+        BinLocation?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+    }
+    namespace BinLocationRow {
+        const idProperty = "BinLocationId";
+        const nameProperty = "BinLocation";
+        const localTextPrefix = "Configuration.BinLocation";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            BinLocationId = "BinLocationId",
+            BinLocation = "BinLocation",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace BinLocationService {
+        const baseUrl = "Configuration/BinLocation";
+        function Create(request: Serenity.SaveRequest<BinLocationRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BinLocationRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BinLocationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BinLocationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/BinLocation/Create",
+            Update = "Configuration/BinLocation/Update",
+            Delete = "Configuration/BinLocation/Delete",
+            Retrieve = "Configuration/BinLocation/Retrieve",
+            List = "Configuration/BinLocation/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
     interface CityForm {
         CityCode: Serenity.StringEditor;
         ProvinceId: Serenity.IntegerEditor;
@@ -1329,6 +1392,30 @@ declare namespace DIMSOnline.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {
         getItem(key: string): string;
         setItem(key: string, data: string): void;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class BinLocationDialog extends Serenity.EntityDialog<BinLocationRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: BinLocationForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class BinLocationGrid extends Serenity.EntityGrid<BinLocationRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BinLocationDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace DIMSOnline.Configuration {
