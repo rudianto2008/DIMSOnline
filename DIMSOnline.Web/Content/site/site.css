@@ -7404,3 +7404,33 @@ section.content > .s-DataGrid {
   font-style: italic;
   color: #966;
 }
+.s-Default-CompanyDialog > .size {
+  width: 650px;
+}
+.s-Default-CompanyDialog .caption {
+  width: 150px;
+}
+.s-Configuration-CompanyDialog > .size {
+  width: 650px;
+}
+.s-Configuration-CompanyDialog .caption {
+  width: 150px;
+}
+.s-Configuration-IslandDialog > .size {
+  width: 650px;
+}
+.s-Configuration-IslandDialog .caption {
+  width: 150px;
+}
+.s-Configuration-ProvinceDialog > .size {
+  width: 650px;
+}
+.s-Configuration-ProvinceDialog .caption {
+  width: 150px;
+}
+.s-Configuration-CityDialog > .size {
+  width: 650px;
+}
+.s-Configuration-CityDialog .caption {
+  width: 150px;
+}

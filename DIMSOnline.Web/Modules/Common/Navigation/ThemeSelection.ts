@@ -33,6 +33,8 @@
             Q.addOption(select, 'yellow-light', Q.text('Site.Layout.ThemeYellowLight'));
             Q.addOption(select, 'black', Q.text('Site.Layout.ThemeBlack'));
             Q.addOption(select, 'black-light', Q.text('Site.Layout.ThemeBlackLight'));
+            //DIMS
+            Q.addOption(select, 'white', Q.text('Site.Layout.ThemeWhite'));
 
             select.val(this.getCurrentTheme());
         }

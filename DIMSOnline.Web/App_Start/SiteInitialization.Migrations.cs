@@ -140,6 +140,8 @@
 
         public static bool SkippedMigrations { get; private set; }
 
+        public static bool ShowLabelSkippedMigrations { get; private set; }
+
         private static void RunMigrations(string databaseKey)
         {
             var cs = SqlConnections.GetConnectionString(databaseKey);
@@ -154,6 +156,7 @@
             if (!isOracle && cs.ConnectionString.IndexOf(typeof(SiteInitialization).Namespace +
                     @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
             {
+                ShowLabelSkippedMigrations = false;
                 SkippedMigrations = true;
                 return;
             }

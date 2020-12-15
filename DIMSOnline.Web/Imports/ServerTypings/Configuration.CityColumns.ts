@@ -1,0 +1,3 @@
+﻿namespace DIMSOnline.Configuration {
+}
+

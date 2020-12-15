@@ -199,6 +199,33 @@
       <Link>wkhtmltopdf.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Architect\charts-chartjs.html" />
+    <Content Include="Architect\components-accordions.html" />
+    <Content Include="Architect\components-calendar.html" />
+    <Content Include="Architect\components-carousel.html" />
+    <Content Include="Architect\components-maps.html" />
+    <Content Include="Architect\components-modals.html" />
+    <Content Include="Architect\components-notifications.html" />
+    <Content Include="Architect\components-pagination.html" />
+    <Content Include="Architect\components-progress-bar.html" />
+    <Content Include="Architect\components-scrollable-elements.html" />
+    <Content Include="Architect\components-tabs.html" />
+    <Content Include="Architect\components-tooltips-popovers.html" />
+    <Content Include="Architect\dashboard-boxes.html" />
+    <Content Include="Architect\elements-badges-labels.html" />
+    <Content Include="Architect\elements-buttons-standard.html" />
+    <Content Include="Architect\elements-cards.html" />
+    <Content Include="Architect\elements-dropdowns.html" />
+    <Content Include="Architect\elements-icons.html" />
+    <Content Include="Architect\elements-list-group.html" />
+    <Content Include="Architect\elements-navigation.html" />
+    <Content Include="Architect\elements-utilities.html" />
+    <Content Include="Architect\forms-controls.html" />
+    <Content Include="Architect\forms-layouts.html" />
+    <Content Include="Architect\forms-validation.html" />
+    <Content Include="Architect\index.html" />
+    <Content Include="Architect\main.css" />
+    <Content Include="Architect\tables-regular.html" />
     <Content Include="Content\aristo\aristo.css" />
     <Content Include="Content\aristo\images\icon_sprite.png" />
     <Content Include="Content\aristo\images\progress_bar.gif" />
@@ -862,6 +889,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="wkhtmltopdf-license.txt" />
+    <Content Include="Modules\Configuration\Company\CompanyIndex.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
@@ -1067,9 +1095,38 @@
     <Content Include="tools\Node\less\lib\less\visitor.js" />
     <Content Include="tools\Node\node.exe" />
     <Content Include="tsconfig.json" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Administration.PermissionKeys.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CityColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CompanyColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CompanyForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CompanyRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CompanyService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.IslandColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.PermissionKeys.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProvinceColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Configuration\Company\CompanyDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\Company\CompanyGrid.ts" />
     <TypeScriptCompile Include="Modules\Membership\Account\LoginPanel.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
@@ -1642,6 +1699,43 @@
     <TypeScriptCompile Include="Scripts\serenity\slick\serenity-slick.d.ts" />
     <TypeScriptCompile Include="Scripts\serenity\widget\serenity-widget.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\serenity\Serenity.CoreLib.d.ts" />
+    <Content Include="Content\site\site.default.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.IslandRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.IslandService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\Island\IslandIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\Island\IslandDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\Island\IslandGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.IslandForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProvinceRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProvinceService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\Province\ProvinceIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\Province\ProvinceDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\Province\ProvinceGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProvinceForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CityRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CityService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\City\CityIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\City\CityDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\City\CityGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CityForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1721,6 +1815,13 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceModels.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
+    <Compile Include="Modules\Configuration\Company\CompanyColumns.cs" />
+    <Compile Include="Modules\Configuration\Company\CompanyEndpoint.cs" />
+    <Compile Include="Modules\Configuration\Company\CompanyForm.cs" />
+    <Compile Include="Modules\Configuration\Company\CompanyPage.cs" />
+    <Compile Include="Modules\Configuration\Company\CompanyRepository.cs" />
+    <Compile Include="Modules\Configuration\Company\CompanyRow.cs" />
+    <Compile Include="Modules\Configuration\ConfigurationPermissionKeys.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />
     <Compile Include="Modules\Membership\Account\ForgotPassword\AccountPage.ForgotPassword.cs" />
@@ -1775,6 +1876,25 @@
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRow.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRepository.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionEndpoint.cs" />
+    <Compile Include="Modules\Configuration\ConfigurationNavigation.cs" />
+    <Compile Include="Modules\Configuration\Island\IslandRow.cs" />
+    <Compile Include="Modules\Configuration\Island\IslandRepository.cs" />
+    <Compile Include="Modules\Configuration\Island\IslandEndpoint.cs" />
+    <Compile Include="Modules\Configuration\Island\IslandPage.cs" />
+    <Compile Include="Modules\Configuration\Island\IslandColumns.cs" />
+    <Compile Include="Modules\Configuration\Island\IslandForm.cs" />
+    <Compile Include="Modules\Configuration\Province\ProvinceRow.cs" />
+    <Compile Include="Modules\Configuration\Province\ProvinceRepository.cs" />
+    <Compile Include="Modules\Configuration\Province\ProvinceEndpoint.cs" />
+    <Compile Include="Modules\Configuration\Province\ProvincePage.cs" />
+    <Compile Include="Modules\Configuration\Province\ProvinceColumns.cs" />
+    <Compile Include="Modules\Configuration\Province\ProvinceForm.cs" />
+    <Compile Include="Modules\Configuration\City\CityRow.cs" />
+    <Compile Include="Modules\Configuration\City\CityRepository.cs" />
+    <Compile Include="Modules\Configuration\City\CityEndpoint.cs" />
+    <Compile Include="Modules\Configuration\City\CityPage.cs" />
+    <Compile Include="Modules\Configuration\City\CityColumns.cs" />
+    <Compile Include="Modules\Configuration\City\CityForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

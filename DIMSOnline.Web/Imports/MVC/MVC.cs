@@ -39,6 +39,30 @@ namespace MVC
             {
                 public const string ReportPage = "~/Modules/Common/Reporting/ReportPage.cshtml";
             }
+
+        }
+
+        public static class Configuration
+        {
+            public static class City
+            {
+                public const string CityIndex = "~/Modules/Configuration/City/CityIndex.cshtml";
+            }
+
+            public static class Company
+            {
+                public const string CompanyIndex = "~/Modules/Configuration/Company/CompanyIndex.cshtml";
+            }
+
+            public static class Island
+            {
+                public const string IslandIndex = "~/Modules/Configuration/Island/IslandIndex.cshtml";
+            }
+
+            public static class Province
+            {
+                public const string ProvinceIndex = "~/Modules/Configuration/Province/ProvinceIndex.cshtml";
+            }
         }
 
         public static class Errors
