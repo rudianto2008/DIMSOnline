@@ -13,6 +13,8 @@ namespace DIMSOnline.Configuration.Columns
     [BasedOnRow(typeof(Entities.ProvinceRow), CheckNames = true)]
     public class ProvinceColumns
     { 
+        [EditLink]
+        public String ProvinceCode { get; set; }
         public String ProvinceName { get; set; }
         public String IslandIslandName { get; set; }
     }

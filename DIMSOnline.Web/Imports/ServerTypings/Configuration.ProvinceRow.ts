@@ -20,8 +20,13 @@
 
     export namespace ProvinceRow {
         export const idProperty = 'ProvinceId';
-        export const nameProperty = 'ProvinceCode';
+        export const nameProperty = 'ProvinceName';
         export const localTextPrefix = 'Configuration.Province';
+        export const lookupKey = 'LookupProvince';
+
+        export function getLookup(): Q.Lookup<ProvinceRow> {
+            return Q.getLookup<ProvinceRow>('LookupProvince');
+        }
         export const deletePermission = 'Administration:Configuration';
         export const insertPermission = 'Administration:Configuration';
         export const readPermission = 'Administration:Configuration';

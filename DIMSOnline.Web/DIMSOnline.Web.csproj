@@ -1102,6 +1102,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.BinLocationColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CategoryUnitColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CityColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1117,7 +1120,16 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CompanyService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CustomerColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.IslandColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.MovementTypeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.OrderCategoryColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.PermissionKeys.ts">
@@ -1127,6 +1139,15 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.InventoryColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.MovementStockColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PermissionKeys.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Configuration\Company\CompanyDialog.ts" />
@@ -1751,6 +1772,79 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.BinLocationForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CategoryUnitRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CategoryUnitService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\CategoryUnit\CategoryUnitIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\CategoryUnit\CategoryUnitDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\CategoryUnit\CategoryUnitGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CategoryUnitForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CustomerRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CustomerService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\Customer\CustomerIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\Customer\CustomerDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\Customer\CustomerGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.CustomerForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.InventoryRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.InventoryService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\Inventory\InventoryIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\Inventory\InventoryDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\Inventory\InventoryGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.InventoryForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Content\site\site.transaction.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.MovementStockRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.MovementStockService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\MovementStock\MovementStockIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\MovementStock\MovementStockDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\MovementStock\MovementStockGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.MovementStockForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.MovementTypeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.MovementTypeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\MovementType\MovementTypeIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\MovementType\MovementTypeDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\MovementType\MovementTypeGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.MovementTypeForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.OrderCategoryRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.OrderCategoryService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\OrderCategory\OrderCategoryIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\OrderCategory\OrderCategoryDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\OrderCategory\OrderCategoryGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.OrderCategoryForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1862,6 +1956,7 @@
     <Compile Include="Modules\Administration\User\Authentication\AuthenticationService.cs" />
     <Compile Include="Modules\Administration\User\Authentication\UserRetrieveService.cs" />
     <Compile Include="Modules\Membership\Account\LoginRequest.cs" />
+    <Compile Include="Modules\Transaction\TransactionPermissionKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modules\Administration\User\UserRow.cs" />
     <Compile Include="Modules\Administration\User\UserForm.cs" />
@@ -1916,6 +2011,43 @@
     <Compile Include="Modules\Configuration\BinLocation\BinLocationPage.cs" />
     <Compile Include="Modules\Configuration\BinLocation\BinLocationColumns.cs" />
     <Compile Include="Modules\Configuration\BinLocation\BinLocationForm.cs" />
+    <Compile Include="Modules\Configuration\CategoryUnit\CategoryUnitRow.cs" />
+    <Compile Include="Modules\Configuration\CategoryUnit\CategoryUnitRepository.cs" />
+    <Compile Include="Modules\Configuration\CategoryUnit\CategoryUnitEndpoint.cs" />
+    <Compile Include="Modules\Configuration\CategoryUnit\CategoryUnitPage.cs" />
+    <Compile Include="Modules\Configuration\CategoryUnit\CategoryUnitColumns.cs" />
+    <Compile Include="Modules\Configuration\CategoryUnit\CategoryUnitForm.cs" />
+    <Compile Include="Modules\Configuration\Customer\CustomerRow.cs" />
+    <Compile Include="Modules\Configuration\Customer\CustomerRepository.cs" />
+    <Compile Include="Modules\Configuration\Customer\CustomerEndpoint.cs" />
+    <Compile Include="Modules\Configuration\Customer\CustomerPage.cs" />
+    <Compile Include="Modules\Configuration\Customer\CustomerColumns.cs" />
+    <Compile Include="Modules\Configuration\Customer\CustomerForm.cs" />
+    <Compile Include="Modules\Transaction\Inventory\InventoryRow.cs" />
+    <Compile Include="Modules\Transaction\Inventory\InventoryRepository.cs" />
+    <Compile Include="Modules\Transaction\Inventory\InventoryEndpoint.cs" />
+    <Compile Include="Modules\Transaction\Inventory\InventoryPage.cs" />
+    <Compile Include="Modules\Transaction\Inventory\InventoryColumns.cs" />
+    <Compile Include="Modules\Transaction\Inventory\InventoryForm.cs" />
+    <Compile Include="Modules\Transaction\TransactionNavigation.cs" />
+    <Compile Include="Modules\Transaction\MovementStock\MovementStockRow.cs" />
+    <Compile Include="Modules\Transaction\MovementStock\MovementStockRepository.cs" />
+    <Compile Include="Modules\Transaction\MovementStock\MovementStockEndpoint.cs" />
+    <Compile Include="Modules\Transaction\MovementStock\MovementStockPage.cs" />
+    <Compile Include="Modules\Transaction\MovementStock\MovementStockColumns.cs" />
+    <Compile Include="Modules\Transaction\MovementStock\MovementStockForm.cs" />
+    <Compile Include="Modules\Configuration\MovementType\MovementTypeRow.cs" />
+    <Compile Include="Modules\Configuration\MovementType\MovementTypeRepository.cs" />
+    <Compile Include="Modules\Configuration\MovementType\MovementTypeEndpoint.cs" />
+    <Compile Include="Modules\Configuration\MovementType\MovementTypePage.cs" />
+    <Compile Include="Modules\Configuration\MovementType\MovementTypeColumns.cs" />
+    <Compile Include="Modules\Configuration\MovementType\MovementTypeForm.cs" />
+    <Compile Include="Modules\Configuration\OrderCategory\OrderCategoryRow.cs" />
+    <Compile Include="Modules\Configuration\OrderCategory\OrderCategoryRepository.cs" />
+    <Compile Include="Modules\Configuration\OrderCategory\OrderCategoryEndpoint.cs" />
+    <Compile Include="Modules\Configuration\OrderCategory\OrderCategoryPage.cs" />
+    <Compile Include="Modules\Configuration\OrderCategory\OrderCategoryColumns.cs" />
+    <Compile Include="Modules\Configuration\OrderCategory\OrderCategoryForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

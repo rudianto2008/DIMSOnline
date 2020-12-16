@@ -12,15 +12,14 @@ namespace DIMSOnline.Configuration.Forms
     [FormScript("Configuration.City")]
     [BasedOnRow(typeof(Entities.CityRow), CheckNames = true)]
     public class CityForm
-    {
-        public String CityCode { get; set; }
-        public Int32 ProvinceId { get; set; }
+    { 
+        [Required]
         public Int32 IslandId { get; set; }
+        [Required]
+        public Int32 ProvinceId { get; set; }
+        [Required]
+        public String CityCode { get; set; }
+        [Required]
         public String CityName { get; set; }
-        public Int16 InsertUserId { get; set; }
-        public DateTime InsertDate { get; set; }
-        public Int16 UpdateUserId { get; set; }
-        public DateTime UpdateDate { get; set; }
-        public Int16 IsActive { get; set; }
     }
 }

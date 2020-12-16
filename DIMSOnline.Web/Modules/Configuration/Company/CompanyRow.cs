@@ -64,21 +64,23 @@ namespace DIMSOnline.Configuration.Entities
             set { Fields.ContactPerson[this] = value; }
         }
 
-        [DisplayName("Island Id")]
+        [DisplayName("Island"), ForeignKey("[dbo].[Island]", "IslandID"), LeftJoin("jIsland"), TextualField("IslandIslandCode")]
         public Int32? IslandId
         {
             get { return Fields.IslandId[this]; }
             set { Fields.IslandId[this] = value; }
         }
 
-        [DisplayName("Province Id")]
+        [DisplayName("Province"), ForeignKey("[dbo].[Province]", "ProvinceID"), LeftJoin("jProvince"), TextualField("ProvinceProvinceCode")]
+        [LookupEditor("LookupProvince"), LookupInclude]
         public Int32? ProvinceId
         {
             get { return Fields.ProvinceId[this]; }
             set { Fields.ProvinceId[this] = value; }
         }
 
-        [DisplayName("City Id")]
+        [DisplayName("City"), ForeignKey("[dbo].[City]", "CityID"), LeftJoin("jCity"), TextualField("CityCityCode")]
+        [LookupEditor("LookupCity", CascadeFrom = "ProvinceId", CascadeValue = "ProvinceId"), LookupInclude]
         public Int32? CityId
         {
             get { return Fields.CityId[this]; }
@@ -141,6 +143,175 @@ namespace DIMSOnline.Configuration.Entities
             set { Fields.IsActive[this] = value; }
         }
 
+        [DisplayName("Island Island Code"), Expression("jIsland.[IslandCode]")]
+        public String IslandIslandCode
+        {
+            get { return Fields.IslandIslandCode[this]; }
+            set { Fields.IslandIslandCode[this] = value; }
+        }
+
+        [DisplayName("Island Island Name"), Expression("jIsland.[IslandName]")]
+        public String IslandIslandName
+        {
+            get { return Fields.IslandIslandName[this]; }
+            set { Fields.IslandIslandName[this] = value; }
+        }
+
+        [DisplayName("Island Insert User Id"), Expression("jIsland.[InsertUserId]")]
+        public Int16? IslandInsertUserId
+        {
+            get { return Fields.IslandInsertUserId[this]; }
+            set { Fields.IslandInsertUserId[this] = value; }
+        }
+
+        [DisplayName("Island Insert Date"), Expression("jIsland.[InsertDate]")]
+        public DateTime? IslandInsertDate
+        {
+            get { return Fields.IslandInsertDate[this]; }
+            set { Fields.IslandInsertDate[this] = value; }
+        }
+
+        [DisplayName("Island Update User Id"), Expression("jIsland.[UpdateUserId]")]
+        public Int16? IslandUpdateUserId
+        {
+            get { return Fields.IslandUpdateUserId[this]; }
+            set { Fields.IslandUpdateUserId[this] = value; }
+        }
+
+        [DisplayName("Island Update Date"), Expression("jIsland.[UpdateDate]")]
+        public DateTime? IslandUpdateDate
+        {
+            get { return Fields.IslandUpdateDate[this]; }
+            set { Fields.IslandUpdateDate[this] = value; }
+        }
+
+        [DisplayName("Island Is Active"), Expression("jIsland.[IsActive]")]
+        public Int16? IslandIsActive
+        {
+            get { return Fields.IslandIsActive[this]; }
+            set { Fields.IslandIsActive[this] = value; }
+        }
+
+        [DisplayName("Province Province Code"), Expression("jProvince.[ProvinceCode]")]
+        public String ProvinceProvinceCode
+        {
+            get { return Fields.ProvinceProvinceCode[this]; }
+            set { Fields.ProvinceProvinceCode[this] = value; }
+        }
+
+        [DisplayName("Province Island Id"), Expression("jProvince.[IslandID]")]
+        public Int32? ProvinceIslandId
+        {
+            get { return Fields.ProvinceIslandId[this]; }
+            set { Fields.ProvinceIslandId[this] = value; }
+        }
+
+        [DisplayName("Province Name"), Expression("jProvince.[ProvinceName]")]
+        public String ProvinceProvinceName
+        {
+            get { return Fields.ProvinceProvinceName[this]; }
+            set { Fields.ProvinceProvinceName[this] = value; }
+        }
+
+        [DisplayName("Province Insert User Id"), Expression("jProvince.[InsertUserId]")]
+        public Int16? ProvinceInsertUserId
+        {
+            get { return Fields.ProvinceInsertUserId[this]; }
+            set { Fields.ProvinceInsertUserId[this] = value; }
+        }
+
+        [DisplayName("Province Insert Date"), Expression("jProvince.[InsertDate]")]
+        public DateTime? ProvinceInsertDate
+        {
+            get { return Fields.ProvinceInsertDate[this]; }
+            set { Fields.ProvinceInsertDate[this] = value; }
+        }
+
+        [DisplayName("Province Update User Id"), Expression("jProvince.[UpdateUserId]")]
+        public Int16? ProvinceUpdateUserId
+        {
+            get { return Fields.ProvinceUpdateUserId[this]; }
+            set { Fields.ProvinceUpdateUserId[this] = value; }
+        }
+
+        [DisplayName("Province Update Date"), Expression("jProvince.[UpdateDate]")]
+        public DateTime? ProvinceUpdateDate
+        {
+            get { return Fields.ProvinceUpdateDate[this]; }
+            set { Fields.ProvinceUpdateDate[this] = value; }
+        }
+
+        [DisplayName("Province Is Active"), Expression("jProvince.[IsActive]")]
+        public Int16? ProvinceIsActive
+        {
+            get { return Fields.ProvinceIsActive[this]; }
+            set { Fields.ProvinceIsActive[this] = value; }
+        }
+
+        [DisplayName("City City Code"), Expression("jCity.[CityCode]")]
+        public String CityCityCode
+        {
+            get { return Fields.CityCityCode[this]; }
+            set { Fields.CityCityCode[this] = value; }
+        }
+
+        [DisplayName("City Province Id"), Expression("jCity.[ProvinceID]")]
+        public Int32? CityProvinceId
+        {
+            get { return Fields.CityProvinceId[this]; }
+            set { Fields.CityProvinceId[this] = value; }
+        }
+
+        [DisplayName("City Island Id"), Expression("jCity.[IslandID]")]
+        public Int32? CityIslandId
+        {
+            get { return Fields.CityIslandId[this]; }
+            set { Fields.CityIslandId[this] = value; }
+        }
+
+        [DisplayName("City Name"), Expression("jCity.[CityName]")]
+        public String CityCityName
+        {
+            get { return Fields.CityCityName[this]; }
+            set { Fields.CityCityName[this] = value; }
+        }
+
+        [DisplayName("City Insert User Id"), Expression("jCity.[InsertUserId]")]
+        public Int16? CityInsertUserId
+        {
+            get { return Fields.CityInsertUserId[this]; }
+            set { Fields.CityInsertUserId[this] = value; }
+        }
+
+        [DisplayName("City Insert Date"), Expression("jCity.[InsertDate]")]
+        public DateTime? CityInsertDate
+        {
+            get { return Fields.CityInsertDate[this]; }
+            set { Fields.CityInsertDate[this] = value; }
+        }
+
+        [DisplayName("City Update User Id"), Expression("jCity.[UpdateUserId]")]
+        public Int16? CityUpdateUserId
+        {
+            get { return Fields.CityUpdateUserId[this]; }
+            set { Fields.CityUpdateUserId[this] = value; }
+        }
+
+        [DisplayName("City Update Date"), Expression("jCity.[UpdateDate]")]
+        public DateTime? CityUpdateDate
+        {
+            get { return Fields.CityUpdateDate[this]; }
+            set { Fields.CityUpdateDate[this] = value; }
+        }
+
+        [DisplayName("City Is Active"), Expression("jCity.[IsActive]")]
+        public Int16? CityIsActive
+        {
+            get { return Fields.CityIsActive[this]; }
+            set { Fields.CityIsActive[this] = value; }
+        }
+
+
         IIdField IIdRow.IdField
         {
             get { return Fields.CompanyId; }
@@ -178,6 +349,33 @@ namespace DIMSOnline.Configuration.Entities
             public Int16Field DeleteUserId;
             public DateTimeField DeleteDate;
             public Int16Field IsActive;
+
+            public StringField IslandIslandCode;
+            public StringField IslandIslandName;
+            public Int16Field IslandInsertUserId;
+            public DateTimeField IslandInsertDate;
+            public Int16Field IslandUpdateUserId;
+            public DateTimeField IslandUpdateDate;
+            public Int16Field IslandIsActive;
+
+            public StringField ProvinceProvinceCode;
+            public Int32Field ProvinceIslandId;
+            public StringField ProvinceProvinceName;
+            public Int16Field ProvinceInsertUserId;
+            public DateTimeField ProvinceInsertDate;
+            public Int16Field ProvinceUpdateUserId;
+            public DateTimeField ProvinceUpdateDate;
+            public Int16Field ProvinceIsActive;
+
+            public StringField CityCityCode;
+            public Int32Field CityProvinceId;
+            public Int32Field CityIslandId;
+            public StringField CityCityName;
+            public Int16Field CityInsertUserId;
+            public DateTimeField CityInsertDate;
+            public Int16Field CityUpdateUserId;
+            public DateTimeField CityUpdateDate;
+            public Int16Field CityIsActive;
         }
     }
 }

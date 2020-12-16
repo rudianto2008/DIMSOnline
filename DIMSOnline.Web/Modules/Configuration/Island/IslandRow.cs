@@ -13,9 +13,10 @@ namespace DIMSOnline.Configuration.Entities
     [DisplayName("Island"), InstanceName("Island")]
     [ReadPermission(Configuration.PermissionKeys.Configuration)]
     [ModifyPermission(Configuration.PermissionKeys.Configuration)]
+    [LookupScript("LookupIsland")]
     public sealed class IslandRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Island Id"), Column("IslandID"), Identity]
+        [DisplayName("Island Id"), Column("IslandID"), Identity, LookupInclude]
         public Int32? IslandId
         {
             get { return Fields.IslandId[this]; }
@@ -78,7 +79,7 @@ namespace DIMSOnline.Configuration.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.IslandCode; }
+            get { return Fields.IslandName; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();

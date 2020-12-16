@@ -491,16 +491,16 @@ button.ui-button::-moz-focus-inner {
   margin: .5em .5em .5em 0;
 }
 .ui-dialog .ui-dialog-titlebar {
-  flex-direction: column;
-  border: none;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  color: #fff;
-  padding: 2px 2px 2px 1em;
-  background-color: #1f7dce;
-  display: flex;
-  flex-direction: row;
+    flex-direction: column;
+    border: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: #fff;
+    padding: 2px 2px 2px 1em;
+    background-color: #04a49c;
+    display: flex;
+    flex-direction: row;
 }
 .ui-dialog .ui-dialog-titlebar.ui-helper-clearfix:after {
   display: none;

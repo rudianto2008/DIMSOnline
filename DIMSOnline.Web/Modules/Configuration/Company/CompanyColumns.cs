@@ -13,25 +13,17 @@ namespace DIMSOnline.Configuration.Columns
     [BasedOnRow(typeof(Entities.CompanyRow), CheckNames = true)]
     public class CompanyColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-        public Int32 CompanyId { get; set; }
-        [EditLink]
+        [EditLink, Width(300)]
         public String CompanyName { get; set; }
+        [Width(400)]
         public String Address { get; set; }
-        public String Fax { get; set; }
-        public String Logo { get; set; }
+        [Width(150)]
+        public String ProvinceProvinceName { get; set; }
+        [Width(150)]
+        public String CityCityName { get; set; }
+        [Width(150)]
         public String Phone { get; set; }
+        [Width(200)]
         public String ContactPerson { get; set; }
-        public Int32 IslandId { get; set; }
-        public Int32 ProvinceId { get; set; }
-        public Int32 CityId { get; set; }
-        public String OfficeType { get; set; }
-        public Int16 InsertUserId { get; set; }
-        public DateTime InsertDate { get; set; }
-        public Int16 UpdateUserId { get; set; }
-        public DateTime UpdateDate { get; set; }
-        public Int16 DeleteUserId { get; set; }
-        public DateTime DeleteDate { get; set; }
-        public Int16 IsActive { get; set; }
     }
 }

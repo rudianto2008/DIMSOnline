@@ -441,6 +441,69 @@ var DIMSOnline;
 (function (DIMSOnline) {
     var Configuration;
     (function (Configuration) {
+        var CategoryUnitForm = /** @class */ (function (_super) {
+            __extends(CategoryUnitForm, _super);
+            function CategoryUnitForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!CategoryUnitForm.init) {
+                    CategoryUnitForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DecimalEditor;
+                    Q.initFormType(CategoryUnitForm, [
+                        'CategoryUnitName', w0,
+                        'PricePerHour', w1
+                    ]);
+                }
+                return _this;
+            }
+            CategoryUnitForm.formKey = 'Configuration.CategoryUnit';
+            return CategoryUnitForm;
+        }(Serenity.PrefixedContext));
+        Configuration.CategoryUnitForm = CategoryUnitForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var CategoryUnitRow;
+        (function (CategoryUnitRow) {
+            CategoryUnitRow.idProperty = 'CategoryUnitId';
+            CategoryUnitRow.nameProperty = 'CategoryUnitName';
+            CategoryUnitRow.localTextPrefix = 'Configuration.CategoryUnit';
+            CategoryUnitRow.deletePermission = 'Administration:Configuration';
+            CategoryUnitRow.insertPermission = 'Administration:Configuration';
+            CategoryUnitRow.readPermission = 'Administration:Configuration';
+            CategoryUnitRow.updatePermission = 'Administration:Configuration';
+        })(CategoryUnitRow = Configuration.CategoryUnitRow || (Configuration.CategoryUnitRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var CategoryUnitService;
+        (function (CategoryUnitService) {
+            CategoryUnitService.baseUrl = 'Configuration/CategoryUnit';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                CategoryUnitService[x] = function (r, s, o) {
+                    return Q.serviceRequest(CategoryUnitService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(CategoryUnitService = Configuration.CategoryUnitService || (Configuration.CategoryUnitService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
         var CityForm = /** @class */ (function (_super) {
             __extends(CityForm, _super);
             function CityForm(prefix) {
@@ -478,8 +541,13 @@ var DIMSOnline;
         var CityRow;
         (function (CityRow) {
             CityRow.idProperty = 'CityId';
-            CityRow.nameProperty = 'CityCode';
+            CityRow.nameProperty = 'CityName';
             CityRow.localTextPrefix = 'Configuration.City';
+            CityRow.lookupKey = 'LookupCity';
+            function getLookup() {
+                return Q.getLookup('LookupCity');
+            }
+            CityRow.getLookup = getLookup;
             CityRow.deletePermission = 'Administration:Configuration';
             CityRow.insertPermission = 'Administration:Configuration';
             CityRow.readPermission = 'Administration:Configuration';
@@ -520,26 +588,15 @@ var DIMSOnline;
                     CompanyForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DateEditor;
+                    var w1 = s.LookupEditor;
                     Q.initFormType(CompanyForm, [
                         'CompanyName', w0,
-                        'Address', w0,
-                        'Fax', w0,
-                        'Logo', w0,
                         'Phone', w0,
                         'ContactPerson', w0,
-                        'IslandId', w1,
                         'ProvinceId', w1,
                         'CityId', w1,
-                        'OfficeType', w0,
-                        'InsertUserId', w1,
-                        'InsertDate', w2,
-                        'UpdateUserId', w1,
-                        'UpdateDate', w2,
-                        'DeleteUserId', w1,
-                        'DeleteDate', w2,
-                        'IsActive', w1
+                        'Address', w0,
+                        'Logo', w0
                     ]);
                 }
                 return _this;
@@ -585,6 +642,91 @@ var DIMSOnline;
                 };
             });
         })(CompanyService = Configuration.CompanyService || (Configuration.CompanyService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var CustomerForm = /** @class */ (function (_super) {
+            __extends(CustomerForm, _super);
+            function CustomerForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!CustomerForm.init) {
+                    CustomerForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(CustomerForm, [
+                        'CustomerNumber', w0,
+                        'CompanyId', w1,
+                        'CustomerName', w0,
+                        'ProvinceId', w1,
+                        'CityId', w1,
+                        'Address', w0,
+                        'Pic', w0,
+                        'IslandId', w1,
+                        'PostCode', w1,
+                        'Phone', w0,
+                        'ContactPerson', w0,
+                        'Fax', w0,
+                        'BirthPlace', w0,
+                        'BirthDate', w2,
+                        'Email', w0,
+                        'Npwp', w0,
+                        'InsertUserId', w1,
+                        'InsertDate', w2,
+                        'UpdateUserId', w1,
+                        'UpdateDate', w2,
+                        'IsActive', w1,
+                        'DeleteUserId', w1,
+                        'DeleteDate', w2
+                    ]);
+                }
+                return _this;
+            }
+            CustomerForm.formKey = 'Configuration.Customer';
+            return CustomerForm;
+        }(Serenity.PrefixedContext));
+        Configuration.CustomerForm = CustomerForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var CustomerRow;
+        (function (CustomerRow) {
+            CustomerRow.idProperty = 'CustomerId';
+            CustomerRow.nameProperty = 'CustomerNumber';
+            CustomerRow.localTextPrefix = 'Configuration.Customer';
+            CustomerRow.deletePermission = 'Administration:Configuration';
+            CustomerRow.insertPermission = 'Administration:Configuration';
+            CustomerRow.readPermission = 'Administration:Configuration';
+            CustomerRow.updatePermission = 'Administration:Configuration';
+        })(CustomerRow = Configuration.CustomerRow || (Configuration.CustomerRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var CustomerService;
+        (function (CustomerService) {
+            CustomerService.baseUrl = 'Configuration/Customer';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                CustomerService[x] = function (r, s, o) {
+                    return Q.serviceRequest(CustomerService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(CustomerService = Configuration.CustomerService || (Configuration.CustomerService = {}));
     })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
@@ -659,6 +801,137 @@ var DIMSOnline;
 var DIMSOnline;
 (function (DIMSOnline) {
     var Configuration;
+    (function (Configuration) {
+        var MovementTypeForm = /** @class */ (function (_super) {
+            __extends(MovementTypeForm, _super);
+            function MovementTypeForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!MovementTypeForm.init) {
+                    MovementTypeForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(MovementTypeForm, [
+                        'MovementTypeName', w0,
+                        'StatusInOut', w0
+                    ]);
+                }
+                return _this;
+            }
+            MovementTypeForm.formKey = 'Configuration.MovementType';
+            return MovementTypeForm;
+        }(Serenity.PrefixedContext));
+        Configuration.MovementTypeForm = MovementTypeForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var MovementTypeRow;
+        (function (MovementTypeRow) {
+            MovementTypeRow.idProperty = 'MovementTypeId';
+            MovementTypeRow.nameProperty = 'MovementTypeName';
+            MovementTypeRow.localTextPrefix = 'Configuration.MovementType';
+            MovementTypeRow.deletePermission = 'Administration:Configuration';
+            MovementTypeRow.insertPermission = 'Administration:Configuration';
+            MovementTypeRow.readPermission = 'Administration:Configuration';
+            MovementTypeRow.updatePermission = 'Administration:Configuration';
+        })(MovementTypeRow = Configuration.MovementTypeRow || (Configuration.MovementTypeRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var MovementTypeService;
+        (function (MovementTypeService) {
+            MovementTypeService.baseUrl = 'Configuration/MovementType';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                MovementTypeService[x] = function (r, s, o) {
+                    return Q.serviceRequest(MovementTypeService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(MovementTypeService = Configuration.MovementTypeService || (Configuration.MovementTypeService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var OrderCategoryForm = /** @class */ (function (_super) {
+            __extends(OrderCategoryForm, _super);
+            function OrderCategoryForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!OrderCategoryForm.init) {
+                    OrderCategoryForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(OrderCategoryForm, [
+                        'OrderCategoryName', w0,
+                        'Description', w0,
+                        'InsertUserId', w1,
+                        'InsertDate', w2,
+                        'UpdateUserId', w1,
+                        'UpdateDate', w2,
+                        'IsActive', w1
+                    ]);
+                }
+                return _this;
+            }
+            OrderCategoryForm.formKey = 'Configuration.OrderCategory';
+            return OrderCategoryForm;
+        }(Serenity.PrefixedContext));
+        Configuration.OrderCategoryForm = OrderCategoryForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var OrderCategoryRow;
+        (function (OrderCategoryRow) {
+            OrderCategoryRow.idProperty = 'OrderCategoryId';
+            OrderCategoryRow.nameProperty = 'OrderCategoryName';
+            OrderCategoryRow.localTextPrefix = 'Configuration.OrderCategory';
+            OrderCategoryRow.deletePermission = 'Administration:Configuration';
+            OrderCategoryRow.insertPermission = 'Administration:Configuration';
+            OrderCategoryRow.readPermission = 'Administration:Configuration';
+            OrderCategoryRow.updatePermission = 'Administration:Configuration';
+        })(OrderCategoryRow = Configuration.OrderCategoryRow || (Configuration.OrderCategoryRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var OrderCategoryService;
+        (function (OrderCategoryService) {
+            OrderCategoryService.baseUrl = 'Configuration/OrderCategory';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                OrderCategoryService[x] = function (r, s, o) {
+                    return Q.serviceRequest(OrderCategoryService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(OrderCategoryService = Configuration.OrderCategoryService || (Configuration.OrderCategoryService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
     (function (Configuration_1) {
     })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
 })(DIMSOnline || (DIMSOnline = {}));
@@ -702,8 +975,13 @@ var DIMSOnline;
         var ProvinceRow;
         (function (ProvinceRow) {
             ProvinceRow.idProperty = 'ProvinceId';
-            ProvinceRow.nameProperty = 'ProvinceCode';
+            ProvinceRow.nameProperty = 'ProvinceName';
             ProvinceRow.localTextPrefix = 'Configuration.Province';
+            ProvinceRow.lookupKey = 'LookupProvince';
+            function getLookup() {
+                return Q.getLookup('LookupProvince');
+            }
+            ProvinceRow.getLookup = getLookup;
             ProvinceRow.deletePermission = 'Administration:Configuration';
             ProvinceRow.insertPermission = 'Administration:Configuration';
             ProvinceRow.readPermission = 'Administration:Configuration';
@@ -867,8 +1145,165 @@ var DIMSOnline;
 (function (DIMSOnline) {
     var Texts;
     (function (Texts) {
-        DIMSOnline['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Configuration: { BinLocation: { BinLocation: 1, BinLocationId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, UpdateDate: 1, UpdateUserId: 1 }, City: { CityCode: 1, CityId: 1, CityName: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Company: { Address: 1, CityId: 1, CompanyId: 1, CompanyName: 1, ContactPerson: 1, DeleteDate: 1, DeleteUserId: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, Logo: 1, OfficeType: 1, Phone: 1, ProvinceId: 1, UpdateDate: 1, UpdateUserId: 1 }, Island: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandCode: 1, IslandId: 1, IslandName: 1, UpdateDate: 1, UpdateUserId: 1 }, Province: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, ProvinceCode: 1, ProvinceId: 1, ProvinceName: 1, UpdateDate: 1, UpdateUserId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        DIMSOnline['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Configuration: { BinLocation: { BinLocation: 1, BinLocationId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, UpdateDate: 1, UpdateUserId: 1 }, CategoryUnit: { CategoryUnitId: 1, CategoryUnitName: 1, PricePerHour: 1 }, City: { CityCode: 1, CityId: 1, CityName: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Company: { Address: 1, CityId: 1, CompanyId: 1, CompanyName: 1, ContactPerson: 1, DeleteDate: 1, DeleteUserId: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, Logo: 1, OfficeType: 1, Phone: 1, ProvinceId: 1, UpdateDate: 1, UpdateUserId: 1 }, Customer: { Address: 1, BirthDate: 1, BirthPlace: 1, CityCityCode: 1, CityCityName: 1, CityId: 1, CityInsertDate: 1, CityInsertUserId: 1, CityIsActive: 1, CityIslandId: 1, CityProvinceId: 1, CityUpdateDate: 1, CityUpdateUserId: 1, CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, ContactPerson: 1, CustomerId: 1, CustomerName: 1, CustomerNumber: 1, DeleteDate: 1, DeleteUserId: 1, Email: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, Npwp: 1, Phone: 1, Pic: 1, PostCode: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Island: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandCode: 1, IslandId: 1, IslandName: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementType: { MovementTypeId: 1, MovementTypeName: 1, StatusInOut: 1 }, OrderCategory: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryId: 1, OrderCategoryName: 1, UpdateDate: 1, UpdateUserId: 1 }, Province: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, ProvinceCode: 1, ProvinceId: 1, ProvinceName: 1, UpdateDate: 1, UpdateUserId: 1 } }, Transaction: { Inventory: { CompanyId: 1, DocumentNo: 1, InsertDate: 1, InsertUserId: 1, InventoryId: 1, InventoryStatus: 1, IsActive: 1, OrderCategoryId: 1, ProductBasePrice: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPrice: 1, ProductPriceNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, Qty: 1, Stock: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementStock: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, MovementQty: 1, MovementStockId: 1, MovementStockNumber: 1, MovementTypeId: 1, MovementTypeMovementTypeName: 1, MovementTypeStatusInOut: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = DIMSOnline.Texts || (DIMSOnline.Texts = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var InventoryForm = /** @class */ (function (_super) {
+            __extends(InventoryForm, _super);
+            function InventoryForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!InventoryForm.init) {
+                    InventoryForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.DateEditor;
+                    Q.initFormType(InventoryForm, [
+                        'ProductId', w0,
+                        'OrderCategoryId', w0,
+                        'Qty', w0,
+                        'InventoryStatus', w1,
+                        'DocumentNo', w1,
+                        'Stock', w0,
+                        'ProductPrice', w2,
+                        'ProductPriceNumber', w1,
+                        'ProductBasePrice', w2,
+                        'ProductBasePriceNumber', w1,
+                        'InsertUserId', w0,
+                        'InsertDate', w3,
+                        'UpdateUserId', w0,
+                        'UpdateDate', w3,
+                        'IsActive', w0,
+                        'CompanyId', w0
+                    ]);
+                }
+                return _this;
+            }
+            InventoryForm.formKey = 'Transaction.Inventory';
+            return InventoryForm;
+        }(Serenity.PrefixedContext));
+        Transaction.InventoryForm = InventoryForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var InventoryRow;
+        (function (InventoryRow) {
+            InventoryRow.idProperty = 'InventoryId';
+            InventoryRow.nameProperty = 'InventoryStatus';
+            InventoryRow.localTextPrefix = 'Transaction.Inventory';
+            InventoryRow.deletePermission = 'Administration:Transaction';
+            InventoryRow.insertPermission = 'Administration:Transaction';
+            InventoryRow.readPermission = 'Administration:Transaction';
+            InventoryRow.updatePermission = 'Administration:Transaction';
+        })(InventoryRow = Transaction.InventoryRow || (Transaction.InventoryRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var InventoryService;
+        (function (InventoryService) {
+            InventoryService.baseUrl = 'Transaction/Inventory';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                InventoryService[x] = function (r, s, o) {
+                    return Q.serviceRequest(InventoryService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(InventoryService = Transaction.InventoryService || (Transaction.InventoryService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var MovementStockForm = /** @class */ (function (_super) {
+            __extends(MovementStockForm, _super);
+            function MovementStockForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!MovementStockForm.init) {
+                    MovementStockForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(MovementStockForm, [
+                        'MovementTypeId', w0,
+                        'ProductId', w0,
+                        'MovementQty', w0,
+                        'MovementStockNumber', w1,
+                        'Description', w1,
+                        'InsertUserId', w0,
+                        'InsertDate', w2,
+                        'UpdateUserId', w0,
+                        'UpdateDate', w2,
+                        'IsActive', w0
+                    ]);
+                }
+                return _this;
+            }
+            MovementStockForm.formKey = 'Transaction.MovementStock';
+            return MovementStockForm;
+        }(Serenity.PrefixedContext));
+        Transaction.MovementStockForm = MovementStockForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var MovementStockRow;
+        (function (MovementStockRow) {
+            MovementStockRow.idProperty = 'MovementStockId';
+            MovementStockRow.nameProperty = 'MovementStockNumber';
+            MovementStockRow.localTextPrefix = 'Transaction.MovementStock';
+            MovementStockRow.deletePermission = 'Administration:Transaction';
+            MovementStockRow.insertPermission = 'Administration:Transaction';
+            MovementStockRow.readPermission = 'Administration:Transaction';
+            MovementStockRow.updatePermission = 'Administration:Transaction';
+        })(MovementStockRow = Transaction.MovementStockRow || (Transaction.MovementStockRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var MovementStockService;
+        (function (MovementStockService) {
+            MovementStockService.baseUrl = 'Transaction/MovementStock';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                MovementStockService[x] = function (r, s, o) {
+                    return Q.serviceRequest(MovementStockService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(MovementStockService = Transaction.MovementStockService || (Transaction.MovementStockService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction_1) {
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
 (function (DIMSOnline) {
@@ -3097,6 +3532,56 @@ var DIMSOnline;
 (function (DIMSOnline) {
     var Configuration;
     (function (Configuration) {
+        var CategoryUnitDialog = /** @class */ (function (_super) {
+            __extends(CategoryUnitDialog, _super);
+            function CategoryUnitDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.CategoryUnitForm(_this.idPrefix);
+                return _this;
+            }
+            CategoryUnitDialog.prototype.getFormKey = function () { return Configuration.CategoryUnitForm.formKey; };
+            CategoryUnitDialog.prototype.getIdProperty = function () { return Configuration.CategoryUnitRow.idProperty; };
+            CategoryUnitDialog.prototype.getLocalTextPrefix = function () { return Configuration.CategoryUnitRow.localTextPrefix; };
+            CategoryUnitDialog.prototype.getNameProperty = function () { return Configuration.CategoryUnitRow.nameProperty; };
+            CategoryUnitDialog.prototype.getService = function () { return Configuration.CategoryUnitService.baseUrl; };
+            CategoryUnitDialog.prototype.getDeletePermission = function () { return Configuration.CategoryUnitRow.deletePermission; };
+            CategoryUnitDialog.prototype.getInsertPermission = function () { return Configuration.CategoryUnitRow.insertPermission; };
+            CategoryUnitDialog.prototype.getUpdatePermission = function () { return Configuration.CategoryUnitRow.updatePermission; };
+            CategoryUnitDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CategoryUnitDialog);
+            return CategoryUnitDialog;
+        }(Serenity.EntityDialog));
+        Configuration.CategoryUnitDialog = CategoryUnitDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var CategoryUnitGrid = /** @class */ (function (_super) {
+            __extends(CategoryUnitGrid, _super);
+            function CategoryUnitGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            CategoryUnitGrid.prototype.getColumnsKey = function () { return 'Configuration.CategoryUnit'; };
+            CategoryUnitGrid.prototype.getDialogType = function () { return Configuration.CategoryUnitDialog; };
+            CategoryUnitGrid.prototype.getIdProperty = function () { return Configuration.CategoryUnitRow.idProperty; };
+            CategoryUnitGrid.prototype.getInsertPermission = function () { return Configuration.CategoryUnitRow.insertPermission; };
+            CategoryUnitGrid.prototype.getLocalTextPrefix = function () { return Configuration.CategoryUnitRow.localTextPrefix; };
+            CategoryUnitGrid.prototype.getService = function () { return Configuration.CategoryUnitService.baseUrl; };
+            CategoryUnitGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CategoryUnitGrid);
+            return CategoryUnitGrid;
+        }(Serenity.EntityGrid));
+        Configuration.CategoryUnitGrid = CategoryUnitGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
         var CityDialog = /** @class */ (function (_super) {
             __extends(CityDialog, _super);
             function CityDialog() {
@@ -3197,6 +3682,56 @@ var DIMSOnline;
 (function (DIMSOnline) {
     var Configuration;
     (function (Configuration) {
+        var CustomerDialog = /** @class */ (function (_super) {
+            __extends(CustomerDialog, _super);
+            function CustomerDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.CustomerForm(_this.idPrefix);
+                return _this;
+            }
+            CustomerDialog.prototype.getFormKey = function () { return Configuration.CustomerForm.formKey; };
+            CustomerDialog.prototype.getIdProperty = function () { return Configuration.CustomerRow.idProperty; };
+            CustomerDialog.prototype.getLocalTextPrefix = function () { return Configuration.CustomerRow.localTextPrefix; };
+            CustomerDialog.prototype.getNameProperty = function () { return Configuration.CustomerRow.nameProperty; };
+            CustomerDialog.prototype.getService = function () { return Configuration.CustomerService.baseUrl; };
+            CustomerDialog.prototype.getDeletePermission = function () { return Configuration.CustomerRow.deletePermission; };
+            CustomerDialog.prototype.getInsertPermission = function () { return Configuration.CustomerRow.insertPermission; };
+            CustomerDialog.prototype.getUpdatePermission = function () { return Configuration.CustomerRow.updatePermission; };
+            CustomerDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CustomerDialog);
+            return CustomerDialog;
+        }(Serenity.EntityDialog));
+        Configuration.CustomerDialog = CustomerDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var CustomerGrid = /** @class */ (function (_super) {
+            __extends(CustomerGrid, _super);
+            function CustomerGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            CustomerGrid.prototype.getColumnsKey = function () { return 'Configuration.Customer'; };
+            CustomerGrid.prototype.getDialogType = function () { return Configuration.CustomerDialog; };
+            CustomerGrid.prototype.getIdProperty = function () { return Configuration.CustomerRow.idProperty; };
+            CustomerGrid.prototype.getInsertPermission = function () { return Configuration.CustomerRow.insertPermission; };
+            CustomerGrid.prototype.getLocalTextPrefix = function () { return Configuration.CustomerRow.localTextPrefix; };
+            CustomerGrid.prototype.getService = function () { return Configuration.CustomerService.baseUrl; };
+            CustomerGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CustomerGrid);
+            return CustomerGrid;
+        }(Serenity.EntityGrid));
+        Configuration.CustomerGrid = CustomerGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
         var IslandDialog = /** @class */ (function (_super) {
             __extends(IslandDialog, _super);
             function IslandDialog() {
@@ -3241,6 +3776,106 @@ var DIMSOnline;
             return IslandGrid;
         }(Serenity.EntityGrid));
         Configuration.IslandGrid = IslandGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var MovementTypeDialog = /** @class */ (function (_super) {
+            __extends(MovementTypeDialog, _super);
+            function MovementTypeDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.MovementTypeForm(_this.idPrefix);
+                return _this;
+            }
+            MovementTypeDialog.prototype.getFormKey = function () { return Configuration.MovementTypeForm.formKey; };
+            MovementTypeDialog.prototype.getIdProperty = function () { return Configuration.MovementTypeRow.idProperty; };
+            MovementTypeDialog.prototype.getLocalTextPrefix = function () { return Configuration.MovementTypeRow.localTextPrefix; };
+            MovementTypeDialog.prototype.getNameProperty = function () { return Configuration.MovementTypeRow.nameProperty; };
+            MovementTypeDialog.prototype.getService = function () { return Configuration.MovementTypeService.baseUrl; };
+            MovementTypeDialog.prototype.getDeletePermission = function () { return Configuration.MovementTypeRow.deletePermission; };
+            MovementTypeDialog.prototype.getInsertPermission = function () { return Configuration.MovementTypeRow.insertPermission; };
+            MovementTypeDialog.prototype.getUpdatePermission = function () { return Configuration.MovementTypeRow.updatePermission; };
+            MovementTypeDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MovementTypeDialog);
+            return MovementTypeDialog;
+        }(Serenity.EntityDialog));
+        Configuration.MovementTypeDialog = MovementTypeDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var MovementTypeGrid = /** @class */ (function (_super) {
+            __extends(MovementTypeGrid, _super);
+            function MovementTypeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            MovementTypeGrid.prototype.getColumnsKey = function () { return 'Configuration.MovementType'; };
+            MovementTypeGrid.prototype.getDialogType = function () { return Configuration.MovementTypeDialog; };
+            MovementTypeGrid.prototype.getIdProperty = function () { return Configuration.MovementTypeRow.idProperty; };
+            MovementTypeGrid.prototype.getInsertPermission = function () { return Configuration.MovementTypeRow.insertPermission; };
+            MovementTypeGrid.prototype.getLocalTextPrefix = function () { return Configuration.MovementTypeRow.localTextPrefix; };
+            MovementTypeGrid.prototype.getService = function () { return Configuration.MovementTypeService.baseUrl; };
+            MovementTypeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MovementTypeGrid);
+            return MovementTypeGrid;
+        }(Serenity.EntityGrid));
+        Configuration.MovementTypeGrid = MovementTypeGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var OrderCategoryDialog = /** @class */ (function (_super) {
+            __extends(OrderCategoryDialog, _super);
+            function OrderCategoryDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.OrderCategoryForm(_this.idPrefix);
+                return _this;
+            }
+            OrderCategoryDialog.prototype.getFormKey = function () { return Configuration.OrderCategoryForm.formKey; };
+            OrderCategoryDialog.prototype.getIdProperty = function () { return Configuration.OrderCategoryRow.idProperty; };
+            OrderCategoryDialog.prototype.getLocalTextPrefix = function () { return Configuration.OrderCategoryRow.localTextPrefix; };
+            OrderCategoryDialog.prototype.getNameProperty = function () { return Configuration.OrderCategoryRow.nameProperty; };
+            OrderCategoryDialog.prototype.getService = function () { return Configuration.OrderCategoryService.baseUrl; };
+            OrderCategoryDialog.prototype.getDeletePermission = function () { return Configuration.OrderCategoryRow.deletePermission; };
+            OrderCategoryDialog.prototype.getInsertPermission = function () { return Configuration.OrderCategoryRow.insertPermission; };
+            OrderCategoryDialog.prototype.getUpdatePermission = function () { return Configuration.OrderCategoryRow.updatePermission; };
+            OrderCategoryDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OrderCategoryDialog);
+            return OrderCategoryDialog;
+        }(Serenity.EntityDialog));
+        Configuration.OrderCategoryDialog = OrderCategoryDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var OrderCategoryGrid = /** @class */ (function (_super) {
+            __extends(OrderCategoryGrid, _super);
+            function OrderCategoryGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OrderCategoryGrid.prototype.getColumnsKey = function () { return 'Configuration.OrderCategory'; };
+            OrderCategoryGrid.prototype.getDialogType = function () { return Configuration.OrderCategoryDialog; };
+            OrderCategoryGrid.prototype.getIdProperty = function () { return Configuration.OrderCategoryRow.idProperty; };
+            OrderCategoryGrid.prototype.getInsertPermission = function () { return Configuration.OrderCategoryRow.insertPermission; };
+            OrderCategoryGrid.prototype.getLocalTextPrefix = function () { return Configuration.OrderCategoryRow.localTextPrefix; };
+            OrderCategoryGrid.prototype.getService = function () { return Configuration.OrderCategoryService.baseUrl; };
+            OrderCategoryGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OrderCategoryGrid);
+            return OrderCategoryGrid;
+        }(Serenity.EntityGrid));
+        Configuration.OrderCategoryGrid = OrderCategoryGrid;
     })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
@@ -3543,5 +4178,105 @@ var DIMSOnline;
         }(Serenity.PropertyPanel));
         Membership.SignUpPanel = SignUpPanel;
     })(Membership = DIMSOnline.Membership || (DIMSOnline.Membership = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var InventoryDialog = /** @class */ (function (_super) {
+            __extends(InventoryDialog, _super);
+            function InventoryDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.InventoryForm(_this.idPrefix);
+                return _this;
+            }
+            InventoryDialog.prototype.getFormKey = function () { return Transaction.InventoryForm.formKey; };
+            InventoryDialog.prototype.getIdProperty = function () { return Transaction.InventoryRow.idProperty; };
+            InventoryDialog.prototype.getLocalTextPrefix = function () { return Transaction.InventoryRow.localTextPrefix; };
+            InventoryDialog.prototype.getNameProperty = function () { return Transaction.InventoryRow.nameProperty; };
+            InventoryDialog.prototype.getService = function () { return Transaction.InventoryService.baseUrl; };
+            InventoryDialog.prototype.getDeletePermission = function () { return Transaction.InventoryRow.deletePermission; };
+            InventoryDialog.prototype.getInsertPermission = function () { return Transaction.InventoryRow.insertPermission; };
+            InventoryDialog.prototype.getUpdatePermission = function () { return Transaction.InventoryRow.updatePermission; };
+            InventoryDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InventoryDialog);
+            return InventoryDialog;
+        }(Serenity.EntityDialog));
+        Transaction.InventoryDialog = InventoryDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var InventoryGrid = /** @class */ (function (_super) {
+            __extends(InventoryGrid, _super);
+            function InventoryGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            InventoryGrid.prototype.getColumnsKey = function () { return 'Transaction.Inventory'; };
+            InventoryGrid.prototype.getDialogType = function () { return Transaction.InventoryDialog; };
+            InventoryGrid.prototype.getIdProperty = function () { return Transaction.InventoryRow.idProperty; };
+            InventoryGrid.prototype.getInsertPermission = function () { return Transaction.InventoryRow.insertPermission; };
+            InventoryGrid.prototype.getLocalTextPrefix = function () { return Transaction.InventoryRow.localTextPrefix; };
+            InventoryGrid.prototype.getService = function () { return Transaction.InventoryService.baseUrl; };
+            InventoryGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InventoryGrid);
+            return InventoryGrid;
+        }(Serenity.EntityGrid));
+        Transaction.InventoryGrid = InventoryGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var MovementStockDialog = /** @class */ (function (_super) {
+            __extends(MovementStockDialog, _super);
+            function MovementStockDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.MovementStockForm(_this.idPrefix);
+                return _this;
+            }
+            MovementStockDialog.prototype.getFormKey = function () { return Transaction.MovementStockForm.formKey; };
+            MovementStockDialog.prototype.getIdProperty = function () { return Transaction.MovementStockRow.idProperty; };
+            MovementStockDialog.prototype.getLocalTextPrefix = function () { return Transaction.MovementStockRow.localTextPrefix; };
+            MovementStockDialog.prototype.getNameProperty = function () { return Transaction.MovementStockRow.nameProperty; };
+            MovementStockDialog.prototype.getService = function () { return Transaction.MovementStockService.baseUrl; };
+            MovementStockDialog.prototype.getDeletePermission = function () { return Transaction.MovementStockRow.deletePermission; };
+            MovementStockDialog.prototype.getInsertPermission = function () { return Transaction.MovementStockRow.insertPermission; };
+            MovementStockDialog.prototype.getUpdatePermission = function () { return Transaction.MovementStockRow.updatePermission; };
+            MovementStockDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MovementStockDialog);
+            return MovementStockDialog;
+        }(Serenity.EntityDialog));
+        Transaction.MovementStockDialog = MovementStockDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var MovementStockGrid = /** @class */ (function (_super) {
+            __extends(MovementStockGrid, _super);
+            function MovementStockGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            MovementStockGrid.prototype.getColumnsKey = function () { return 'Transaction.MovementStock'; };
+            MovementStockGrid.prototype.getDialogType = function () { return Transaction.MovementStockDialog; };
+            MovementStockGrid.prototype.getIdProperty = function () { return Transaction.MovementStockRow.idProperty; };
+            MovementStockGrid.prototype.getInsertPermission = function () { return Transaction.MovementStockRow.insertPermission; };
+            MovementStockGrid.prototype.getLocalTextPrefix = function () { return Transaction.MovementStockRow.localTextPrefix; };
+            MovementStockGrid.prototype.getService = function () { return Transaction.MovementStockService.baseUrl; };
+            MovementStockGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MovementStockGrid);
+            return MovementStockGrid;
+        }(Serenity.EntityGrid));
+        Transaction.MovementStockGrid = MovementStockGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 //# sourceMappingURL=DIMSOnline.Web.js.map

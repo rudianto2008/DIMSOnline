@@ -13,10 +13,13 @@ namespace DIMSOnline.Configuration.Columns
     [BasedOnRow(typeof(Entities.CityRow), CheckNames = true)]
     public class CityColumns
     {
-        [EditLink] 
+        [EditLink]
+        public String CityCode { get; set; }
         public String CityName { get; set; }
         [DisplayName("Province Name")]
         public String ProvinceProvinceName { get; set; }
+        [DisplayName("Island Name")]
+        public String IslandIslandName { get; set; }
 
     }
 }

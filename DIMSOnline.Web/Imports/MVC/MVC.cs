@@ -49,6 +49,11 @@ namespace MVC
                 public const string BinLocationIndex = "~/Modules/Configuration/BinLocation/BinLocationIndex.cshtml";
             }
 
+            public static class CategoryUnit
+            {
+                public const string CategoryUnitIndex = "~/Modules/Configuration/CategoryUnit/CategoryUnitIndex.cshtml";
+            }
+
             public static class City
             {
                 public const string CityIndex = "~/Modules/Configuration/City/CityIndex.cshtml";
@@ -59,9 +64,24 @@ namespace MVC
                 public const string CompanyIndex = "~/Modules/Configuration/Company/CompanyIndex.cshtml";
             }
 
+            public static class Customer
+            {
+                public const string CustomerIndex = "~/Modules/Configuration/Customer/CustomerIndex.cshtml";
+            }
+
             public static class Island
             {
                 public const string IslandIndex = "~/Modules/Configuration/Island/IslandIndex.cshtml";
+            }
+
+            public static class MovementType
+            {
+                public const string MovementTypeIndex = "~/Modules/Configuration/MovementType/MovementTypeIndex.cshtml";
+            }
+
+            public static class OrderCategory
+            {
+                public const string OrderCategoryIndex = "~/Modules/Configuration/OrderCategory/OrderCategoryIndex.cshtml";
             }
 
             public static class Province
@@ -118,6 +138,19 @@ namespace MVC
             public const string _LayoutSlimHead = "~/Views/Shared/_LayoutSlimHead.cshtml";
             public const string Error = "~/Views/Shared/Error.cshtml";
             public const string LeftNavigation = "~/Views/Shared/LeftNavigation.cshtml";
+        }
+
+        public static class Transaction
+        {
+            public static class Inventory
+            {
+                public const string InventoryIndex = "~/Modules/Transaction/Inventory/InventoryIndex.cshtml";
+            }
+
+            public static class MovementStock
+            {
+                public const string MovementStockIndex = "~/Modules/Transaction/MovementStock/MovementStockIndex.cshtml";
+            }
         }
     }
 }

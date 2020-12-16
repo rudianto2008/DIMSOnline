@@ -22,8 +22,13 @@
 
     export namespace CityRow {
         export const idProperty = 'CityId';
-        export const nameProperty = 'CityCode';
+        export const nameProperty = 'CityName';
         export const localTextPrefix = 'Configuration.City';
+        export const lookupKey = 'LookupCity';
+
+        export function getLookup(): Q.Lookup<CityRow> {
+            return Q.getLookup<CityRow>('LookupCity');
+        }
         export const deletePermission = 'Administration:Configuration';
         export const insertPermission = 'Administration:Configuration';
         export const readPermission = 'Administration:Configuration';

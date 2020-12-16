@@ -505,6 +505,57 @@ declare namespace DIMSOnline.Configuration {
 declare namespace DIMSOnline.Configuration {
 }
 declare namespace DIMSOnline.Configuration {
+    interface CategoryUnitForm {
+        CategoryUnitName: Serenity.StringEditor;
+        PricePerHour: Serenity.DecimalEditor;
+    }
+    class CategoryUnitForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface CategoryUnitRow {
+        CategoryUnitId?: number;
+        CategoryUnitName?: string;
+        PricePerHour?: number;
+    }
+    namespace CategoryUnitRow {
+        const idProperty = "CategoryUnitId";
+        const nameProperty = "CategoryUnitName";
+        const localTextPrefix = "Configuration.CategoryUnit";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            CategoryUnitId = "CategoryUnitId",
+            CategoryUnitName = "CategoryUnitName",
+            PricePerHour = "PricePerHour"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace CategoryUnitService {
+        const baseUrl = "Configuration/CategoryUnit";
+        function Create(request: Serenity.SaveRequest<CategoryUnitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CategoryUnitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CategoryUnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CategoryUnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/CategoryUnit/Create",
+            Update = "Configuration/CategoryUnit/Update",
+            Delete = "Configuration/CategoryUnit/Delete",
+            Retrieve = "Configuration/CategoryUnit/Retrieve",
+            List = "Configuration/CategoryUnit/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
     interface CityForm {
         CityCode: Serenity.StringEditor;
         ProvinceId: Serenity.IntegerEditor;
@@ -545,8 +596,10 @@ declare namespace DIMSOnline.Configuration {
     }
     namespace CityRow {
         const idProperty = "CityId";
-        const nameProperty = "CityCode";
+        const nameProperty = "CityName";
         const localTextPrefix = "Configuration.City";
+        const lookupKey = "LookupCity";
+        function getLookup(): Q.Lookup<CityRow>;
         const deletePermission = "Administration:Configuration";
         const insertPermission = "Administration:Configuration";
         const readPermission = "Administration:Configuration";
@@ -595,22 +648,12 @@ declare namespace DIMSOnline.Configuration {
 declare namespace DIMSOnline.Configuration {
     interface CompanyForm {
         CompanyName: Serenity.StringEditor;
-        Address: Serenity.StringEditor;
-        Fax: Serenity.StringEditor;
-        Logo: Serenity.StringEditor;
         Phone: Serenity.StringEditor;
         ContactPerson: Serenity.StringEditor;
-        IslandId: Serenity.IntegerEditor;
-        ProvinceId: Serenity.IntegerEditor;
-        CityId: Serenity.IntegerEditor;
-        OfficeType: Serenity.StringEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        InsertDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        DeleteUserId: Serenity.IntegerEditor;
-        DeleteDate: Serenity.DateEditor;
-        IsActive: Serenity.IntegerEditor;
+        ProvinceId: Serenity.LookupEditor;
+        CityId: Serenity.LookupEditor;
+        Address: Serenity.StringEditor;
+        Logo: Serenity.StringEditor;
     }
     class CompanyForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -689,6 +732,202 @@ declare namespace DIMSOnline.Configuration {
 declare namespace DIMSOnline.Configuration {
 }
 declare namespace DIMSOnline.Configuration {
+    interface CustomerForm {
+        CustomerNumber: Serenity.StringEditor;
+        CompanyId: Serenity.IntegerEditor;
+        CustomerName: Serenity.StringEditor;
+        ProvinceId: Serenity.IntegerEditor;
+        CityId: Serenity.IntegerEditor;
+        Address: Serenity.StringEditor;
+        Pic: Serenity.StringEditor;
+        IslandId: Serenity.IntegerEditor;
+        PostCode: Serenity.IntegerEditor;
+        Phone: Serenity.StringEditor;
+        ContactPerson: Serenity.StringEditor;
+        Fax: Serenity.StringEditor;
+        BirthPlace: Serenity.StringEditor;
+        BirthDate: Serenity.DateEditor;
+        Email: Serenity.StringEditor;
+        Npwp: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+        DeleteUserId: Serenity.IntegerEditor;
+        DeleteDate: Serenity.DateEditor;
+    }
+    class CustomerForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface CustomerRow {
+        CustomerId?: number;
+        CustomerNumber?: string;
+        CompanyId?: number;
+        CustomerName?: string;
+        ProvinceId?: number;
+        CityId?: number;
+        Address?: string;
+        Pic?: string;
+        IslandId?: number;
+        PostCode?: number;
+        Phone?: string;
+        ContactPerson?: string;
+        Fax?: string;
+        BirthPlace?: string;
+        BirthDate?: string;
+        Email?: string;
+        Npwp?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        DeleteUserId?: number;
+        DeleteDate?: string;
+        CompanyCompanyName?: string;
+        CompanyAddress?: string;
+        CompanyFax?: string;
+        CompanyLogo?: string;
+        CompanyPhone?: string;
+        CompanyContactPerson?: string;
+        CompanyIslandId?: number;
+        CompanyProvinceId?: number;
+        CompanyCityId?: number;
+        CompanyOfficeType?: string;
+        CompanyInsertUserId?: number;
+        CompanyInsertDate?: string;
+        CompanyUpdateUserId?: number;
+        CompanyUpdateDate?: string;
+        CompanyDeleteUserId?: number;
+        CompanyDeleteDate?: string;
+        CompanyIsActive?: number;
+        ProvinceProvinceCode?: string;
+        ProvinceIslandId?: number;
+        ProvinceProvinceName?: string;
+        ProvinceInsertUserId?: number;
+        ProvinceInsertDate?: string;
+        ProvinceUpdateUserId?: number;
+        ProvinceUpdateDate?: string;
+        ProvinceIsActive?: number;
+        CityCityCode?: string;
+        CityProvinceId?: number;
+        CityIslandId?: number;
+        CityCityName?: string;
+        CityInsertUserId?: number;
+        CityInsertDate?: string;
+        CityUpdateUserId?: number;
+        CityUpdateDate?: string;
+        CityIsActive?: number;
+        IslandIslandCode?: string;
+        IslandIslandName?: string;
+        IslandInsertUserId?: number;
+        IslandInsertDate?: string;
+        IslandUpdateUserId?: number;
+        IslandUpdateDate?: string;
+        IslandIsActive?: number;
+    }
+    namespace CustomerRow {
+        const idProperty = "CustomerId";
+        const nameProperty = "CustomerNumber";
+        const localTextPrefix = "Configuration.Customer";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            CustomerId = "CustomerId",
+            CustomerNumber = "CustomerNumber",
+            CompanyId = "CompanyId",
+            CustomerName = "CustomerName",
+            ProvinceId = "ProvinceId",
+            CityId = "CityId",
+            Address = "Address",
+            Pic = "Pic",
+            IslandId = "IslandId",
+            PostCode = "PostCode",
+            Phone = "Phone",
+            ContactPerson = "ContactPerson",
+            Fax = "Fax",
+            BirthPlace = "BirthPlace",
+            BirthDate = "BirthDate",
+            Email = "Email",
+            Npwp = "Npwp",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            DeleteUserId = "DeleteUserId",
+            DeleteDate = "DeleteDate",
+            CompanyCompanyName = "CompanyCompanyName",
+            CompanyAddress = "CompanyAddress",
+            CompanyFax = "CompanyFax",
+            CompanyLogo = "CompanyLogo",
+            CompanyPhone = "CompanyPhone",
+            CompanyContactPerson = "CompanyContactPerson",
+            CompanyIslandId = "CompanyIslandId",
+            CompanyProvinceId = "CompanyProvinceId",
+            CompanyCityId = "CompanyCityId",
+            CompanyOfficeType = "CompanyOfficeType",
+            CompanyInsertUserId = "CompanyInsertUserId",
+            CompanyInsertDate = "CompanyInsertDate",
+            CompanyUpdateUserId = "CompanyUpdateUserId",
+            CompanyUpdateDate = "CompanyUpdateDate",
+            CompanyDeleteUserId = "CompanyDeleteUserId",
+            CompanyDeleteDate = "CompanyDeleteDate",
+            CompanyIsActive = "CompanyIsActive",
+            ProvinceProvinceCode = "ProvinceProvinceCode",
+            ProvinceIslandId = "ProvinceIslandId",
+            ProvinceProvinceName = "ProvinceProvinceName",
+            ProvinceInsertUserId = "ProvinceInsertUserId",
+            ProvinceInsertDate = "ProvinceInsertDate",
+            ProvinceUpdateUserId = "ProvinceUpdateUserId",
+            ProvinceUpdateDate = "ProvinceUpdateDate",
+            ProvinceIsActive = "ProvinceIsActive",
+            CityCityCode = "CityCityCode",
+            CityProvinceId = "CityProvinceId",
+            CityIslandId = "CityIslandId",
+            CityCityName = "CityCityName",
+            CityInsertUserId = "CityInsertUserId",
+            CityInsertDate = "CityInsertDate",
+            CityUpdateUserId = "CityUpdateUserId",
+            CityUpdateDate = "CityUpdateDate",
+            CityIsActive = "CityIsActive",
+            IslandIslandCode = "IslandIslandCode",
+            IslandIslandName = "IslandIslandName",
+            IslandInsertUserId = "IslandInsertUserId",
+            IslandInsertDate = "IslandInsertDate",
+            IslandUpdateUserId = "IslandUpdateUserId",
+            IslandUpdateDate = "IslandUpdateDate",
+            IslandIsActive = "IslandIsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace CustomerService {
+        const baseUrl = "Configuration/Customer";
+        function Create(request: Serenity.SaveRequest<CustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CustomerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CustomerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/Customer/Create",
+            Update = "Configuration/Customer/Update",
+            Delete = "Configuration/Customer/Delete",
+            Retrieve = "Configuration/Customer/Retrieve",
+            List = "Configuration/Customer/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
     interface IslandForm {
         IslandCode: Serenity.StringEditor;
         IslandName: Serenity.StringEditor;
@@ -755,6 +994,123 @@ declare namespace DIMSOnline.Configuration {
 declare namespace DIMSOnline.Configuration {
 }
 declare namespace DIMSOnline.Configuration {
+    interface MovementTypeForm {
+        MovementTypeName: Serenity.StringEditor;
+        StatusInOut: Serenity.StringEditor;
+    }
+    class MovementTypeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface MovementTypeRow {
+        MovementTypeId?: number;
+        MovementTypeName?: string;
+        StatusInOut?: string;
+    }
+    namespace MovementTypeRow {
+        const idProperty = "MovementTypeId";
+        const nameProperty = "MovementTypeName";
+        const localTextPrefix = "Configuration.MovementType";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            MovementTypeId = "MovementTypeId",
+            MovementTypeName = "MovementTypeName",
+            StatusInOut = "StatusInOut"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace MovementTypeService {
+        const baseUrl = "Configuration/MovementType";
+        function Create(request: Serenity.SaveRequest<MovementTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MovementTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MovementTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MovementTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/MovementType/Create",
+            Update = "Configuration/MovementType/Update",
+            Delete = "Configuration/MovementType/Delete",
+            Retrieve = "Configuration/MovementType/Retrieve",
+            List = "Configuration/MovementType/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+    interface OrderCategoryForm {
+        OrderCategoryName: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+    }
+    class OrderCategoryForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface OrderCategoryRow {
+        OrderCategoryId?: number;
+        OrderCategoryName?: string;
+        Description?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+    }
+    namespace OrderCategoryRow {
+        const idProperty = "OrderCategoryId";
+        const nameProperty = "OrderCategoryName";
+        const localTextPrefix = "Configuration.OrderCategory";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            OrderCategoryId = "OrderCategoryId",
+            OrderCategoryName = "OrderCategoryName",
+            Description = "Description",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace OrderCategoryService {
+        const baseUrl = "Configuration/OrderCategory";
+        function Create(request: Serenity.SaveRequest<OrderCategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OrderCategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OrderCategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OrderCategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/OrderCategory/Create",
+            Update = "Configuration/OrderCategory/Update",
+            Delete = "Configuration/OrderCategory/Delete",
+            Retrieve = "Configuration/OrderCategory/Retrieve",
+            List = "Configuration/OrderCategory/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
 }
 declare namespace DIMSOnline.Configuration {
     interface ProvinceForm {
@@ -794,8 +1150,10 @@ declare namespace DIMSOnline.Configuration {
     }
     namespace ProvinceRow {
         const idProperty = "ProvinceId";
-        const nameProperty = "ProvinceCode";
+        const nameProperty = "ProvinceName";
         const localTextPrefix = "Configuration.Province";
+        const lookupKey = "LookupProvince";
+        function getLookup(): Q.Lookup<ProvinceRow>;
         const deletePermission = "Administration:Configuration";
         const insertPermission = "Administration:Configuration";
         const readPermission = "Administration:Configuration";
@@ -962,6 +1320,248 @@ declare namespace DIMSOnline {
     }
 }
 declare namespace DIMSOnline.Texts {
+}
+declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+    interface InventoryForm {
+        ProductId: Serenity.IntegerEditor;
+        OrderCategoryId: Serenity.IntegerEditor;
+        Qty: Serenity.IntegerEditor;
+        InventoryStatus: Serenity.StringEditor;
+        DocumentNo: Serenity.StringEditor;
+        Stock: Serenity.IntegerEditor;
+        ProductPrice: Serenity.DecimalEditor;
+        ProductPriceNumber: Serenity.StringEditor;
+        ProductBasePrice: Serenity.DecimalEditor;
+        ProductBasePriceNumber: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+        CompanyId: Serenity.IntegerEditor;
+    }
+    class InventoryForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface InventoryRow {
+        InventoryId?: number;
+        ProductId?: number;
+        OrderCategoryId?: number;
+        Qty?: number;
+        InventoryStatus?: string;
+        DocumentNo?: string;
+        Stock?: number;
+        ProductPrice?: number;
+        ProductPriceNumber?: string;
+        ProductBasePrice?: number;
+        ProductBasePriceNumber?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        CompanyId?: number;
+        ProductProductNumber?: string;
+        ProductModelName?: string;
+        ProductCategoryUnitId?: number;
+        ProductUnitStockId?: number;
+        ProductPartNumber?: string;
+        ProductProductTypeId?: number;
+        ProductMinimumStock?: number;
+        ProductContinued?: boolean;
+        ProductProductImage?: string;
+        ProductDescription?: string;
+        ProductBinLocationId?: number;
+        ProductInsertUserId?: number;
+        ProductInsertDate?: string;
+        ProductUpdateUserId?: number;
+        ProductUpdateDate?: string;
+        ProductIsActive?: number;
+        ProductStockQuantity?: number;
+    }
+    namespace InventoryRow {
+        const idProperty = "InventoryId";
+        const nameProperty = "InventoryStatus";
+        const localTextPrefix = "Transaction.Inventory";
+        const deletePermission = "Administration:Transaction";
+        const insertPermission = "Administration:Transaction";
+        const readPermission = "Administration:Transaction";
+        const updatePermission = "Administration:Transaction";
+        const enum Fields {
+            InventoryId = "InventoryId",
+            ProductId = "ProductId",
+            OrderCategoryId = "OrderCategoryId",
+            Qty = "Qty",
+            InventoryStatus = "InventoryStatus",
+            DocumentNo = "DocumentNo",
+            Stock = "Stock",
+            ProductPrice = "ProductPrice",
+            ProductPriceNumber = "ProductPriceNumber",
+            ProductBasePrice = "ProductBasePrice",
+            ProductBasePriceNumber = "ProductBasePriceNumber",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            CompanyId = "CompanyId",
+            ProductProductNumber = "ProductProductNumber",
+            ProductModelName = "ProductModelName",
+            ProductCategoryUnitId = "ProductCategoryUnitId",
+            ProductUnitStockId = "ProductUnitStockId",
+            ProductPartNumber = "ProductPartNumber",
+            ProductProductTypeId = "ProductProductTypeId",
+            ProductMinimumStock = "ProductMinimumStock",
+            ProductContinued = "ProductContinued",
+            ProductProductImage = "ProductProductImage",
+            ProductDescription = "ProductDescription",
+            ProductBinLocationId = "ProductBinLocationId",
+            ProductInsertUserId = "ProductInsertUserId",
+            ProductInsertDate = "ProductInsertDate",
+            ProductUpdateUserId = "ProductUpdateUserId",
+            ProductUpdateDate = "ProductUpdateDate",
+            ProductIsActive = "ProductIsActive",
+            ProductStockQuantity = "ProductStockQuantity"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    namespace InventoryService {
+        const baseUrl = "Transaction/Inventory";
+        function Create(request: Serenity.SaveRequest<InventoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<InventoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InventoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InventoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Transaction/Inventory/Create",
+            Update = "Transaction/Inventory/Update",
+            Delete = "Transaction/Inventory/Delete",
+            Retrieve = "Transaction/Inventory/Retrieve",
+            List = "Transaction/Inventory/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+    interface MovementStockForm {
+        MovementTypeId: Serenity.IntegerEditor;
+        ProductId: Serenity.IntegerEditor;
+        MovementQty: Serenity.IntegerEditor;
+        MovementStockNumber: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+    }
+    class MovementStockForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface MovementStockRow {
+        MovementStockId?: number;
+        MovementTypeId?: number;
+        ProductId?: number;
+        MovementQty?: number;
+        MovementStockNumber?: string;
+        Description?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        MovementTypeMovementTypeName?: string;
+        MovementTypeStatusInOut?: string;
+        ProductProductNumber?: string;
+        ProductModelName?: string;
+        ProductCategoryUnitId?: number;
+        ProductUnitStockId?: number;
+        ProductPartNumber?: string;
+        ProductProductTypeId?: number;
+        ProductMinimumStock?: number;
+        ProductContinued?: boolean;
+        ProductProductImage?: string;
+        ProductDescription?: string;
+        ProductBinLocationId?: number;
+        ProductInsertUserId?: number;
+        ProductInsertDate?: string;
+        ProductUpdateUserId?: number;
+        ProductUpdateDate?: string;
+        ProductIsActive?: number;
+        ProductStockQuantity?: number;
+    }
+    namespace MovementStockRow {
+        const idProperty = "MovementStockId";
+        const nameProperty = "MovementStockNumber";
+        const localTextPrefix = "Transaction.MovementStock";
+        const deletePermission = "Administration:Transaction";
+        const insertPermission = "Administration:Transaction";
+        const readPermission = "Administration:Transaction";
+        const updatePermission = "Administration:Transaction";
+        const enum Fields {
+            MovementStockId = "MovementStockId",
+            MovementTypeId = "MovementTypeId",
+            ProductId = "ProductId",
+            MovementQty = "MovementQty",
+            MovementStockNumber = "MovementStockNumber",
+            Description = "Description",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            MovementTypeMovementTypeName = "MovementTypeMovementTypeName",
+            MovementTypeStatusInOut = "MovementTypeStatusInOut",
+            ProductProductNumber = "ProductProductNumber",
+            ProductModelName = "ProductModelName",
+            ProductCategoryUnitId = "ProductCategoryUnitId",
+            ProductUnitStockId = "ProductUnitStockId",
+            ProductPartNumber = "ProductPartNumber",
+            ProductProductTypeId = "ProductProductTypeId",
+            ProductMinimumStock = "ProductMinimumStock",
+            ProductContinued = "ProductContinued",
+            ProductProductImage = "ProductProductImage",
+            ProductDescription = "ProductDescription",
+            ProductBinLocationId = "ProductBinLocationId",
+            ProductInsertUserId = "ProductInsertUserId",
+            ProductInsertDate = "ProductInsertDate",
+            ProductUpdateUserId = "ProductUpdateUserId",
+            ProductUpdateDate = "ProductUpdateDate",
+            ProductIsActive = "ProductIsActive",
+            ProductStockQuantity = "ProductStockQuantity"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    namespace MovementStockService {
+        const baseUrl = "Transaction/MovementStock";
+        function Create(request: Serenity.SaveRequest<MovementStockRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MovementStockRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MovementStockRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MovementStockRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Transaction/MovementStock/Create",
+            Update = "Transaction/MovementStock/Update",
+            Delete = "Transaction/MovementStock/Delete",
+            Retrieve = "Transaction/MovementStock/Retrieve",
+            List = "Transaction/MovementStock/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
 }
 declare namespace DIMSOnline.Administration {
     class LanguageDialog extends Serenity.EntityDialog<LanguageRow, any> {
@@ -1419,6 +2019,30 @@ declare namespace DIMSOnline.Configuration {
     }
 }
 declare namespace DIMSOnline.Configuration {
+    class CategoryUnitDialog extends Serenity.EntityDialog<CategoryUnitRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: CategoryUnitForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class CategoryUnitGrid extends Serenity.EntityGrid<CategoryUnitRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CategoryUnitDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
     class CityDialog extends Serenity.EntityDialog<CityRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -1467,6 +2091,30 @@ declare namespace DIMSOnline.Configuration {
     }
 }
 declare namespace DIMSOnline.Configuration {
+    class CustomerDialog extends Serenity.EntityDialog<CustomerRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: CustomerForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class CustomerGrid extends Serenity.EntityGrid<CustomerRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CustomerDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
     class IslandDialog extends Serenity.EntityDialog<IslandRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -1483,6 +2131,54 @@ declare namespace DIMSOnline.Configuration {
     class IslandGrid extends Serenity.EntityGrid<IslandRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof IslandDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class MovementTypeDialog extends Serenity.EntityDialog<MovementTypeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: MovementTypeForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class MovementTypeGrid extends Serenity.EntityGrid<MovementTypeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof MovementTypeDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class OrderCategoryDialog extends Serenity.EntityDialog<OrderCategoryRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: OrderCategoryForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class OrderCategoryGrid extends Serenity.EntityGrid<OrderCategoryRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OrderCategoryDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;
@@ -1547,6 +2243,54 @@ declare namespace DIMSOnline.Membership {
     class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
         protected getFormKey(): string;
         private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class InventoryDialog extends Serenity.EntityDialog<InventoryRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: InventoryForm;
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class InventoryGrid extends Serenity.EntityGrid<InventoryRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof InventoryDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class MovementStockDialog extends Serenity.EntityDialog<MovementStockRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: MovementStockForm;
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class MovementStockGrid extends Serenity.EntityGrid<MovementStockRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof MovementStockDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
         constructor(container: JQuery);
     }
 }

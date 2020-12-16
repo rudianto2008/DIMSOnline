@@ -13,6 +13,7 @@ namespace DIMSOnline.Configuration.Entities
     [DisplayName("Province"), InstanceName("Province")]
     [ReadPermission(Configuration.PermissionKeys.Configuration)]
     [ModifyPermission(Configuration.PermissionKeys.Configuration)]
+    [LookupScript("LookupProvince")]
     public sealed class ProvinceRow : Row, IIdRow, INameRow
     {
         [DisplayName("Province Id"), Column("ProvinceID"), Identity]
@@ -29,7 +30,7 @@ namespace DIMSOnline.Configuration.Entities
             set { Fields.ProvinceCode[this] = value; }
         }
 
-        [DisplayName("Island"), Column("IslandID"), ForeignKey("[dbo].[Island]", "IslandID"), LeftJoin("jIsland"), TextualField("IslandIslandCode")]
+        [DisplayName("Island"), Column("IslandID"), ForeignKey("[dbo].[Island]", "IslandID"), LeftJoin("jIsland"), TextualField("IslandIslandCode"), LookupInclude]
         public Int32? IslandId
         {
             get { return Fields.IslandId[this]; }
@@ -85,7 +86,7 @@ namespace DIMSOnline.Configuration.Entities
             set { Fields.IslandIslandCode[this] = value; }
         }
 
-        [DisplayName("Island Island Name"), Expression("jIsland.[IslandName]")]
+        [DisplayName("Island Name"), Expression("jIsland.[IslandName]")]
         public String IslandIslandName
         {
             get { return Fields.IslandIslandName[this]; }
@@ -134,7 +135,7 @@ namespace DIMSOnline.Configuration.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.ProvinceCode; }
+            get { return Fields.ProvinceName; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();

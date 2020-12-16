@@ -13,6 +13,7 @@ namespace DIMSOnline.Configuration.Entities
     [DisplayName("City"), InstanceName("City")]
     [ReadPermission(Configuration.PermissionKeys.Configuration)]
     [ModifyPermission(Configuration.PermissionKeys.Configuration)]
+    [LookupScript("LookupCity")]
     public sealed class CityRow : Row, IIdRow, INameRow
     {
         [DisplayName("City Id"), Column("CityID"), Identity]
@@ -29,18 +30,27 @@ namespace DIMSOnline.Configuration.Entities
             set { Fields.CityCode[this] = value; }
         }
 
-        [DisplayName("Province"), Column("ProvinceID"), ForeignKey("[dbo].[Province]", "ProvinceID"), LeftJoin("jProvince"), TextualField("ProvinceProvinceCode")]
+        [DisplayName("Province"), Column("ProvinceID"), ForeignKey("[dbo].[Province]", "ProvinceID"), LeftJoin("jProvince"), TextualField("ProvinceProvinceCode"), LookupInclude]
+        [LookupEditor("LookupProvince", CascadeFrom = "IslandId", CascadeValue = "IslandId")]
         public Int32? ProvinceId
         {
             get { return Fields.ProvinceId[this]; }
             set { Fields.ProvinceId[this] = value; }
         }
 
-        [DisplayName("Island Id"), Column("IslandID")]
+        [DisplayName("Island Id"), Column("IslandID"), ForeignKey("[dbo].[Island]", "IslandID"), LeftJoin("jIsland"), TextualField("IslandIslandCode"), LookupInclude]
+        [LookupEditor("LookupIsland")]
         public Int32? IslandId
         {
             get { return Fields.IslandId[this]; }
             set { Fields.IslandId[this] = value; }
+        }
+
+        [DisplayName("Island Name"), Expression("jIsland.[IslandName]")]
+        public String IslandIslandName
+        {
+            get { return Fields.IslandIslandName[this]; }
+            set { Fields.IslandIslandName[this] = value; }
         }
 
         [DisplayName("City Name"), Size(50)]
@@ -99,7 +109,7 @@ namespace DIMSOnline.Configuration.Entities
             set { Fields.ProvinceIslandId[this] = value; }
         }
 
-        [DisplayName("Province Province Name"), Expression("jProvince.[ProvinceName]")]
+        [DisplayName("Province Name"), Expression("jProvince.[ProvinceName]")]
         public String ProvinceProvinceName
         {
             get { return Fields.ProvinceProvinceName[this]; }
@@ -148,7 +158,7 @@ namespace DIMSOnline.Configuration.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.CityCode; }
+            get { return Fields.CityName; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
@@ -164,6 +174,7 @@ namespace DIMSOnline.Configuration.Entities
             public StringField CityCode;
             public Int32Field ProvinceId;
             public Int32Field IslandId;
+            public StringField IslandIslandName;
             public StringField CityName;
             public Int16Field InsertUserId;
             public DateTimeField InsertDate;
