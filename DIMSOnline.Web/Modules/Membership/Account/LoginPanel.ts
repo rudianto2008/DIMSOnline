@@ -14,10 +14,11 @@
                 overlay: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAAA3NCSVQICAjb4U" +
                     "/gAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMA/1uRIrUAAAAJcEhZcwAAAsQAAALEAVuRnQsAAAAWdEVYdENyZWF0" +
                     "aW9uIFRpbWUAMDQvMTMvMTGrW0T6AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAAxJREFUCJljaGBgAAABhACBrONIPgAAAABJRU5ErkJggg==",
+                /*overlay: Q.resolveUrl("~/Content/site/slides/traktor.jpeg"),*/
                 slides: [
-                    { src: Q.resolveUrl("~/Content/site/slides/slide1.jpg"), transition: 'fade' },
-                    { src: Q.resolveUrl("~/Content/site/slides/slide2.jpg"), transition: 'zoomOut' },
-                    { src: Q.resolveUrl("~/Content/site/slides/slide3.jpg"), transition: 'swirlLeft' }
+                    { src: Q.resolveUrl("~/Content/site/slides/traktor.jpeg"), transition: 'fade' },
+                    { src: Q.resolveUrl("~/Content/site/slides/traktor.jpeg"), transition: 'zoomOut' },
+                    { src: Q.resolveUrl("~/Content/site/slides/traktor.jpeg"), transition: 'swirlLeft' }
                 ]
             });
 
@@ -81,15 +82,11 @@
                 <div class="clear"></div>
             </div>
             <div class="buttons">
-                <button id="~_LoginButton" type="submit" class="btn btn-primary">
+                <button id="~_LoginButton" type="submit" class="btn btn-success">
                     ${Q.text("Forms.Membership.Login.SignInButton")}
                 </button>
             </div>
-            <div class="actions">
-                <a href="${Q.resolveUrl('~/Account/ForgotPassword')}"><i class="fa fa-angle-right"></i>&nbsp;${Q.text("Forms.Membership.Login.ForgotPassword")}</a>
-                <a href="${Q.resolveUrl('~/Account/SignUp')}"><i class="fa fa-angle-right"></i>&nbsp;${Q.text("Forms.Membership.Login.SignUpButton")}</a>
-                <div class="clear"></div>
-            </div>
+           
         </div>
     </form>
 </div>
@@ -97,3 +94,9 @@
         }
     }
 }
+
+/*<div class="actions" >
+    <a href="${Q.resolveUrl('~/Account/ForgotPassword')}" > <i class="fa fa-angle-right" > </i>&nbsp;${Q.text("Forms.Membership.Login.ForgotPassword")}</a >
+        <a href="${Q.resolveUrl('~/Account/SignUp')}" > <i class="fa fa-angle-right" > </i>&nbsp;${Q.text("Forms.Membership.Login.SignUpButton")}</a >
+            <div class="clear" > </div>
+                < /div>*/

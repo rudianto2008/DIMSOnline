@@ -581,6 +581,7 @@
     <Content Include="Content\serenity\serenity.editors.css" />
     <Content Include="Content\serenity\serenity.jquery-ui.messagedialogs.css" />
     <Content Include="Content\simple-line-icons.css" />
+    <Content Include="Content\site\images\kmiforlife.jpeg" />
     <Content Include="Content\slick-default-theme.css" />
     <Content Include="Content\slick.columnpicker.css" />
     <Content Include="Content\slick.grid.css" />
@@ -1193,6 +1194,21 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Transaction.SerialNumberUnitColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitDetailColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypeDetailColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypePriceColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Configuration\Company\CompanyDialog.ts" />
@@ -2070,6 +2086,66 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Transaction.SerialNumberUnitForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\ServiceUnit\ServiceUnitIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnit\ServiceUnitDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnit\ServiceUnitGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitDetailRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitDetailService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\ServiceUnitDetail\ServiceUnitDetailIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnitDetail\ServiceUnitDetailDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnitDetail\ServiceUnitDetailGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitDetailForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\ServiceUnitType\ServiceUnitTypeIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnitType\ServiceUnitTypeDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnitType\ServiceUnitTypeGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypeForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypeDetailRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypeDetailService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\ServiceUnitTypeDetail\ServiceUnitTypeDetailIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnitTypeDetail\ServiceUnitTypeDetailDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnitTypeDetail\ServiceUnitTypeDetailGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypeDetailForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypePriceRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypePriceService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\ServiceUnitTypePrice\ServiceUnitTypePriceIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnitTypePrice\ServiceUnitTypePriceDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\ServiceUnitTypePrice\ServiceUnitTypePriceGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ServiceUnitTypePriceForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2363,6 +2439,36 @@
     <Compile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitPage.cs" />
     <Compile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitColumns.cs" />
     <Compile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitForm.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnit\ServiceUnitRow.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnit\ServiceUnitRepository.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnit\ServiceUnitEndpoint.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnit\ServiceUnitPage.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnit\ServiceUnitColumns.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnit\ServiceUnitForm.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitDetail\ServiceUnitDetailRow.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitDetail\ServiceUnitDetailRepository.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitDetail\ServiceUnitDetailEndpoint.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitDetail\ServiceUnitDetailPage.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitDetail\ServiceUnitDetailColumns.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitDetail\ServiceUnitDetailForm.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitType\ServiceUnitTypeRow.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitType\ServiceUnitTypeRepository.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitType\ServiceUnitTypeEndpoint.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitType\ServiceUnitTypePage.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitType\ServiceUnitTypeColumns.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitType\ServiceUnitTypeForm.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypeDetail\ServiceUnitTypeDetailRow.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypeDetail\ServiceUnitTypeDetailRepository.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypeDetail\ServiceUnitTypeDetailEndpoint.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypeDetail\ServiceUnitTypeDetailPage.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypeDetail\ServiceUnitTypeDetailColumns.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypeDetail\ServiceUnitTypeDetailForm.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypePrice\ServiceUnitTypePriceRow.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypePrice\ServiceUnitTypePriceRepository.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypePrice\ServiceUnitTypePriceEndpoint.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypePrice\ServiceUnitTypePricePage.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypePrice\ServiceUnitTypePriceColumns.cs" />
+    <Compile Include="Modules\Transaction\ServiceUnitTypePrice\ServiceUnitTypePriceForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

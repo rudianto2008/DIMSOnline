@@ -26,10 +26,10 @@
         export const idProperty = 'SerialNumberUnitId';
         export const nameProperty = 'SerialNumber';
         export const localTextPrefix = 'Transaction.SerialNumberUnit';
-        export const deletePermission = 'Administration:General';
-        export const insertPermission = 'Administration:General';
-        export const readPermission = 'Administration:General';
-        export const updatePermission = 'Administration:General';
+        export const deletePermission = 'Administration:Transaction';
+        export const insertPermission = 'Administration:Transaction';
+        export const readPermission = 'Administration:Transaction';
+        export const updatePermission = 'Administration:Transaction';
 
         export declare const enum Fields {
             SerialNumberUnitId = "SerialNumberUnitId",

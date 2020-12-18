@@ -226,6 +226,31 @@ namespace MVC
             {
                 public const string SerialNumberUnitIndex = "~/Modules/Transaction/SerialNumberUnit/SerialNumberUnitIndex.cshtml";
             }
+
+            public static class ServiceUnit
+            {
+                public const string ServiceUnitIndex = "~/Modules/Transaction/ServiceUnit/ServiceUnitIndex.cshtml";
+            }
+
+            public static class ServiceUnitDetail
+            {
+                public const string ServiceUnitDetailIndex = "~/Modules/Transaction/ServiceUnitDetail/ServiceUnitDetailIndex.cshtml";
+            }
+
+            public static class ServiceUnitType
+            {
+                public const string ServiceUnitTypeIndex = "~/Modules/Transaction/ServiceUnitType/ServiceUnitTypeIndex.cshtml";
+            }
+
+            public static class ServiceUnitTypeDetail
+            {
+                public const string ServiceUnitTypeDetailIndex = "~/Modules/Transaction/ServiceUnitTypeDetail/ServiceUnitTypeDetailIndex.cshtml";
+            }
+
+            public static class ServiceUnitTypePrice
+            {
+                public const string ServiceUnitTypePriceIndex = "~/Modules/Transaction/ServiceUnitTypePrice/ServiceUnitTypePriceIndex.cshtml";
+            }
         }
     }
 }

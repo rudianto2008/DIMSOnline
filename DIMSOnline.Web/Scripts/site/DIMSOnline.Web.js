@@ -1672,7 +1672,7 @@ var DIMSOnline;
 (function (DIMSOnline) {
     var Texts;
     (function (Texts) {
-        DIMSOnline['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Configuration: { BinLocation: { BinLocation: 1, BinLocationId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, UpdateDate: 1, UpdateUserId: 1 }, CategoryUnit: { CategoryUnitId: 1, CategoryUnitName: 1, PricePerHour: 1 }, City: { CityCode: 1, CityId: 1, CityName: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandIslandName: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Company: { Address: 1, CityCityCode: 1, CityCityName: 1, CityId: 1, CityInsertDate: 1, CityInsertUserId: 1, CityIsActive: 1, CityIslandId: 1, CityProvinceId: 1, CityUpdateDate: 1, CityUpdateUserId: 1, CompanyId: 1, CompanyName: 1, ContactPerson: 1, DeleteDate: 1, DeleteUserId: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, Logo: 1, OfficeType: 1, Phone: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Customer: { Address: 1, BirthDate: 1, BirthPlace: 1, CityCityCode: 1, CityCityName: 1, CityId: 1, CityInsertDate: 1, CityInsertUserId: 1, CityIsActive: 1, CityIslandId: 1, CityProvinceId: 1, CityUpdateDate: 1, CityUpdateUserId: 1, CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, ContactPerson: 1, CustomerId: 1, CustomerName: 1, CustomerNumber: 1, DeleteDate: 1, DeleteUserId: 1, Email: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, Npwp: 1, Phone: 1, Pic: 1, PostCode: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Island: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandCode: 1, IslandId: 1, IslandName: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementType: { MovementTypeId: 1, MovementTypeName: 1, StatusInOut: 1 }, OrderCategory: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryId: 1, OrderCategoryName: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductAlternative: { Combine: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, ProductAlternativeId: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductIdAlt: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, SeqNo: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductBasePrice: { ActualPrice: 1, Continued: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, Price: 1, ProductBasePriceId: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductPrice: { Continued: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryDescription: 1, OrderCategoryId: 1, OrderCategoryInsertDate: 1, OrderCategoryInsertUserId: 1, OrderCategoryIsActive: 1, OrderCategoryOrderCategoryName: 1, OrderCategoryUpdateDate: 1, OrderCategoryUpdateUserId: 1, Price: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPriceId: 1, ProductPriceNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductType: { InsertDate: 1, InsertUserId: 1, IsActive: 1, ProductTypeId: 1, ProductTypeName: 1, UpdateDate: 1, UpdateUserId: 1 }, Products: { BinLocation: 1, BinLocationId: 1, BinLocationInsertDate: 1, BinLocationInsertUserId: 1, BinLocationIsActive: 1, BinLocationUpdateDate: 1, BinLocationUpdateUserId: 1, CategoryUnitCategoryUnitName: 1, CategoryUnitId: 1, CategoryUnitPricePerHour: 1, Continued: 1, Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, MinimumStock: 1, ModelName: 1, PartNumber: 1, ProductId: 1, ProductImage: 1, ProductNumber: 1, ProductTypeId: 1, ProductTypeInsertDate: 1, ProductTypeInsertUserId: 1, ProductTypeIsActive: 1, ProductTypeProductTypeName: 1, ProductTypeUpdateDate: 1, ProductTypeUpdateUserId: 1, StockQuantity: 1, UnitStock: 1, UnitStockId: 1, UnitStockInsertDate: 1, UnitStockInsertUserId: 1, UnitStockIsActive: 1, UnitStockUpdateDate: 1, UnitStockUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductsLog: { BinLocation: 1, ChangingUserId: 1, Continued: 1, Description: 1, ModelName: 1, OperationType: 1, PartNumber: 1, ProductId: 1, ProductImage: 1, ProductLogId: 1, ProductTypeId: 1, UnitStock: 1, ValidFrom: 1, ValidUntil: 1 }, Province: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, ProvinceCode: 1, ProvinceId: 1, ProvinceName: 1, UpdateDate: 1, UpdateUserId: 1 }, Supplier: { Address: 1, ContactName: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, Phone: 1, SupplierId: 1, SupplierName: 1, UpdateDate: 1, UpdateUserId: 1 }, UnitStock: { InsertDate: 1, InsertUserId: 1, IsActive: 1, UnitStock: 1, UnitStockId: 1, UpdateDate: 1, UpdateUserId: 1 } }, Transaction: { Inventory: { CompanyId: 1, DocumentNo: 1, InsertDate: 1, InsertUserId: 1, InventoryId: 1, InventoryStatus: 1, IsActive: 1, OrderCategoryId: 1, ProductBasePrice: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPrice: 1, ProductPriceNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, Qty: 1, Stock: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementStock: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, MovementQty: 1, MovementStockId: 1, MovementStockNumber: 1, MovementTypeId: 1, MovementTypeMovementTypeName: 1, MovementTypeStatusInOut: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, OrderDetail: { ActualPrice: 1, AsAlternativeItem: 1, BasePrice: 1, CancellationBy: 1, CancellationDate: 1, Discount: 1, DiscountPercent: 1, GrossAmount: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, KmInUse: 1, ManufactureYear: 1, OrderCategoryId: 1, OrderCompanyId: 1, OrderCustomerId: 1, OrderDetailId: 1, OrderId: 1, OrderInsertDate: 1, OrderInsertUserId: 1, OrderIsActive: 1, OrderKmInUse: 1, OrderOrderDate: 1, OrderOrderNumber: 1, OrderOrderStatus: 1, OrderPaymentService: 1, OrderProductTypeId: 1, OrderQty: 1, OrderUpdateDate: 1, OrderUpdateUserId: 1, OrderUserId: 1, ParentItemId: 1, Ppn: 1, ProductBasePriceId: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, SerialNumber: 1, ServiceQuantity: 1, ServiceUnitId: 1, Stock: 1, Total: 1, UpdateDate: 1, UpdateUserId: 1, WarrantyNumber: 1 }, Orders: { CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, CustomerAddress: 1, CustomerBirthDate: 1, CustomerBirthPlace: 1, CustomerCityId: 1, CustomerCompanyId: 1, CustomerContactPerson: 1, CustomerCustomerName: 1, CustomerCustomerNumber: 1, CustomerDeleteDate: 1, CustomerDeleteUserId: 1, CustomerEmail: 1, CustomerFax: 1, CustomerId: 1, CustomerInsertDate: 1, CustomerInsertUserId: 1, CustomerIsActive: 1, CustomerIslandId: 1, CustomerNpwp: 1, CustomerPhone: 1, CustomerPic: 1, CustomerPostCode: 1, CustomerProvinceId: 1, CustomerUpdateDate: 1, CustomerUpdateUserId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, KmInUse: 1, OrderDate: 1, OrderId: 1, OrderNumber: 1, OrderStatus: 1, PaymentService: 1, ProductTypeId: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1 }, PurchaseOrder: { CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryId: 1, PickupPoint: 1, ProductTypeId: 1, ProductTypeInsertDate: 1, ProductTypeInsertUserId: 1, ProductTypeIsActive: 1, ProductTypeProductTypeName: 1, ProductTypeUpdateDate: 1, ProductTypeUpdateUserId: 1, PurchaseOrderDate: 1, PurchaseOrderId: 1, PurchaseOrderNumber: 1, PurchaseOrderStatus: 1, UpdateDate: 1, UpdateUserId: 1 }, PurchaseOrderDetail: { ApprovalStatusDiscount: 1, BackOrderQty: 1, CancellationBy: 1, CancellationDate: 1, CommentDiscount: 1, DiscountRequest: 1, GrossAmount: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, Ppn: 1, Price: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPriceContinued: 1, ProductPriceId: 1, ProductPriceInsertDate: 1, ProductPriceInsertUserId: 1, ProductPriceIsActive: 1, ProductPriceNumber: 1, ProductPriceOrderCategoryId: 1, ProductPricePrice: 1, ProductPriceProductId: 1, ProductPriceProductPriceNumber: 1, ProductPriceUpdateDate: 1, ProductPriceUpdateUserId: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, PurchaseOrderCompanyId: 1, PurchaseOrderDetailId: 1, PurchaseOrderId: 1, PurchaseOrderInsertDate: 1, PurchaseOrderInsertUserId: 1, PurchaseOrderIsActive: 1, PurchaseOrderOrderCategoryId: 1, PurchaseOrderPickupPoint: 1, PurchaseOrderProductTypeId: 1, PurchaseOrderPurchaseOrderDate: 1, PurchaseOrderPurchaseOrderNumber: 1, PurchaseOrderPurchaseOrderStatus: 1, PurchaseOrderUpdateDate: 1, PurchaseOrderUpdateUserId: 1, Quantity: 1, ReceiveOrderDetailId: 1, ReceiveQty: 1, SupportingDocumentDiscount: 1, Total: 1, UpdateDate: 1, UpdateUserId: 1 }, ReceiveOrder: { AcknowledgeBy: 1, CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, ProductTypeId: 1, PurchaseOrderCompanyId: 1, PurchaseOrderId: 1, PurchaseOrderInsertDate: 1, PurchaseOrderInsertUserId: 1, PurchaseOrderIsActive: 1, PurchaseOrderOrderCategoryId: 1, PurchaseOrderPickupPoint: 1, PurchaseOrderProductTypeId: 1, PurchaseOrderPurchaseOrderDate: 1, PurchaseOrderPurchaseOrderNumber: 1, PurchaseOrderPurchaseOrderStatus: 1, PurchaseOrderUpdateDate: 1, PurchaseOrderUpdateUserId: 1, ReceiveBy: 1, ReceiveDate: 1, ReceiveOrderId: 1, ReceiveOrderNumber: 1, ReceiveOrderStatus: 1, UpdateDate: 1, UpdateUserId: 1 }, ReceiveOrderDetail: { BackOrderQty: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, PoQty: 1, Price: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, ReceiveComplete: 1, ReceiveOrderAcknowledgeBy: 1, ReceiveOrderCompanyId: 1, ReceiveOrderDetailId: 1, ReceiveOrderId: 1, ReceiveOrderInsertDate: 1, ReceiveOrderInsertUserId: 1, ReceiveOrderIsActive: 1, ReceiveOrderProductTypeId: 1, ReceiveOrderPurchaseOrderId: 1, ReceiveOrderReceiveBy: 1, ReceiveOrderReceiveDate: 1, ReceiveOrderReceiveOrderNumber: 1, ReceiveOrderReceiveOrderStatus: 1, ReceiveOrderUpdateDate: 1, ReceiveOrderUpdateUserId: 1, ReceiveQty: 1, UpdateDate: 1, UpdateUserId: 1 }, SerialNumberUnit: { Available: 1, CategoryUnitId: 1, ManufactureYear: 1, ReceiveOrderAcknowledgeBy: 1, ReceiveOrderCompanyId: 1, ReceiveOrderId: 1, ReceiveOrderInsertDate: 1, ReceiveOrderInsertUserId: 1, ReceiveOrderIsActive: 1, ReceiveOrderProductTypeId: 1, ReceiveOrderPurchaseOrderId: 1, ReceiveOrderReceiveBy: 1, ReceiveOrderReceiveDate: 1, ReceiveOrderReceiveOrderNumber: 1, ReceiveOrderReceiveOrderStatus: 1, ReceiveOrderUpdateDate: 1, ReceiveOrderUpdateUserId: 1, SerialNumber: 1, SerialNumberUnitId: 1, WarrantyNumber: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        DIMSOnline['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Configuration: { BinLocation: { BinLocation: 1, BinLocationId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, UpdateDate: 1, UpdateUserId: 1 }, CategoryUnit: { CategoryUnitId: 1, CategoryUnitName: 1, PricePerHour: 1 }, City: { CityCode: 1, CityId: 1, CityName: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandIslandName: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Company: { Address: 1, CityCityCode: 1, CityCityName: 1, CityId: 1, CityInsertDate: 1, CityInsertUserId: 1, CityIsActive: 1, CityIslandId: 1, CityProvinceId: 1, CityUpdateDate: 1, CityUpdateUserId: 1, CompanyId: 1, CompanyName: 1, ContactPerson: 1, DeleteDate: 1, DeleteUserId: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, Logo: 1, OfficeType: 1, Phone: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Customer: { Address: 1, BirthDate: 1, BirthPlace: 1, CityCityCode: 1, CityCityName: 1, CityId: 1, CityInsertDate: 1, CityInsertUserId: 1, CityIsActive: 1, CityIslandId: 1, CityProvinceId: 1, CityUpdateDate: 1, CityUpdateUserId: 1, CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, ContactPerson: 1, CustomerId: 1, CustomerName: 1, CustomerNumber: 1, DeleteDate: 1, DeleteUserId: 1, Email: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, Npwp: 1, Phone: 1, Pic: 1, PostCode: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Island: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandCode: 1, IslandId: 1, IslandName: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementType: { MovementTypeId: 1, MovementTypeName: 1, StatusInOut: 1 }, OrderCategory: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryId: 1, OrderCategoryName: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductAlternative: { Combine: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, ProductAlternativeId: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductIdAlt: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, SeqNo: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductBasePrice: { ActualPrice: 1, Continued: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, Price: 1, ProductBasePriceId: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductPrice: { Continued: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryDescription: 1, OrderCategoryId: 1, OrderCategoryInsertDate: 1, OrderCategoryInsertUserId: 1, OrderCategoryIsActive: 1, OrderCategoryOrderCategoryName: 1, OrderCategoryUpdateDate: 1, OrderCategoryUpdateUserId: 1, Price: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPriceId: 1, ProductPriceNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductType: { InsertDate: 1, InsertUserId: 1, IsActive: 1, ProductTypeId: 1, ProductTypeName: 1, UpdateDate: 1, UpdateUserId: 1 }, Products: { BinLocation: 1, BinLocationId: 1, BinLocationInsertDate: 1, BinLocationInsertUserId: 1, BinLocationIsActive: 1, BinLocationUpdateDate: 1, BinLocationUpdateUserId: 1, CategoryUnitCategoryUnitName: 1, CategoryUnitId: 1, CategoryUnitPricePerHour: 1, Continued: 1, Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, MinimumStock: 1, ModelName: 1, PartNumber: 1, ProductId: 1, ProductImage: 1, ProductNumber: 1, ProductTypeId: 1, ProductTypeInsertDate: 1, ProductTypeInsertUserId: 1, ProductTypeIsActive: 1, ProductTypeProductTypeName: 1, ProductTypeUpdateDate: 1, ProductTypeUpdateUserId: 1, StockQuantity: 1, UnitStock: 1, UnitStockId: 1, UnitStockInsertDate: 1, UnitStockInsertUserId: 1, UnitStockIsActive: 1, UnitStockUpdateDate: 1, UnitStockUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductsLog: { BinLocation: 1, ChangingUserId: 1, Continued: 1, Description: 1, ModelName: 1, OperationType: 1, PartNumber: 1, ProductId: 1, ProductImage: 1, ProductLogId: 1, ProductTypeId: 1, UnitStock: 1, ValidFrom: 1, ValidUntil: 1 }, Province: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, ProvinceCode: 1, ProvinceId: 1, ProvinceName: 1, UpdateDate: 1, UpdateUserId: 1 }, Supplier: { Address: 1, ContactName: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, Phone: 1, SupplierId: 1, SupplierName: 1, UpdateDate: 1, UpdateUserId: 1 }, UnitStock: { InsertDate: 1, InsertUserId: 1, IsActive: 1, UnitStock: 1, UnitStockId: 1, UpdateDate: 1, UpdateUserId: 1 } }, Transaction: { Inventory: { CompanyId: 1, DocumentNo: 1, InsertDate: 1, InsertUserId: 1, InventoryId: 1, InventoryStatus: 1, IsActive: 1, OrderCategoryId: 1, ProductBasePrice: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPrice: 1, ProductPriceNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, Qty: 1, Stock: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementStock: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, MovementQty: 1, MovementStockId: 1, MovementStockNumber: 1, MovementTypeId: 1, MovementTypeMovementTypeName: 1, MovementTypeStatusInOut: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, OrderDetail: { ActualPrice: 1, AsAlternativeItem: 1, BasePrice: 1, CancellationBy: 1, CancellationDate: 1, Discount: 1, DiscountPercent: 1, GrossAmount: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, KmInUse: 1, ManufactureYear: 1, OrderCategoryId: 1, OrderCompanyId: 1, OrderCustomerId: 1, OrderDetailId: 1, OrderId: 1, OrderInsertDate: 1, OrderInsertUserId: 1, OrderIsActive: 1, OrderKmInUse: 1, OrderOrderDate: 1, OrderOrderNumber: 1, OrderOrderStatus: 1, OrderPaymentService: 1, OrderProductTypeId: 1, OrderQty: 1, OrderUpdateDate: 1, OrderUpdateUserId: 1, OrderUserId: 1, ParentItemId: 1, Ppn: 1, ProductBasePriceId: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, SerialNumber: 1, ServiceQuantity: 1, ServiceUnitId: 1, Stock: 1, Total: 1, UpdateDate: 1, UpdateUserId: 1, WarrantyNumber: 1 }, Orders: { CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, CustomerAddress: 1, CustomerBirthDate: 1, CustomerBirthPlace: 1, CustomerCityId: 1, CustomerCompanyId: 1, CustomerContactPerson: 1, CustomerCustomerName: 1, CustomerCustomerNumber: 1, CustomerDeleteDate: 1, CustomerDeleteUserId: 1, CustomerEmail: 1, CustomerFax: 1, CustomerId: 1, CustomerInsertDate: 1, CustomerInsertUserId: 1, CustomerIsActive: 1, CustomerIslandId: 1, CustomerNpwp: 1, CustomerPhone: 1, CustomerPic: 1, CustomerPostCode: 1, CustomerProvinceId: 1, CustomerUpdateDate: 1, CustomerUpdateUserId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, KmInUse: 1, OrderDate: 1, OrderId: 1, OrderNumber: 1, OrderStatus: 1, PaymentService: 1, ProductTypeId: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1 }, PurchaseOrder: { CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryId: 1, PickupPoint: 1, ProductTypeId: 1, ProductTypeInsertDate: 1, ProductTypeInsertUserId: 1, ProductTypeIsActive: 1, ProductTypeProductTypeName: 1, ProductTypeUpdateDate: 1, ProductTypeUpdateUserId: 1, PurchaseOrderDate: 1, PurchaseOrderId: 1, PurchaseOrderNumber: 1, PurchaseOrderStatus: 1, UpdateDate: 1, UpdateUserId: 1 }, PurchaseOrderDetail: { ApprovalStatusDiscount: 1, BackOrderQty: 1, CancellationBy: 1, CancellationDate: 1, CommentDiscount: 1, DiscountRequest: 1, GrossAmount: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, Ppn: 1, Price: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPriceContinued: 1, ProductPriceId: 1, ProductPriceInsertDate: 1, ProductPriceInsertUserId: 1, ProductPriceIsActive: 1, ProductPriceNumber: 1, ProductPriceOrderCategoryId: 1, ProductPricePrice: 1, ProductPriceProductId: 1, ProductPriceProductPriceNumber: 1, ProductPriceUpdateDate: 1, ProductPriceUpdateUserId: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, PurchaseOrderCompanyId: 1, PurchaseOrderDetailId: 1, PurchaseOrderId: 1, PurchaseOrderInsertDate: 1, PurchaseOrderInsertUserId: 1, PurchaseOrderIsActive: 1, PurchaseOrderOrderCategoryId: 1, PurchaseOrderPickupPoint: 1, PurchaseOrderProductTypeId: 1, PurchaseOrderPurchaseOrderDate: 1, PurchaseOrderPurchaseOrderNumber: 1, PurchaseOrderPurchaseOrderStatus: 1, PurchaseOrderUpdateDate: 1, PurchaseOrderUpdateUserId: 1, Quantity: 1, ReceiveOrderDetailId: 1, ReceiveQty: 1, SupportingDocumentDiscount: 1, Total: 1, UpdateDate: 1, UpdateUserId: 1 }, ReceiveOrder: { AcknowledgeBy: 1, CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, ProductTypeId: 1, PurchaseOrderCompanyId: 1, PurchaseOrderId: 1, PurchaseOrderInsertDate: 1, PurchaseOrderInsertUserId: 1, PurchaseOrderIsActive: 1, PurchaseOrderOrderCategoryId: 1, PurchaseOrderPickupPoint: 1, PurchaseOrderProductTypeId: 1, PurchaseOrderPurchaseOrderDate: 1, PurchaseOrderPurchaseOrderNumber: 1, PurchaseOrderPurchaseOrderStatus: 1, PurchaseOrderUpdateDate: 1, PurchaseOrderUpdateUserId: 1, ReceiveBy: 1, ReceiveDate: 1, ReceiveOrderId: 1, ReceiveOrderNumber: 1, ReceiveOrderStatus: 1, UpdateDate: 1, UpdateUserId: 1 }, ReceiveOrderDetail: { BackOrderQty: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, PoQty: 1, Price: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, ReceiveComplete: 1, ReceiveOrderAcknowledgeBy: 1, ReceiveOrderCompanyId: 1, ReceiveOrderDetailId: 1, ReceiveOrderId: 1, ReceiveOrderInsertDate: 1, ReceiveOrderInsertUserId: 1, ReceiveOrderIsActive: 1, ReceiveOrderProductTypeId: 1, ReceiveOrderPurchaseOrderId: 1, ReceiveOrderReceiveBy: 1, ReceiveOrderReceiveDate: 1, ReceiveOrderReceiveOrderNumber: 1, ReceiveOrderReceiveOrderStatus: 1, ReceiveOrderUpdateDate: 1, ReceiveOrderUpdateUserId: 1, ReceiveQty: 1, UpdateDate: 1, UpdateUserId: 1 }, SerialNumberUnit: { Available: 1, CategoryUnitId: 1, ManufactureYear: 1, ReceiveOrderAcknowledgeBy: 1, ReceiveOrderCompanyId: 1, ReceiveOrderId: 1, ReceiveOrderInsertDate: 1, ReceiveOrderInsertUserId: 1, ReceiveOrderIsActive: 1, ReceiveOrderProductTypeId: 1, ReceiveOrderPurchaseOrderId: 1, ReceiveOrderReceiveBy: 1, ReceiveOrderReceiveDate: 1, ReceiveOrderReceiveOrderNumber: 1, ReceiveOrderReceiveOrderStatus: 1, ReceiveOrderUpdateDate: 1, ReceiveOrderUpdateUserId: 1, SerialNumber: 1, SerialNumberUnitId: 1, WarrantyNumber: 1 }, ServiceUnit: { CustomerAddress: 1, CustomerBirthDate: 1, CustomerBirthPlace: 1, CustomerCityId: 1, CustomerCompanyId: 1, CustomerContactPerson: 1, CustomerCustomerName: 1, CustomerCustomerNumber: 1, CustomerDeleteDate: 1, CustomerDeleteUserId: 1, CustomerEmail: 1, CustomerFax: 1, CustomerId: 1, CustomerInsertDate: 1, CustomerInsertUserId: 1, CustomerIsActive: 1, CustomerIslandId: 1, CustomerNpwp: 1, CustomerPhone: 1, CustomerPic: 1, CustomerPostCode: 1, CustomerProvinceId: 1, CustomerUpdateDate: 1, CustomerUpdateUserId: 1, Hm: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, ManufactureYear: 1, OrderUnitCompanyId: 1, OrderUnitCustomerId: 1, OrderUnitId: 1, OrderUnitInsertDate: 1, OrderUnitInsertUserId: 1, OrderUnitIsActive: 1, OrderUnitKmInUse: 1, OrderUnitOrderDate: 1, OrderUnitOrderNumber: 1, OrderUnitOrderStatus: 1, OrderUnitPaymentService: 1, OrderUnitProductTypeId: 1, OrderUnitUpdateDate: 1, OrderUnitUpdateUserId: 1, OrderUnitUserId: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, Remark: 1, SerialNumber: 1, ServiceBy: 1, ServiceDate: 1, ServiceUnitId: 1, ServiceUnitNumber: 1, ServiceUnitStatus: 1, UpdateDate: 1, UpdateUserId: 1, WarrantyNumber: 1 }, ServiceUnitDetail: { ChargePerHour: 1, KmInUse: 1, OrderIdService: 1, ServiceBy: 1, ServiceCharge: 1, ServiceDate: 1, ServiceHour: 1, ServiceUnitCustomerId: 1, ServiceUnitDetailId: 1, ServiceUnitHm: 1, ServiceUnitId: 1, ServiceUnitInsertDate: 1, ServiceUnitInsertUserId: 1, ServiceUnitIsActive: 1, ServiceUnitManufactureYear: 1, ServiceUnitOrderUnitId: 1, ServiceUnitProductId: 1, ServiceUnitRemark: 1, ServiceUnitSerialNumber: 1, ServiceUnitServiceBy: 1, ServiceUnitServiceDate: 1, ServiceUnitServiceUnitNumber: 1, ServiceUnitServiceUnitStatus: 1, ServiceUnitType: 1, ServiceUnitTypeCategoryUnitId: 1, ServiceUnitTypeChargePerHour: 1, ServiceUnitTypeContinued: 1, ServiceUnitTypeDescription: 1, ServiceUnitTypeId: 1, ServiceUnitTypeJobCodeNo: 1, ServiceUnitTypeProductId: 1, ServiceUnitTypeStandartOpTime: 1, ServiceUnitUpdateDate: 1, ServiceUnitUpdateUserId: 1, ServiceUnitWarrantyNumber: 1 }, ServiceUnitType: { CategoryUnitCategoryUnitName: 1, CategoryUnitId: 1, CategoryUnitPricePerHour: 1, ChargePerHour: 1, Continued: 1, Description: 1, JobCodeNo: 1, ProductId: 1, ServiceUnitType: 1, ServiceUnitTypeId: 1, StandartOpTime: 1 }, ServiceUnitTypeDetail: { CategoryUnitId: 1, ChargePerHour: 1, Description: 1, JobCodeNo: 1, ServiceHour: 1, ServiceUnitId: 1, ServiceUnitType: 1, ServiceUnitTypeCategoryUnitId: 1, ServiceUnitTypeChargePerHour: 1, ServiceUnitTypeContinued: 1, ServiceUnitTypeDescription: 1, ServiceUnitTypeDetailId: 1, ServiceUnitTypeId: 1, ServiceUnitTypeJobCodeNo: 1, ServiceUnitTypeProductId: 1, ServiceUnitTypeStandartOpTime: 1, StandartOpTime: 1, TotalCharge: 1 }, ServiceUnitTypePrice: { CategoryUnitCategoryUnitName: 1, CategoryUnitId: 1, CategoryUnitPricePerHour: 1, PricePerHour: 1, ServiceUnitTypePriceId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = DIMSOnline.Texts || (DIMSOnline.Texts = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
@@ -2351,10 +2351,10 @@ var DIMSOnline;
             SerialNumberUnitRow.idProperty = 'SerialNumberUnitId';
             SerialNumberUnitRow.nameProperty = 'SerialNumber';
             SerialNumberUnitRow.localTextPrefix = 'Transaction.SerialNumberUnit';
-            SerialNumberUnitRow.deletePermission = 'Administration:General';
-            SerialNumberUnitRow.insertPermission = 'Administration:General';
-            SerialNumberUnitRow.readPermission = 'Administration:General';
-            SerialNumberUnitRow.updatePermission = 'Administration:General';
+            SerialNumberUnitRow.deletePermission = 'Administration:Transaction';
+            SerialNumberUnitRow.insertPermission = 'Administration:Transaction';
+            SerialNumberUnitRow.readPermission = 'Administration:Transaction';
+            SerialNumberUnitRow.updatePermission = 'Administration:Transaction';
         })(SerialNumberUnitRow = Transaction.SerialNumberUnitRow || (Transaction.SerialNumberUnitRow = {}));
     })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
 })(DIMSOnline || (DIMSOnline = {}));
@@ -2377,6 +2377,361 @@ var DIMSOnline;
                 };
             });
         })(SerialNumberUnitService = Transaction.SerialNumberUnitService || (Transaction.SerialNumberUnitService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitDetailForm = /** @class */ (function (_super) {
+            __extends(ServiceUnitDetailForm, _super);
+            function ServiceUnitDetailForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ServiceUnitDetailForm.init) {
+                    ServiceUnitDetailForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.DecimalEditor;
+                    var w2 = s.StringEditor;
+                    var w3 = s.DateEditor;
+                    Q.initFormType(ServiceUnitDetailForm, [
+                        'ServiceUnitId', w0,
+                        'ServiceUnitTypeId', w0,
+                        'ChargePerHour', w1,
+                        'ServiceHour', w0,
+                        'ServiceCharge', w1,
+                        'ServiceBy', w2,
+                        'KmInUse', w0,
+                        'ServiceDate', w3,
+                        'OrderIdService', w0
+                    ]);
+                }
+                return _this;
+            }
+            ServiceUnitDetailForm.formKey = 'Transaction.ServiceUnitDetail';
+            return ServiceUnitDetailForm;
+        }(Serenity.PrefixedContext));
+        Transaction.ServiceUnitDetailForm = ServiceUnitDetailForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitDetailRow;
+        (function (ServiceUnitDetailRow) {
+            ServiceUnitDetailRow.idProperty = 'ServiceUnitDetailId';
+            ServiceUnitDetailRow.nameProperty = 'ServiceBy';
+            ServiceUnitDetailRow.localTextPrefix = 'Transaction.ServiceUnitDetail';
+            ServiceUnitDetailRow.deletePermission = 'Administration:Transaction';
+            ServiceUnitDetailRow.insertPermission = 'Administration:Transaction';
+            ServiceUnitDetailRow.readPermission = 'Administration:Transaction';
+            ServiceUnitDetailRow.updatePermission = 'Administration:Transaction';
+        })(ServiceUnitDetailRow = Transaction.ServiceUnitDetailRow || (Transaction.ServiceUnitDetailRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitDetailService;
+        (function (ServiceUnitDetailService) {
+            ServiceUnitDetailService.baseUrl = 'Transaction/ServiceUnitDetail';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ServiceUnitDetailService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ServiceUnitDetailService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ServiceUnitDetailService = Transaction.ServiceUnitDetailService || (Transaction.ServiceUnitDetailService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitForm = /** @class */ (function (_super) {
+            __extends(ServiceUnitForm, _super);
+            function ServiceUnitForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ServiceUnitForm.init) {
+                    ServiceUnitForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(ServiceUnitForm, [
+                        'ServiceUnitNumber', w0,
+                        'ProductId', w1,
+                        'OrderUnitId', w1,
+                        'CustomerId', w1,
+                        'ServiceDate', w2,
+                        'ServiceBy', w0,
+                        'SerialNumber', w0,
+                        'ManufactureYear', w0,
+                        'WarrantyNumber', w0,
+                        'Remark', w0,
+                        'ServiceUnitStatus', w0,
+                        'Hm', w0,
+                        'InsertUserId', w1,
+                        'InsertDate', w2,
+                        'UpdateUserId', w1,
+                        'UpdateDate', w2,
+                        'IsActive', w1
+                    ]);
+                }
+                return _this;
+            }
+            ServiceUnitForm.formKey = 'Transaction.ServiceUnit';
+            return ServiceUnitForm;
+        }(Serenity.PrefixedContext));
+        Transaction.ServiceUnitForm = ServiceUnitForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitRow;
+        (function (ServiceUnitRow) {
+            ServiceUnitRow.idProperty = 'ServiceUnitId';
+            ServiceUnitRow.nameProperty = 'ServiceUnitNumber';
+            ServiceUnitRow.localTextPrefix = 'Transaction.ServiceUnit';
+            ServiceUnitRow.deletePermission = 'Administration:Transaction';
+            ServiceUnitRow.insertPermission = 'Administration:Transaction';
+            ServiceUnitRow.readPermission = 'Administration:Transaction';
+            ServiceUnitRow.updatePermission = 'Administration:Transaction';
+        })(ServiceUnitRow = Transaction.ServiceUnitRow || (Transaction.ServiceUnitRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitService;
+        (function (ServiceUnitService) {
+            ServiceUnitService.baseUrl = 'Transaction/ServiceUnit';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ServiceUnitService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ServiceUnitService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ServiceUnitService = Transaction.ServiceUnitService || (Transaction.ServiceUnitService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeDetailForm = /** @class */ (function (_super) {
+            __extends(ServiceUnitTypeDetailForm, _super);
+            function ServiceUnitTypeDetailForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ServiceUnitTypeDetailForm.init) {
+                    ServiceUnitTypeDetailForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DecimalEditor;
+                    Q.initFormType(ServiceUnitTypeDetailForm, [
+                        'ServiceUnitId', w0,
+                        'CategoryUnitId', w0,
+                        'JobCodeNo', w1,
+                        'Description', w1,
+                        'StandartOpTime', w2,
+                        'ChargePerHour', w2,
+                        'ServiceHour', w0,
+                        'TotalCharge', w2,
+                        'ServiceUnitTypeId', w0
+                    ]);
+                }
+                return _this;
+            }
+            ServiceUnitTypeDetailForm.formKey = 'Transaction.ServiceUnitTypeDetail';
+            return ServiceUnitTypeDetailForm;
+        }(Serenity.PrefixedContext));
+        Transaction.ServiceUnitTypeDetailForm = ServiceUnitTypeDetailForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeDetailRow;
+        (function (ServiceUnitTypeDetailRow) {
+            ServiceUnitTypeDetailRow.idProperty = 'ServiceUnitTypeDetailId';
+            ServiceUnitTypeDetailRow.nameProperty = 'JobCodeNo';
+            ServiceUnitTypeDetailRow.localTextPrefix = 'Transaction.ServiceUnitTypeDetail';
+            ServiceUnitTypeDetailRow.deletePermission = 'Administration:Transaction';
+            ServiceUnitTypeDetailRow.insertPermission = 'Administration:Transaction';
+            ServiceUnitTypeDetailRow.readPermission = 'Administration:Transaction';
+            ServiceUnitTypeDetailRow.updatePermission = 'Administration:Transaction';
+        })(ServiceUnitTypeDetailRow = Transaction.ServiceUnitTypeDetailRow || (Transaction.ServiceUnitTypeDetailRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeDetailService;
+        (function (ServiceUnitTypeDetailService) {
+            ServiceUnitTypeDetailService.baseUrl = 'Transaction/ServiceUnitTypeDetail';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ServiceUnitTypeDetailService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ServiceUnitTypeDetailService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ServiceUnitTypeDetailService = Transaction.ServiceUnitTypeDetailService || (Transaction.ServiceUnitTypeDetailService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeForm = /** @class */ (function (_super) {
+            __extends(ServiceUnitTypeForm, _super);
+            function ServiceUnitTypeForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ServiceUnitTypeForm.init) {
+                    ServiceUnitTypeForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.BooleanEditor;
+                    Q.initFormType(ServiceUnitTypeForm, [
+                        'CategoryUnitId', w0,
+                        'ProductId', w0,
+                        'JobCodeNo', w1,
+                        'Description', w1,
+                        'ChargePerHour', w2,
+                        'ServiceUnitType', w1,
+                        'StandartOpTime', w2,
+                        'Continued', w3
+                    ]);
+                }
+                return _this;
+            }
+            ServiceUnitTypeForm.formKey = 'Transaction.ServiceUnitType';
+            return ServiceUnitTypeForm;
+        }(Serenity.PrefixedContext));
+        Transaction.ServiceUnitTypeForm = ServiceUnitTypeForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypePriceForm = /** @class */ (function (_super) {
+            __extends(ServiceUnitTypePriceForm, _super);
+            function ServiceUnitTypePriceForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ServiceUnitTypePriceForm.init) {
+                    ServiceUnitTypePriceForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.DecimalEditor;
+                    Q.initFormType(ServiceUnitTypePriceForm, [
+                        'CategoryUnitId', w0,
+                        'PricePerHour', w1
+                    ]);
+                }
+                return _this;
+            }
+            ServiceUnitTypePriceForm.formKey = 'Transaction.ServiceUnitTypePrice';
+            return ServiceUnitTypePriceForm;
+        }(Serenity.PrefixedContext));
+        Transaction.ServiceUnitTypePriceForm = ServiceUnitTypePriceForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypePriceRow;
+        (function (ServiceUnitTypePriceRow) {
+            ServiceUnitTypePriceRow.idProperty = 'ServiceUnitTypePriceId';
+            ServiceUnitTypePriceRow.localTextPrefix = 'Transaction.ServiceUnitTypePrice';
+            ServiceUnitTypePriceRow.deletePermission = 'Administration:Transaction';
+            ServiceUnitTypePriceRow.insertPermission = 'Administration:Transaction';
+            ServiceUnitTypePriceRow.readPermission = 'Administration:Transaction';
+            ServiceUnitTypePriceRow.updatePermission = 'Administration:Transaction';
+        })(ServiceUnitTypePriceRow = Transaction.ServiceUnitTypePriceRow || (Transaction.ServiceUnitTypePriceRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypePriceService;
+        (function (ServiceUnitTypePriceService) {
+            ServiceUnitTypePriceService.baseUrl = 'Transaction/ServiceUnitTypePrice';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ServiceUnitTypePriceService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ServiceUnitTypePriceService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ServiceUnitTypePriceService = Transaction.ServiceUnitTypePriceService || (Transaction.ServiceUnitTypePriceService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeRow;
+        (function (ServiceUnitTypeRow) {
+            ServiceUnitTypeRow.idProperty = 'ServiceUnitTypeId';
+            ServiceUnitTypeRow.nameProperty = 'ServiceUnitType';
+            ServiceUnitTypeRow.localTextPrefix = 'Transaction.ServiceUnitType';
+            ServiceUnitTypeRow.deletePermission = 'Administration:Transaction';
+            ServiceUnitTypeRow.insertPermission = 'Administration:Transaction';
+            ServiceUnitTypeRow.readPermission = 'Administration:Transaction';
+            ServiceUnitTypeRow.updatePermission = 'Administration:Transaction';
+        })(ServiceUnitTypeRow = Transaction.ServiceUnitTypeRow || (Transaction.ServiceUnitTypeRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeService;
+        (function (ServiceUnitTypeService) {
+            ServiceUnitTypeService.baseUrl = 'Transaction/ServiceUnitType';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ServiceUnitTypeService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ServiceUnitTypeService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ServiceUnitTypeService = Transaction.ServiceUnitTypeService || (Transaction.ServiceUnitTypeService = {}));
     })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
@@ -5415,10 +5770,11 @@ var DIMSOnline;
                     overlay: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAAA3NCSVQICAjb4U" +
                         "/gAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMA/1uRIrUAAAAJcEhZcwAAAsQAAALEAVuRnQsAAAAWdEVYdENyZWF0" +
                         "aW9uIFRpbWUAMDQvMTMvMTGrW0T6AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAAxJREFUCJljaGBgAAABhACBrONIPgAAAABJRU5ErkJggg==",
+                    /*overlay: Q.resolveUrl("~/Content/site/slides/traktor.jpeg"),*/
                     slides: [
-                        { src: Q.resolveUrl("~/Content/site/slides/slide1.jpg"), transition: 'fade' },
-                        { src: Q.resolveUrl("~/Content/site/slides/slide2.jpg"), transition: 'zoomOut' },
-                        { src: Q.resolveUrl("~/Content/site/slides/slide3.jpg"), transition: 'swirlLeft' }
+                        { src: Q.resolveUrl("~/Content/site/slides/traktor.jpeg"), transition: 'fade' },
+                        { src: Q.resolveUrl("~/Content/site/slides/traktor.jpeg"), transition: 'zoomOut' },
+                        { src: Q.resolveUrl("~/Content/site/slides/traktor.jpeg"), transition: 'swirlLeft' }
                     ]
                 });
                 _this.byId('LoginButton').click(function (e) {
@@ -5464,7 +5820,7 @@ var DIMSOnline;
                 }
             };
             LoginPanel.prototype.getTemplate = function () {
-                return "\n<div class=\"flex-layout\">\n    <div class=\"logo\"></div>\n    <h3>" + Q.text("Forms.Membership.Login.FormTitle") + "</h3>\n    <form id=\"~_Form\" action=\"\">\n        <div class=\"s-Form\">\n            <div class=\"fieldset ui-widget ui-widget-content ui-corner-all\">\n                <div id=\"~_PropertyGrid\"></div>\n                <div class=\"clear\"></div>\n            </div>\n            <div class=\"buttons\">\n                <button id=\"~_LoginButton\" type=\"submit\" class=\"btn btn-primary\">\n                    " + Q.text("Forms.Membership.Login.SignInButton") + "\n                </button>\n            </div>\n            <div class=\"actions\">\n                <a href=\"" + Q.resolveUrl('~/Account/ForgotPassword') + "\"><i class=\"fa fa-angle-right\"></i>&nbsp;" + Q.text("Forms.Membership.Login.ForgotPassword") + "</a>\n                <a href=\"" + Q.resolveUrl('~/Account/SignUp') + "\"><i class=\"fa fa-angle-right\"></i>&nbsp;" + Q.text("Forms.Membership.Login.SignUpButton") + "</a>\n                <div class=\"clear\"></div>\n            </div>\n        </div>\n    </form>\n</div>\n";
+                return "\n<div class=\"flex-layout\">\n    <div class=\"logo\"></div>\n    <h3>" + Q.text("Forms.Membership.Login.FormTitle") + "</h3>\n    <form id=\"~_Form\" action=\"\">\n        <div class=\"s-Form\">\n            <div class=\"fieldset ui-widget ui-widget-content ui-corner-all\">\n                <div id=\"~_PropertyGrid\"></div>\n                <div class=\"clear\"></div>\n            </div>\n            <div class=\"buttons\">\n                <button id=\"~_LoginButton\" type=\"submit\" class=\"btn btn-success\">\n                    " + Q.text("Forms.Membership.Login.SignInButton") + "\n                </button>\n            </div>\n           \n        </div>\n    </form>\n</div>\n";
             };
             LoginPanel = __decorate([
                 Serenity.Decorators.registerClass()
@@ -5474,6 +5830,11 @@ var DIMSOnline;
         Membership.LoginPanel = LoginPanel;
     })(Membership = DIMSOnline.Membership || (DIMSOnline.Membership = {}));
 })(DIMSOnline || (DIMSOnline = {}));
+/*<div class="actions" >
+    <a href="${Q.resolveUrl('~/Account/ForgotPassword')}" > <i class="fa fa-angle-right" > </i>&nbsp;${Q.text("Forms.Membership.Login.ForgotPassword")}</a >
+        <a href="${Q.resolveUrl('~/Account/SignUp')}" > <i class="fa fa-angle-right" > </i>&nbsp;${Q.text("Forms.Membership.Login.SignUpButton")}</a >
+            <div class="clear" > </div>
+                < /div>*/ 
 var DIMSOnline;
 (function (DIMSOnline) {
     var Membership;
@@ -6099,6 +6460,255 @@ var DIMSOnline;
             return SerialNumberUnitGrid;
         }(Serenity.EntityGrid));
         Transaction.SerialNumberUnitGrid = SerialNumberUnitGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitDialog = /** @class */ (function (_super) {
+            __extends(ServiceUnitDialog, _super);
+            function ServiceUnitDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.ServiceUnitForm(_this.idPrefix);
+                return _this;
+            }
+            ServiceUnitDialog.prototype.getFormKey = function () { return Transaction.ServiceUnitForm.formKey; };
+            ServiceUnitDialog.prototype.getIdProperty = function () { return Transaction.ServiceUnitRow.idProperty; };
+            ServiceUnitDialog.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitRow.localTextPrefix; };
+            ServiceUnitDialog.prototype.getNameProperty = function () { return Transaction.ServiceUnitRow.nameProperty; };
+            ServiceUnitDialog.prototype.getService = function () { return Transaction.ServiceUnitService.baseUrl; };
+            ServiceUnitDialog.prototype.getDeletePermission = function () { return Transaction.ServiceUnitRow.deletePermission; };
+            ServiceUnitDialog.prototype.getInsertPermission = function () { return Transaction.ServiceUnitRow.insertPermission; };
+            ServiceUnitDialog.prototype.getUpdatePermission = function () { return Transaction.ServiceUnitRow.updatePermission; };
+            ServiceUnitDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitDialog);
+            return ServiceUnitDialog;
+        }(Serenity.EntityDialog));
+        Transaction.ServiceUnitDialog = ServiceUnitDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitGrid = /** @class */ (function (_super) {
+            __extends(ServiceUnitGrid, _super);
+            function ServiceUnitGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ServiceUnitGrid.prototype.getColumnsKey = function () { return 'Transaction.ServiceUnit'; };
+            ServiceUnitGrid.prototype.getDialogType = function () { return Transaction.ServiceUnitDialog; };
+            ServiceUnitGrid.prototype.getIdProperty = function () { return Transaction.ServiceUnitRow.idProperty; };
+            ServiceUnitGrid.prototype.getInsertPermission = function () { return Transaction.ServiceUnitRow.insertPermission; };
+            ServiceUnitGrid.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitRow.localTextPrefix; };
+            ServiceUnitGrid.prototype.getService = function () { return Transaction.ServiceUnitService.baseUrl; };
+            ServiceUnitGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitGrid);
+            return ServiceUnitGrid;
+        }(Serenity.EntityGrid));
+        Transaction.ServiceUnitGrid = ServiceUnitGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitDetailDialog = /** @class */ (function (_super) {
+            __extends(ServiceUnitDetailDialog, _super);
+            function ServiceUnitDetailDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.ServiceUnitDetailForm(_this.idPrefix);
+                return _this;
+            }
+            ServiceUnitDetailDialog.prototype.getFormKey = function () { return Transaction.ServiceUnitDetailForm.formKey; };
+            ServiceUnitDetailDialog.prototype.getIdProperty = function () { return Transaction.ServiceUnitDetailRow.idProperty; };
+            ServiceUnitDetailDialog.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitDetailRow.localTextPrefix; };
+            ServiceUnitDetailDialog.prototype.getNameProperty = function () { return Transaction.ServiceUnitDetailRow.nameProperty; };
+            ServiceUnitDetailDialog.prototype.getService = function () { return Transaction.ServiceUnitDetailService.baseUrl; };
+            ServiceUnitDetailDialog.prototype.getDeletePermission = function () { return Transaction.ServiceUnitDetailRow.deletePermission; };
+            ServiceUnitDetailDialog.prototype.getInsertPermission = function () { return Transaction.ServiceUnitDetailRow.insertPermission; };
+            ServiceUnitDetailDialog.prototype.getUpdatePermission = function () { return Transaction.ServiceUnitDetailRow.updatePermission; };
+            ServiceUnitDetailDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitDetailDialog);
+            return ServiceUnitDetailDialog;
+        }(Serenity.EntityDialog));
+        Transaction.ServiceUnitDetailDialog = ServiceUnitDetailDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitDetailGrid = /** @class */ (function (_super) {
+            __extends(ServiceUnitDetailGrid, _super);
+            function ServiceUnitDetailGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ServiceUnitDetailGrid.prototype.getColumnsKey = function () { return 'Transaction.ServiceUnitDetail'; };
+            ServiceUnitDetailGrid.prototype.getDialogType = function () { return Transaction.ServiceUnitDetailDialog; };
+            ServiceUnitDetailGrid.prototype.getIdProperty = function () { return Transaction.ServiceUnitDetailRow.idProperty; };
+            ServiceUnitDetailGrid.prototype.getInsertPermission = function () { return Transaction.ServiceUnitDetailRow.insertPermission; };
+            ServiceUnitDetailGrid.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitDetailRow.localTextPrefix; };
+            ServiceUnitDetailGrid.prototype.getService = function () { return Transaction.ServiceUnitDetailService.baseUrl; };
+            ServiceUnitDetailGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitDetailGrid);
+            return ServiceUnitDetailGrid;
+        }(Serenity.EntityGrid));
+        Transaction.ServiceUnitDetailGrid = ServiceUnitDetailGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeDialog = /** @class */ (function (_super) {
+            __extends(ServiceUnitTypeDialog, _super);
+            function ServiceUnitTypeDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.ServiceUnitTypeForm(_this.idPrefix);
+                return _this;
+            }
+            ServiceUnitTypeDialog.prototype.getFormKey = function () { return Transaction.ServiceUnitTypeForm.formKey; };
+            ServiceUnitTypeDialog.prototype.getIdProperty = function () { return Transaction.ServiceUnitTypeRow.idProperty; };
+            ServiceUnitTypeDialog.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitTypeRow.localTextPrefix; };
+            ServiceUnitTypeDialog.prototype.getNameProperty = function () { return Transaction.ServiceUnitTypeRow.nameProperty; };
+            ServiceUnitTypeDialog.prototype.getService = function () { return Transaction.ServiceUnitTypeService.baseUrl; };
+            ServiceUnitTypeDialog.prototype.getDeletePermission = function () { return Transaction.ServiceUnitTypeRow.deletePermission; };
+            ServiceUnitTypeDialog.prototype.getInsertPermission = function () { return Transaction.ServiceUnitTypeRow.insertPermission; };
+            ServiceUnitTypeDialog.prototype.getUpdatePermission = function () { return Transaction.ServiceUnitTypeRow.updatePermission; };
+            ServiceUnitTypeDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitTypeDialog);
+            return ServiceUnitTypeDialog;
+        }(Serenity.EntityDialog));
+        Transaction.ServiceUnitTypeDialog = ServiceUnitTypeDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeGrid = /** @class */ (function (_super) {
+            __extends(ServiceUnitTypeGrid, _super);
+            function ServiceUnitTypeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ServiceUnitTypeGrid.prototype.getColumnsKey = function () { return 'Transaction.ServiceUnitType'; };
+            ServiceUnitTypeGrid.prototype.getDialogType = function () { return Transaction.ServiceUnitTypeDialog; };
+            ServiceUnitTypeGrid.prototype.getIdProperty = function () { return Transaction.ServiceUnitTypeRow.idProperty; };
+            ServiceUnitTypeGrid.prototype.getInsertPermission = function () { return Transaction.ServiceUnitTypeRow.insertPermission; };
+            ServiceUnitTypeGrid.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitTypeRow.localTextPrefix; };
+            ServiceUnitTypeGrid.prototype.getService = function () { return Transaction.ServiceUnitTypeService.baseUrl; };
+            ServiceUnitTypeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitTypeGrid);
+            return ServiceUnitTypeGrid;
+        }(Serenity.EntityGrid));
+        Transaction.ServiceUnitTypeGrid = ServiceUnitTypeGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeDetailDialog = /** @class */ (function (_super) {
+            __extends(ServiceUnitTypeDetailDialog, _super);
+            function ServiceUnitTypeDetailDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.ServiceUnitTypeDetailForm(_this.idPrefix);
+                return _this;
+            }
+            ServiceUnitTypeDetailDialog.prototype.getFormKey = function () { return Transaction.ServiceUnitTypeDetailForm.formKey; };
+            ServiceUnitTypeDetailDialog.prototype.getIdProperty = function () { return Transaction.ServiceUnitTypeDetailRow.idProperty; };
+            ServiceUnitTypeDetailDialog.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitTypeDetailRow.localTextPrefix; };
+            ServiceUnitTypeDetailDialog.prototype.getNameProperty = function () { return Transaction.ServiceUnitTypeDetailRow.nameProperty; };
+            ServiceUnitTypeDetailDialog.prototype.getService = function () { return Transaction.ServiceUnitTypeDetailService.baseUrl; };
+            ServiceUnitTypeDetailDialog.prototype.getDeletePermission = function () { return Transaction.ServiceUnitTypeDetailRow.deletePermission; };
+            ServiceUnitTypeDetailDialog.prototype.getInsertPermission = function () { return Transaction.ServiceUnitTypeDetailRow.insertPermission; };
+            ServiceUnitTypeDetailDialog.prototype.getUpdatePermission = function () { return Transaction.ServiceUnitTypeDetailRow.updatePermission; };
+            ServiceUnitTypeDetailDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitTypeDetailDialog);
+            return ServiceUnitTypeDetailDialog;
+        }(Serenity.EntityDialog));
+        Transaction.ServiceUnitTypeDetailDialog = ServiceUnitTypeDetailDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypeDetailGrid = /** @class */ (function (_super) {
+            __extends(ServiceUnitTypeDetailGrid, _super);
+            function ServiceUnitTypeDetailGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ServiceUnitTypeDetailGrid.prototype.getColumnsKey = function () { return 'Transaction.ServiceUnitTypeDetail'; };
+            ServiceUnitTypeDetailGrid.prototype.getDialogType = function () { return Transaction.ServiceUnitTypeDetailDialog; };
+            ServiceUnitTypeDetailGrid.prototype.getIdProperty = function () { return Transaction.ServiceUnitTypeDetailRow.idProperty; };
+            ServiceUnitTypeDetailGrid.prototype.getInsertPermission = function () { return Transaction.ServiceUnitTypeDetailRow.insertPermission; };
+            ServiceUnitTypeDetailGrid.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitTypeDetailRow.localTextPrefix; };
+            ServiceUnitTypeDetailGrid.prototype.getService = function () { return Transaction.ServiceUnitTypeDetailService.baseUrl; };
+            ServiceUnitTypeDetailGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitTypeDetailGrid);
+            return ServiceUnitTypeDetailGrid;
+        }(Serenity.EntityGrid));
+        Transaction.ServiceUnitTypeDetailGrid = ServiceUnitTypeDetailGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypePriceDialog = /** @class */ (function (_super) {
+            __extends(ServiceUnitTypePriceDialog, _super);
+            function ServiceUnitTypePriceDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.ServiceUnitTypePriceForm(_this.idPrefix);
+                return _this;
+            }
+            ServiceUnitTypePriceDialog.prototype.getFormKey = function () { return Transaction.ServiceUnitTypePriceForm.formKey; };
+            ServiceUnitTypePriceDialog.prototype.getIdProperty = function () { return Transaction.ServiceUnitTypePriceRow.idProperty; };
+            ServiceUnitTypePriceDialog.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitTypePriceRow.localTextPrefix; };
+            ServiceUnitTypePriceDialog.prototype.getService = function () { return Transaction.ServiceUnitTypePriceService.baseUrl; };
+            ServiceUnitTypePriceDialog.prototype.getDeletePermission = function () { return Transaction.ServiceUnitTypePriceRow.deletePermission; };
+            ServiceUnitTypePriceDialog.prototype.getInsertPermission = function () { return Transaction.ServiceUnitTypePriceRow.insertPermission; };
+            ServiceUnitTypePriceDialog.prototype.getUpdatePermission = function () { return Transaction.ServiceUnitTypePriceRow.updatePermission; };
+            ServiceUnitTypePriceDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitTypePriceDialog);
+            return ServiceUnitTypePriceDialog;
+        }(Serenity.EntityDialog));
+        Transaction.ServiceUnitTypePriceDialog = ServiceUnitTypePriceDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ServiceUnitTypePriceGrid = /** @class */ (function (_super) {
+            __extends(ServiceUnitTypePriceGrid, _super);
+            function ServiceUnitTypePriceGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ServiceUnitTypePriceGrid.prototype.getColumnsKey = function () { return 'Transaction.ServiceUnitTypePrice'; };
+            ServiceUnitTypePriceGrid.prototype.getDialogType = function () { return Transaction.ServiceUnitTypePriceDialog; };
+            ServiceUnitTypePriceGrid.prototype.getIdProperty = function () { return Transaction.ServiceUnitTypePriceRow.idProperty; };
+            ServiceUnitTypePriceGrid.prototype.getInsertPermission = function () { return Transaction.ServiceUnitTypePriceRow.insertPermission; };
+            ServiceUnitTypePriceGrid.prototype.getLocalTextPrefix = function () { return Transaction.ServiceUnitTypePriceRow.localTextPrefix; };
+            ServiceUnitTypePriceGrid.prototype.getService = function () { return Transaction.ServiceUnitTypePriceService.baseUrl; };
+            ServiceUnitTypePriceGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServiceUnitTypePriceGrid);
+            return ServiceUnitTypePriceGrid;
+        }(Serenity.EntityGrid));
+        Transaction.ServiceUnitTypePriceGrid = ServiceUnitTypePriceGrid;
     })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 //# sourceMappingURL=DIMSOnline.Web.js.map
