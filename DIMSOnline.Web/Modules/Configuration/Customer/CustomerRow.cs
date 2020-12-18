@@ -43,14 +43,16 @@ namespace DIMSOnline.Configuration.Entities
             set { Fields.CustomerName[this] = value; }
         }
 
-        [DisplayName("Province"), Column("ProvinceID"), NotNull, ForeignKey("[dbo].[Province]", "ProvinceID"), LeftJoin("jProvince"), TextualField("ProvinceProvinceCode")]
+        [DisplayName("Province"), Column("ProvinceID"), NotNull, ForeignKey("[dbo].[Province]", "ProvinceID"), LookupInclude, LeftJoin("jProvince"), TextualField("ProvinceProvinceCode")]
+        [LookupEditor("LookupProvince")]
         public Int32? ProvinceId
         {
             get { return Fields.ProvinceId[this]; }
             set { Fields.ProvinceId[this] = value; }
         }
 
-        [DisplayName("City"), Column("CityID"), NotNull, ForeignKey("[dbo].[City]", "CityID"), LeftJoin("jCity"), TextualField("CityCityCode")]
+        [DisplayName("City"), Column("CityID"), NotNull, ForeignKey("[dbo].[City]", "CityID"), LeftJoin("jCity"), LookupInclude, TextualField("CityCityCode")]
+        [LookupEditor("LookupCity", CascadeFrom = "ProvinceId", CascadeValue = "ProvinceId")]
         public Int32? CityId
         {
             get { return Fields.CityId[this]; }

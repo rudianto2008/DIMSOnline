@@ -13,15 +13,9 @@ namespace DIMSOnline.Configuration.Columns
     [BasedOnRow(typeof(Entities.OrderCategoryRow), CheckNames = true)]
     public class OrderCategoryColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-        public Int32 OrderCategoryId { get; set; }
-        [EditLink]
+        [EditLink, Width(200)]
         public String OrderCategoryName { get; set; }
+        [Width(400)]
         public String Description { get; set; }
-        public Int16 InsertUserId { get; set; }
-        public DateTime InsertDate { get; set; }
-        public Int16 UpdateUserId { get; set; }
-        public DateTime UpdateDate { get; set; }
-        public Int16 IsActive { get; set; }
     }
 }

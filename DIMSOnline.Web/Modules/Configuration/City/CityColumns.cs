@@ -15,6 +15,7 @@ namespace DIMSOnline.Configuration.Columns
     {
         [EditLink]
         public String CityCode { get; set; }
+        [Width(400)]
         public String CityName { get; set; }
         [DisplayName("Province Name")]
         public String ProvinceProvinceName { get; set; }

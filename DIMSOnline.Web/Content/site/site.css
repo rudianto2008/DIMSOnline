@@ -7472,6 +7472,54 @@ section.content > .s-DataGrid {
 .s-Configuration-OrderCategoryDialog .caption {
   width: 150px;
 }
+.s-Configuration-ProductsDialog > .size {
+  width: 650px;
+}
+.s-Configuration-ProductsDialog .caption {
+  width: 150px;
+}
+.s-Configuration-ProductPriceDialog > .size {
+  width: 650px;
+}
+.s-Configuration-ProductPriceDialog .caption {
+  width: 150px;
+}
+.s-Configuration-ProductBasePriceDialog > .size {
+  width: 650px;
+}
+.s-Configuration-ProductBasePriceDialog .caption {
+  width: 150px;
+}
+.s-Configuration-ProductTypeDialog > .size {
+  width: 650px;
+}
+.s-Configuration-ProductTypeDialog .caption {
+  width: 150px;
+}
+.s-Configuration-ProductAlternativeDialog > .size {
+  width: 650px;
+}
+.s-Configuration-ProductAlternativeDialog .caption {
+  width: 150px;
+}
+.s-Configuration-ProductsLogDialog > .size {
+  width: 650px;
+}
+.s-Configuration-ProductsLogDialog .caption {
+  width: 150px;
+}
+.s-Configuration-SupplierDialog > .size {
+  width: 650px;
+}
+.s-Configuration-SupplierDialog .caption {
+  width: 150px;
+}
+.s-Configuration-UnitStockDialog > .size {
+  width: 650px;
+}
+.s-Configuration-UnitStockDialog .caption {
+  width: 150px;
+}
 .s-Transaction-InventoryDialog > .size {
   width: 650px;
 }
@@ -7482,5 +7530,47 @@ section.content > .s-DataGrid {
   width: 650px;
 }
 .s-Transaction-MovementStockDialog .caption {
+  width: 150px;
+}
+.s-Transaction-PurchaseOrderDialog > .size {
+  width: 650px;
+}
+.s-Transaction-PurchaseOrderDialog .caption {
+  width: 150px;
+}
+.s-Transaction-PurchaseOrderDetailDialog > .size {
+  width: 650px;
+}
+.s-Transaction-PurchaseOrderDetailDialog .caption {
+  width: 150px;
+}
+.s-Transaction-OrdersDialog > .size {
+  width: 650px;
+}
+.s-Transaction-OrdersDialog .caption {
+  width: 150px;
+}
+.s-Transaction-OrderDetailDialog > .size {
+  width: 650px;
+}
+.s-Transaction-OrderDetailDialog .caption {
+  width: 150px;
+}
+.s-Transaction-ReceiveOrderDialog > .size {
+  width: 650px;
+}
+.s-Transaction-ReceiveOrderDialog .caption {
+  width: 150px;
+}
+.s-Transaction-ReceiveOrderDetailDialog > .size {
+  width: 650px;
+}
+.s-Transaction-ReceiveOrderDetailDialog .caption {
+  width: 150px;
+}
+.s-Transaction-SerialNumberUnitDialog > .size {
+  width: 650px;
+}
+.s-Transaction-SerialNumberUnitDialog .caption {
   width: 150px;
 }

@@ -3162,10 +3162,10 @@ a.s-LinkDropDown input {
   font-weight: 600;
 }
 .s-PropertyGrid .category-links {
-  background: #7380C4;
-  border-radius: 0;
-  border: 0;
-  margin-bottom: 6px;
+    background: #04a49c;
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 6px;
 }
 .property-tabs {
   padding-left: 8px;

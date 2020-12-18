@@ -13,10 +13,9 @@ namespace DIMSOnline.Configuration.Columns
     [BasedOnRow(typeof(Entities.CategoryUnitRow), CheckNames = true)]
     public class CategoryUnitColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-        public Int32 CategoryUnitId { get; set; }
-        [EditLink]
+        [EditLink, Width(200)]
         public String CategoryUnitName { get; set; }
+        [Width(150)]
         public Decimal PricePerHour { get; set; }
     }
 }

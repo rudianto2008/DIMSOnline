@@ -13,6 +13,7 @@ namespace DIMSOnline.Configuration.Forms
     [BasedOnRow(typeof(Entities.BinLocationRow), CheckNames = true)]
     public class BinLocationForm
     {
+        [Required]
         public String BinLocation { get; set; }
     }
 }

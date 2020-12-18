@@ -12,8 +12,13 @@
 
     export namespace IslandRow {
         export const idProperty = 'IslandId';
-        export const nameProperty = 'IslandCode';
+        export const nameProperty = 'IslandName';
         export const localTextPrefix = 'Configuration.Island';
+        export const lookupKey = 'LookupIsland';
+
+        export function getLookup(): Q.Lookup<IslandRow> {
+            return Q.getLookup<IslandRow>('LookupIsland');
+        }
         export const deletePermission = 'Administration:Configuration';
         export const insertPermission = 'Administration:Configuration';
         export const readPermission = 'Administration:Configuration';

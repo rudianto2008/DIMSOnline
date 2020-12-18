@@ -1,12 +1,12 @@
 ﻿namespace DIMSOnline.Configuration {
     export interface CompanyForm {
         CompanyName: Serenity.StringEditor;
-        Phone: Serenity.StringEditor;
-        ContactPerson: Serenity.StringEditor;
+        Address: Serenity.TextAreaEditor;
         ProvinceId: Serenity.LookupEditor;
         CityId: Serenity.LookupEditor;
-        Address: Serenity.StringEditor;
-        Logo: Serenity.StringEditor;
+        Phone: Serenity.StringEditor;
+        ContactPerson: Serenity.StringEditor;
+        Logo: Serenity.ImageUploadEditor;
     }
 
     export class CompanyForm extends Serenity.PrefixedContext {
@@ -21,16 +21,18 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.LookupEditor;
+                var w1 = s.TextAreaEditor;
+                var w2 = s.LookupEditor;
+                var w3 = s.ImageUploadEditor;
 
                 Q.initFormType(CompanyForm, [
                     'CompanyName', w0,
+                    'Address', w1,
+                    'ProvinceId', w2,
+                    'CityId', w2,
                     'Phone', w0,
                     'ContactPerson', w0,
-                    'ProvinceId', w1,
-                    'CityId', w1,
-                    'Address', w0,
-                    'Logo', w0
+                    'Logo', w3
                 ]);
             }
         }

@@ -381,15 +381,8 @@ var DIMSOnline;
                     BinLocationForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DateEditor;
                     Q.initFormType(BinLocationForm, [
-                        'BinLocation', w0,
-                        'InsertUserId', w1,
-                        'InsertDate', w2,
-                        'UpdateUserId', w1,
-                        'UpdateDate', w2,
-                        'IsActive', w1
+                        'BinLocation', w0
                     ]);
                 }
                 return _this;
@@ -511,19 +504,13 @@ var DIMSOnline;
                 if (!CityForm.init) {
                     CityForm.init = true;
                     var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DateEditor;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.StringEditor;
                     Q.initFormType(CityForm, [
-                        'CityCode', w0,
-                        'ProvinceId', w1,
-                        'IslandId', w1,
-                        'CityName', w0,
-                        'InsertUserId', w1,
-                        'InsertDate', w2,
-                        'UpdateUserId', w1,
-                        'UpdateDate', w2,
-                        'IsActive', w1
+                        'IslandId', w0,
+                        'ProvinceId', w0,
+                        'CityCode', w1,
+                        'CityName', w1
                     ]);
                 }
                 return _this;
@@ -588,15 +575,17 @@ var DIMSOnline;
                     CompanyForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.LookupEditor;
+                    var w1 = s.TextAreaEditor;
+                    var w2 = s.LookupEditor;
+                    var w3 = s.ImageUploadEditor;
                     Q.initFormType(CompanyForm, [
                         'CompanyName', w0,
+                        'Address', w1,
+                        'ProvinceId', w2,
+                        'CityId', w2,
                         'Phone', w0,
                         'ContactPerson', w0,
-                        'ProvinceId', w1,
-                        'CityId', w1,
-                        'Address', w0,
-                        'Logo', w0
+                        'Logo', w3
                     ]);
                 }
                 return _this;
@@ -656,32 +645,22 @@ var DIMSOnline;
                     CustomerForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DateEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.LookupEditor;
+                    var w3 = s.IntegerEditor;
                     Q.initFormType(CustomerForm, [
                         'CustomerNumber', w0,
-                        'CompanyId', w1,
                         'CustomerName', w0,
-                        'ProvinceId', w1,
-                        'CityId', w1,
-                        'Address', w0,
-                        'Pic', w0,
-                        'IslandId', w1,
-                        'PostCode', w1,
-                        'Phone', w0,
-                        'ContactPerson', w0,
-                        'Fax', w0,
                         'BirthPlace', w0,
-                        'BirthDate', w2,
-                        'Email', w0,
+                        'BirthDate', w1,
                         'Npwp', w0,
-                        'InsertUserId', w1,
-                        'InsertDate', w2,
-                        'UpdateUserId', w1,
-                        'UpdateDate', w2,
-                        'IsActive', w1,
-                        'DeleteUserId', w1,
-                        'DeleteDate', w2
+                        'ContactPerson', w0,
+                        'Phone', w0,
+                        'Email', w0,
+                        'ProvinceId', w2,
+                        'CityId', w2,
+                        'Address', w0,
+                        'PostCode', w3
                     ]);
                 }
                 return _this;
@@ -768,8 +747,13 @@ var DIMSOnline;
         var IslandRow;
         (function (IslandRow) {
             IslandRow.idProperty = 'IslandId';
-            IslandRow.nameProperty = 'IslandCode';
+            IslandRow.nameProperty = 'IslandName';
             IslandRow.localTextPrefix = 'Configuration.Island';
+            IslandRow.lookupKey = 'LookupIsland';
+            function getLookup() {
+                return Q.getLookup('LookupIsland');
+            }
+            IslandRow.getLookup = getLookup;
             IslandRow.deletePermission = 'Administration:Configuration';
             IslandRow.insertPermission = 'Administration:Configuration';
             IslandRow.readPermission = 'Administration:Configuration';
@@ -872,16 +856,9 @@ var DIMSOnline;
                     OrderCategoryForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DateEditor;
                     Q.initFormType(OrderCategoryForm, [
                         'OrderCategoryName', w0,
-                        'Description', w0,
-                        'InsertUserId', w1,
-                        'InsertDate', w2,
-                        'UpdateUserId', w1,
-                        'UpdateDate', w2,
-                        'IsActive', w1
+                        'Description', w0
                     ]);
                 }
                 return _this;
@@ -933,6 +910,417 @@ var DIMSOnline;
 (function (DIMSOnline) {
     var Configuration;
     (function (Configuration_1) {
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductAlternativeForm = /** @class */ (function (_super) {
+            __extends(ProductAlternativeForm, _super);
+            function ProductAlternativeForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ProductAlternativeForm.init) {
+                    ProductAlternativeForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.BooleanEditor;
+                    Q.initFormType(ProductAlternativeForm, [
+                        'ProductId', w0,
+                        'ProductIdAlt', w0,
+                        'SeqNo', w0,
+                        'Combine', w1
+                    ]);
+                }
+                return _this;
+            }
+            ProductAlternativeForm.formKey = 'Configuration.ProductAlternative';
+            return ProductAlternativeForm;
+        }(Serenity.PrefixedContext));
+        Configuration.ProductAlternativeForm = ProductAlternativeForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductAlternativeRow;
+        (function (ProductAlternativeRow) {
+            ProductAlternativeRow.idProperty = 'ProductAlternativeId';
+            ProductAlternativeRow.localTextPrefix = 'Configuration.ProductAlternative';
+            ProductAlternativeRow.deletePermission = 'Administration:Configuration';
+            ProductAlternativeRow.insertPermission = 'Administration:Configuration';
+            ProductAlternativeRow.readPermission = 'Administration:Configuration';
+            ProductAlternativeRow.updatePermission = 'Administration:Configuration';
+        })(ProductAlternativeRow = Configuration.ProductAlternativeRow || (Configuration.ProductAlternativeRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductAlternativeService;
+        (function (ProductAlternativeService) {
+            ProductAlternativeService.baseUrl = 'Configuration/ProductAlternative';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ProductAlternativeService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ProductAlternativeService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ProductAlternativeService = Configuration.ProductAlternativeService || (Configuration.ProductAlternativeService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductBasePriceForm = /** @class */ (function (_super) {
+            __extends(ProductBasePriceForm, _super);
+            function ProductBasePriceForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ProductBasePriceForm.init) {
+                    ProductBasePriceForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.BooleanEditor;
+                    Q.initFormType(ProductBasePriceForm, [
+                        'ProductBasePriceNumber', w0,
+                        'ProductId', w1,
+                        'Price', w2,
+                        'ActualPrice', w2,
+                        'Continued', w3
+                    ]);
+                }
+                return _this;
+            }
+            ProductBasePriceForm.formKey = 'Configuration.ProductBasePrice';
+            return ProductBasePriceForm;
+        }(Serenity.PrefixedContext));
+        Configuration.ProductBasePriceForm = ProductBasePriceForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductBasePriceRow;
+        (function (ProductBasePriceRow) {
+            ProductBasePriceRow.idProperty = 'ProductBasePriceId';
+            ProductBasePriceRow.nameProperty = 'ProductBasePriceNumber';
+            ProductBasePriceRow.localTextPrefix = 'Configuration.ProductBasePrice';
+            ProductBasePriceRow.deletePermission = 'Administration:Configuration';
+            ProductBasePriceRow.insertPermission = 'Administration:Configuration';
+            ProductBasePriceRow.readPermission = 'Administration:Configuration';
+            ProductBasePriceRow.updatePermission = 'Administration:Configuration';
+        })(ProductBasePriceRow = Configuration.ProductBasePriceRow || (Configuration.ProductBasePriceRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductBasePriceService;
+        (function (ProductBasePriceService) {
+            ProductBasePriceService.baseUrl = 'Configuration/ProductBasePrice';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ProductBasePriceService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ProductBasePriceService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ProductBasePriceService = Configuration.ProductBasePriceService || (Configuration.ProductBasePriceService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductPriceForm = /** @class */ (function (_super) {
+            __extends(ProductPriceForm, _super);
+            function ProductPriceForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ProductPriceForm.init) {
+                    ProductPriceForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.BooleanEditor;
+                    Q.initFormType(ProductPriceForm, [
+                        'ProductPriceNumber', w0,
+                        'ProductId', w1,
+                        'OrderCategoryId', w1,
+                        'Price', w2,
+                        'Continued', w3
+                    ]);
+                }
+                return _this;
+            }
+            ProductPriceForm.formKey = 'Configuration.ProductPrice';
+            return ProductPriceForm;
+        }(Serenity.PrefixedContext));
+        Configuration.ProductPriceForm = ProductPriceForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductPriceRow;
+        (function (ProductPriceRow) {
+            ProductPriceRow.idProperty = 'ProductPriceId';
+            ProductPriceRow.nameProperty = 'ProductPriceNumber';
+            ProductPriceRow.localTextPrefix = 'Configuration.ProductPrice';
+            ProductPriceRow.deletePermission = 'Administration:Configuration';
+            ProductPriceRow.insertPermission = 'Administration:Configuration';
+            ProductPriceRow.readPermission = 'Administration:Configuration';
+            ProductPriceRow.updatePermission = 'Administration:Configuration';
+        })(ProductPriceRow = Configuration.ProductPriceRow || (Configuration.ProductPriceRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductPriceService;
+        (function (ProductPriceService) {
+            ProductPriceService.baseUrl = 'Configuration/ProductPrice';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ProductPriceService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ProductPriceService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ProductPriceService = Configuration.ProductPriceService || (Configuration.ProductPriceService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductTypeForm = /** @class */ (function (_super) {
+            __extends(ProductTypeForm, _super);
+            function ProductTypeForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ProductTypeForm.init) {
+                    ProductTypeForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(ProductTypeForm, [
+                        'ProductTypeName', w0
+                    ]);
+                }
+                return _this;
+            }
+            ProductTypeForm.formKey = 'Configuration.ProductType';
+            return ProductTypeForm;
+        }(Serenity.PrefixedContext));
+        Configuration.ProductTypeForm = ProductTypeForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductTypeRow;
+        (function (ProductTypeRow) {
+            ProductTypeRow.idProperty = 'ProductTypeId';
+            ProductTypeRow.nameProperty = 'ProductTypeName';
+            ProductTypeRow.localTextPrefix = 'Configuration.ProductType';
+            ProductTypeRow.deletePermission = 'Administration:Configuration';
+            ProductTypeRow.insertPermission = 'Administration:Configuration';
+            ProductTypeRow.readPermission = 'Administration:Configuration';
+            ProductTypeRow.updatePermission = 'Administration:Configuration';
+        })(ProductTypeRow = Configuration.ProductTypeRow || (Configuration.ProductTypeRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductTypeService;
+        (function (ProductTypeService) {
+            ProductTypeService.baseUrl = 'Configuration/ProductType';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ProductTypeService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ProductTypeService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ProductTypeService = Configuration.ProductTypeService || (Configuration.ProductTypeService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsForm = /** @class */ (function (_super) {
+            __extends(ProductsForm, _super);
+            function ProductsForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ProductsForm.init) {
+                    ProductsForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.BooleanEditor;
+                    Q.initFormType(ProductsForm, [
+                        'ProductNumber', w0,
+                        'ModelName', w0,
+                        'CategoryUnitId', w1,
+                        'UnitStockId', w1,
+                        'PartNumber', w0,
+                        'ProductTypeId', w1,
+                        'MinimumStock', w1,
+                        'Continued', w2,
+                        'ProductImage', w0,
+                        'Description', w0,
+                        'BinLocationId', w1,
+                        'StockQuantity', w1
+                    ]);
+                }
+                return _this;
+            }
+            ProductsForm.formKey = 'Configuration.Products';
+            return ProductsForm;
+        }(Serenity.PrefixedContext));
+        Configuration.ProductsForm = ProductsForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsLogForm = /** @class */ (function (_super) {
+            __extends(ProductsLogForm, _super);
+            function ProductsLogForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ProductsLogForm.init) {
+                    ProductsLogForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.BooleanEditor;
+                    var w3 = s.DateEditor;
+                    Q.initFormType(ProductsLogForm, [
+                        'ProductId', w0,
+                        'ModelName', w1,
+                        'UnitStock', w1,
+                        'PartNumber', w1,
+                        'ProductTypeId', w0,
+                        'Continued', w2,
+                        'ProductImage', w1,
+                        'Description', w1,
+                        'BinLocation', w1,
+                        'OperationType', w0,
+                        'ChangingUserId', w0,
+                        'ValidFrom', w3,
+                        'ValidUntil', w3
+                    ]);
+                }
+                return _this;
+            }
+            ProductsLogForm.formKey = 'Configuration.ProductsLog';
+            return ProductsLogForm;
+        }(Serenity.PrefixedContext));
+        Configuration.ProductsLogForm = ProductsLogForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsLogRow;
+        (function (ProductsLogRow) {
+            ProductsLogRow.idProperty = 'ProductLogId';
+            ProductsLogRow.nameProperty = 'ModelName';
+            ProductsLogRow.localTextPrefix = 'Configuration.ProductsLog';
+            ProductsLogRow.deletePermission = 'Administration:Configuration';
+            ProductsLogRow.insertPermission = 'Administration:Configuration';
+            ProductsLogRow.readPermission = 'Administration:Configuration';
+            ProductsLogRow.updatePermission = 'Administration:Configuration';
+        })(ProductsLogRow = Configuration.ProductsLogRow || (Configuration.ProductsLogRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsLogService;
+        (function (ProductsLogService) {
+            ProductsLogService.baseUrl = 'Configuration/ProductsLog';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ProductsLogService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ProductsLogService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ProductsLogService = Configuration.ProductsLogService || (Configuration.ProductsLogService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsRow;
+        (function (ProductsRow) {
+            ProductsRow.idProperty = 'ProductId';
+            ProductsRow.nameProperty = 'ProductNumber';
+            ProductsRow.localTextPrefix = 'Configuration.Products';
+            ProductsRow.deletePermission = 'Administration:Configuration';
+            ProductsRow.insertPermission = 'Administration:Configuration';
+            ProductsRow.readPermission = 'Administration:Configuration';
+            ProductsRow.updatePermission = 'Administration:Configuration';
+        })(ProductsRow = Configuration.ProductsRow || (Configuration.ProductsRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsService;
+        (function (ProductsService) {
+            ProductsService.baseUrl = 'Configuration/Products';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ProductsService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ProductsService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ProductsService = Configuration.ProductsService || (Configuration.ProductsService = {}));
     })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
@@ -1008,6 +1396,145 @@ var DIMSOnline;
                 };
             });
         })(ProvinceService = Configuration.ProvinceService || (Configuration.ProvinceService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var SupplierForm = /** @class */ (function (_super) {
+            __extends(SupplierForm, _super);
+            function SupplierForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SupplierForm.init) {
+                    SupplierForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(SupplierForm, [
+                        'SupplierName', w0,
+                        'Address', w0,
+                        'Phone', w0,
+                        'ContactName', w0,
+                        'InsertUserId', w1,
+                        'InsertDate', w2,
+                        'UpdateUserId', w1,
+                        'UpdateDate', w2,
+                        'IsActive', w1
+                    ]);
+                }
+                return _this;
+            }
+            SupplierForm.formKey = 'Configuration.Supplier';
+            return SupplierForm;
+        }(Serenity.PrefixedContext));
+        Configuration.SupplierForm = SupplierForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var SupplierRow;
+        (function (SupplierRow) {
+            SupplierRow.idProperty = 'SupplierId';
+            SupplierRow.nameProperty = 'SupplierName';
+            SupplierRow.localTextPrefix = 'Configuration.Supplier';
+            SupplierRow.deletePermission = 'Administration:Configuration';
+            SupplierRow.insertPermission = 'Administration:Configuration';
+            SupplierRow.readPermission = 'Administration:Configuration';
+            SupplierRow.updatePermission = 'Administration:Configuration';
+        })(SupplierRow = Configuration.SupplierRow || (Configuration.SupplierRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var SupplierService;
+        (function (SupplierService) {
+            SupplierService.baseUrl = 'Configuration/Supplier';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                SupplierService[x] = function (r, s, o) {
+                    return Q.serviceRequest(SupplierService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(SupplierService = Configuration.SupplierService || (Configuration.SupplierService = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var UnitStockForm = /** @class */ (function (_super) {
+            __extends(UnitStockForm, _super);
+            function UnitStockForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!UnitStockForm.init) {
+                    UnitStockForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(UnitStockForm, [
+                        'UnitStock', w0,
+                        'InsertUserId', w1,
+                        'InsertDate', w2,
+                        'UpdateUserId', w1,
+                        'UpdateDate', w2,
+                        'IsActive', w1
+                    ]);
+                }
+                return _this;
+            }
+            UnitStockForm.formKey = 'Configuration.UnitStock';
+            return UnitStockForm;
+        }(Serenity.PrefixedContext));
+        Configuration.UnitStockForm = UnitStockForm;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var UnitStockRow;
+        (function (UnitStockRow) {
+            UnitStockRow.idProperty = 'UnitStockId';
+            UnitStockRow.nameProperty = 'UnitStock';
+            UnitStockRow.localTextPrefix = 'Configuration.UnitStock';
+            UnitStockRow.deletePermission = 'Administration:Configuration';
+            UnitStockRow.insertPermission = 'Administration:Configuration';
+            UnitStockRow.readPermission = 'Administration:Configuration';
+            UnitStockRow.updatePermission = 'Administration:Configuration';
+        })(UnitStockRow = Configuration.UnitStockRow || (Configuration.UnitStockRow = {}));
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var UnitStockService;
+        (function (UnitStockService) {
+            UnitStockService.baseUrl = 'Configuration/UnitStock';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                UnitStockService[x] = function (r, s, o) {
+                    return Q.serviceRequest(UnitStockService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(UnitStockService = Configuration.UnitStockService || (Configuration.UnitStockService = {}));
     })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
@@ -1145,7 +1672,7 @@ var DIMSOnline;
 (function (DIMSOnline) {
     var Texts;
     (function (Texts) {
-        DIMSOnline['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Configuration: { BinLocation: { BinLocation: 1, BinLocationId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, UpdateDate: 1, UpdateUserId: 1 }, CategoryUnit: { CategoryUnitId: 1, CategoryUnitName: 1, PricePerHour: 1 }, City: { CityCode: 1, CityId: 1, CityName: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Company: { Address: 1, CityId: 1, CompanyId: 1, CompanyName: 1, ContactPerson: 1, DeleteDate: 1, DeleteUserId: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, Logo: 1, OfficeType: 1, Phone: 1, ProvinceId: 1, UpdateDate: 1, UpdateUserId: 1 }, Customer: { Address: 1, BirthDate: 1, BirthPlace: 1, CityCityCode: 1, CityCityName: 1, CityId: 1, CityInsertDate: 1, CityInsertUserId: 1, CityIsActive: 1, CityIslandId: 1, CityProvinceId: 1, CityUpdateDate: 1, CityUpdateUserId: 1, CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, ContactPerson: 1, CustomerId: 1, CustomerName: 1, CustomerNumber: 1, DeleteDate: 1, DeleteUserId: 1, Email: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, Npwp: 1, Phone: 1, Pic: 1, PostCode: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Island: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandCode: 1, IslandId: 1, IslandName: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementType: { MovementTypeId: 1, MovementTypeName: 1, StatusInOut: 1 }, OrderCategory: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryId: 1, OrderCategoryName: 1, UpdateDate: 1, UpdateUserId: 1 }, Province: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, ProvinceCode: 1, ProvinceId: 1, ProvinceName: 1, UpdateDate: 1, UpdateUserId: 1 } }, Transaction: { Inventory: { CompanyId: 1, DocumentNo: 1, InsertDate: 1, InsertUserId: 1, InventoryId: 1, InventoryStatus: 1, IsActive: 1, OrderCategoryId: 1, ProductBasePrice: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPrice: 1, ProductPriceNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, Qty: 1, Stock: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementStock: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, MovementQty: 1, MovementStockId: 1, MovementStockNumber: 1, MovementTypeId: 1, MovementTypeMovementTypeName: 1, MovementTypeStatusInOut: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        DIMSOnline['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Configuration: { BinLocation: { BinLocation: 1, BinLocationId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, UpdateDate: 1, UpdateUserId: 1 }, CategoryUnit: { CategoryUnitId: 1, CategoryUnitName: 1, PricePerHour: 1 }, City: { CityCode: 1, CityId: 1, CityName: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandIslandName: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Company: { Address: 1, CityCityCode: 1, CityCityName: 1, CityId: 1, CityInsertDate: 1, CityInsertUserId: 1, CityIsActive: 1, CityIslandId: 1, CityProvinceId: 1, CityUpdateDate: 1, CityUpdateUserId: 1, CompanyId: 1, CompanyName: 1, ContactPerson: 1, DeleteDate: 1, DeleteUserId: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, Logo: 1, OfficeType: 1, Phone: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Customer: { Address: 1, BirthDate: 1, BirthPlace: 1, CityCityCode: 1, CityCityName: 1, CityId: 1, CityInsertDate: 1, CityInsertUserId: 1, CityIsActive: 1, CityIslandId: 1, CityProvinceId: 1, CityUpdateDate: 1, CityUpdateUserId: 1, CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, ContactPerson: 1, CustomerId: 1, CustomerName: 1, CustomerNumber: 1, DeleteDate: 1, DeleteUserId: 1, Email: 1, Fax: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, Npwp: 1, Phone: 1, Pic: 1, PostCode: 1, ProvinceId: 1, ProvinceInsertDate: 1, ProvinceInsertUserId: 1, ProvinceIsActive: 1, ProvinceIslandId: 1, ProvinceProvinceCode: 1, ProvinceProvinceName: 1, ProvinceUpdateDate: 1, ProvinceUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, Island: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandCode: 1, IslandId: 1, IslandName: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementType: { MovementTypeId: 1, MovementTypeName: 1, StatusInOut: 1 }, OrderCategory: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryId: 1, OrderCategoryName: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductAlternative: { Combine: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, ProductAlternativeId: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductIdAlt: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, SeqNo: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductBasePrice: { ActualPrice: 1, Continued: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, Price: 1, ProductBasePriceId: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductPrice: { Continued: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryDescription: 1, OrderCategoryId: 1, OrderCategoryInsertDate: 1, OrderCategoryInsertUserId: 1, OrderCategoryIsActive: 1, OrderCategoryOrderCategoryName: 1, OrderCategoryUpdateDate: 1, OrderCategoryUpdateUserId: 1, Price: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPriceId: 1, ProductPriceNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductType: { InsertDate: 1, InsertUserId: 1, IsActive: 1, ProductTypeId: 1, ProductTypeName: 1, UpdateDate: 1, UpdateUserId: 1 }, Products: { BinLocation: 1, BinLocationId: 1, BinLocationInsertDate: 1, BinLocationInsertUserId: 1, BinLocationIsActive: 1, BinLocationUpdateDate: 1, BinLocationUpdateUserId: 1, CategoryUnitCategoryUnitName: 1, CategoryUnitId: 1, CategoryUnitPricePerHour: 1, Continued: 1, Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, MinimumStock: 1, ModelName: 1, PartNumber: 1, ProductId: 1, ProductImage: 1, ProductNumber: 1, ProductTypeId: 1, ProductTypeInsertDate: 1, ProductTypeInsertUserId: 1, ProductTypeIsActive: 1, ProductTypeProductTypeName: 1, ProductTypeUpdateDate: 1, ProductTypeUpdateUserId: 1, StockQuantity: 1, UnitStock: 1, UnitStockId: 1, UnitStockInsertDate: 1, UnitStockInsertUserId: 1, UnitStockIsActive: 1, UnitStockUpdateDate: 1, UnitStockUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, ProductsLog: { BinLocation: 1, ChangingUserId: 1, Continued: 1, Description: 1, ModelName: 1, OperationType: 1, PartNumber: 1, ProductId: 1, ProductImage: 1, ProductLogId: 1, ProductTypeId: 1, UnitStock: 1, ValidFrom: 1, ValidUntil: 1 }, Province: { InsertDate: 1, InsertUserId: 1, IsActive: 1, IslandId: 1, IslandInsertDate: 1, IslandInsertUserId: 1, IslandIsActive: 1, IslandIslandCode: 1, IslandIslandName: 1, IslandUpdateDate: 1, IslandUpdateUserId: 1, ProvinceCode: 1, ProvinceId: 1, ProvinceName: 1, UpdateDate: 1, UpdateUserId: 1 }, Supplier: { Address: 1, ContactName: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, Phone: 1, SupplierId: 1, SupplierName: 1, UpdateDate: 1, UpdateUserId: 1 }, UnitStock: { InsertDate: 1, InsertUserId: 1, IsActive: 1, UnitStock: 1, UnitStockId: 1, UpdateDate: 1, UpdateUserId: 1 } }, Transaction: { Inventory: { CompanyId: 1, DocumentNo: 1, InsertDate: 1, InsertUserId: 1, InventoryId: 1, InventoryStatus: 1, IsActive: 1, OrderCategoryId: 1, ProductBasePrice: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPrice: 1, ProductPriceNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, Qty: 1, Stock: 1, UpdateDate: 1, UpdateUserId: 1 }, MovementStock: { Description: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, MovementQty: 1, MovementStockId: 1, MovementStockNumber: 1, MovementTypeId: 1, MovementTypeMovementTypeName: 1, MovementTypeStatusInOut: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, UpdateDate: 1, UpdateUserId: 1 }, OrderDetail: { ActualPrice: 1, AsAlternativeItem: 1, BasePrice: 1, CancellationBy: 1, CancellationDate: 1, Discount: 1, DiscountPercent: 1, GrossAmount: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, KmInUse: 1, ManufactureYear: 1, OrderCategoryId: 1, OrderCompanyId: 1, OrderCustomerId: 1, OrderDetailId: 1, OrderId: 1, OrderInsertDate: 1, OrderInsertUserId: 1, OrderIsActive: 1, OrderKmInUse: 1, OrderOrderDate: 1, OrderOrderNumber: 1, OrderOrderStatus: 1, OrderPaymentService: 1, OrderProductTypeId: 1, OrderQty: 1, OrderUpdateDate: 1, OrderUpdateUserId: 1, OrderUserId: 1, ParentItemId: 1, Ppn: 1, ProductBasePriceId: 1, ProductBasePriceNumber: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, SerialNumber: 1, ServiceQuantity: 1, ServiceUnitId: 1, Stock: 1, Total: 1, UpdateDate: 1, UpdateUserId: 1, WarrantyNumber: 1 }, Orders: { CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, CustomerAddress: 1, CustomerBirthDate: 1, CustomerBirthPlace: 1, CustomerCityId: 1, CustomerCompanyId: 1, CustomerContactPerson: 1, CustomerCustomerName: 1, CustomerCustomerNumber: 1, CustomerDeleteDate: 1, CustomerDeleteUserId: 1, CustomerEmail: 1, CustomerFax: 1, CustomerId: 1, CustomerInsertDate: 1, CustomerInsertUserId: 1, CustomerIsActive: 1, CustomerIslandId: 1, CustomerNpwp: 1, CustomerPhone: 1, CustomerPic: 1, CustomerPostCode: 1, CustomerProvinceId: 1, CustomerUpdateDate: 1, CustomerUpdateUserId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, KmInUse: 1, OrderDate: 1, OrderId: 1, OrderNumber: 1, OrderStatus: 1, PaymentService: 1, ProductTypeId: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1 }, PurchaseOrder: { CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, OrderCategoryId: 1, PickupPoint: 1, ProductTypeId: 1, ProductTypeInsertDate: 1, ProductTypeInsertUserId: 1, ProductTypeIsActive: 1, ProductTypeProductTypeName: 1, ProductTypeUpdateDate: 1, ProductTypeUpdateUserId: 1, PurchaseOrderDate: 1, PurchaseOrderId: 1, PurchaseOrderNumber: 1, PurchaseOrderStatus: 1, UpdateDate: 1, UpdateUserId: 1 }, PurchaseOrderDetail: { ApprovalStatusDiscount: 1, BackOrderQty: 1, CancellationBy: 1, CancellationDate: 1, CommentDiscount: 1, DiscountRequest: 1, GrossAmount: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, Ppn: 1, Price: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductPriceContinued: 1, ProductPriceId: 1, ProductPriceInsertDate: 1, ProductPriceInsertUserId: 1, ProductPriceIsActive: 1, ProductPriceNumber: 1, ProductPriceOrderCategoryId: 1, ProductPricePrice: 1, ProductPriceProductId: 1, ProductPriceProductPriceNumber: 1, ProductPriceUpdateDate: 1, ProductPriceUpdateUserId: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, PurchaseOrderCompanyId: 1, PurchaseOrderDetailId: 1, PurchaseOrderId: 1, PurchaseOrderInsertDate: 1, PurchaseOrderInsertUserId: 1, PurchaseOrderIsActive: 1, PurchaseOrderOrderCategoryId: 1, PurchaseOrderPickupPoint: 1, PurchaseOrderProductTypeId: 1, PurchaseOrderPurchaseOrderDate: 1, PurchaseOrderPurchaseOrderNumber: 1, PurchaseOrderPurchaseOrderStatus: 1, PurchaseOrderUpdateDate: 1, PurchaseOrderUpdateUserId: 1, Quantity: 1, ReceiveOrderDetailId: 1, ReceiveQty: 1, SupportingDocumentDiscount: 1, Total: 1, UpdateDate: 1, UpdateUserId: 1 }, ReceiveOrder: { AcknowledgeBy: 1, CompanyAddress: 1, CompanyCityId: 1, CompanyCompanyName: 1, CompanyContactPerson: 1, CompanyDeleteDate: 1, CompanyDeleteUserId: 1, CompanyFax: 1, CompanyId: 1, CompanyInsertDate: 1, CompanyInsertUserId: 1, CompanyIsActive: 1, CompanyIslandId: 1, CompanyLogo: 1, CompanyOfficeType: 1, CompanyPhone: 1, CompanyProvinceId: 1, CompanyUpdateDate: 1, CompanyUpdateUserId: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, ProductTypeId: 1, PurchaseOrderCompanyId: 1, PurchaseOrderId: 1, PurchaseOrderInsertDate: 1, PurchaseOrderInsertUserId: 1, PurchaseOrderIsActive: 1, PurchaseOrderOrderCategoryId: 1, PurchaseOrderPickupPoint: 1, PurchaseOrderProductTypeId: 1, PurchaseOrderPurchaseOrderDate: 1, PurchaseOrderPurchaseOrderNumber: 1, PurchaseOrderPurchaseOrderStatus: 1, PurchaseOrderUpdateDate: 1, PurchaseOrderUpdateUserId: 1, ReceiveBy: 1, ReceiveDate: 1, ReceiveOrderId: 1, ReceiveOrderNumber: 1, ReceiveOrderStatus: 1, UpdateDate: 1, UpdateUserId: 1 }, ReceiveOrderDetail: { BackOrderQty: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, PoQty: 1, Price: 1, ProductBinLocationId: 1, ProductCategoryUnitId: 1, ProductContinued: 1, ProductDescription: 1, ProductId: 1, ProductInsertDate: 1, ProductInsertUserId: 1, ProductIsActive: 1, ProductMinimumStock: 1, ProductModelName: 1, ProductPartNumber: 1, ProductProductImage: 1, ProductProductNumber: 1, ProductProductTypeId: 1, ProductStockQuantity: 1, ProductUnitStockId: 1, ProductUpdateDate: 1, ProductUpdateUserId: 1, ReceiveComplete: 1, ReceiveOrderAcknowledgeBy: 1, ReceiveOrderCompanyId: 1, ReceiveOrderDetailId: 1, ReceiveOrderId: 1, ReceiveOrderInsertDate: 1, ReceiveOrderInsertUserId: 1, ReceiveOrderIsActive: 1, ReceiveOrderProductTypeId: 1, ReceiveOrderPurchaseOrderId: 1, ReceiveOrderReceiveBy: 1, ReceiveOrderReceiveDate: 1, ReceiveOrderReceiveOrderNumber: 1, ReceiveOrderReceiveOrderStatus: 1, ReceiveOrderUpdateDate: 1, ReceiveOrderUpdateUserId: 1, ReceiveQty: 1, UpdateDate: 1, UpdateUserId: 1 }, SerialNumberUnit: { Available: 1, CategoryUnitId: 1, ManufactureYear: 1, ReceiveOrderAcknowledgeBy: 1, ReceiveOrderCompanyId: 1, ReceiveOrderId: 1, ReceiveOrderInsertDate: 1, ReceiveOrderInsertUserId: 1, ReceiveOrderIsActive: 1, ReceiveOrderProductTypeId: 1, ReceiveOrderPurchaseOrderId: 1, ReceiveOrderReceiveBy: 1, ReceiveOrderReceiveDate: 1, ReceiveOrderReceiveOrderNumber: 1, ReceiveOrderReceiveOrderStatus: 1, ReceiveOrderUpdateDate: 1, ReceiveOrderUpdateUserId: 1, SerialNumber: 1, SerialNumberUnitId: 1, WarrantyNumber: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = DIMSOnline.Texts || (DIMSOnline.Texts = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
@@ -1302,7 +1829,554 @@ var DIMSOnline;
 var DIMSOnline;
 (function (DIMSOnline) {
     var Transaction;
+    (function (Transaction) {
+        var OrderDetailForm = /** @class */ (function (_super) {
+            __extends(OrderDetailForm, _super);
+            function OrderDetailForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!OrderDetailForm.init) {
+                    OrderDetailForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.BooleanEditor;
+                    var w4 = s.DateEditor;
+                    Q.initFormType(OrderDetailForm, [
+                        'OrderId', w0,
+                        'ProductId', w0,
+                        'OrderQty', w0,
+                        'Stock', w0,
+                        'ProductBasePriceId', w0,
+                        'ProductBasePriceNumber', w1,
+                        'OrderCategoryId', w0,
+                        'BasePrice', w2,
+                        'ActualPrice', w2,
+                        'GrossAmount', w2,
+                        'DiscountPercent', w0,
+                        'Discount', w2,
+                        'Total', w2,
+                        'Ppn', w2,
+                        'KmInUse', w0,
+                        'ServiceQuantity', w0,
+                        'SerialNumber', w1,
+                        'ManufactureYear', w1,
+                        'WarrantyNumber', w1,
+                        'ServiceUnitId', w0,
+                        'AsAlternativeItem', w3,
+                        'ParentItemId', w0,
+                        'InsertUserId', w0,
+                        'InsertDate', w4,
+                        'UpdateUserId', w0,
+                        'UpdateDate', w4,
+                        'IsActive', w0,
+                        'CancellationDate', w4,
+                        'CancellationBy', w0
+                    ]);
+                }
+                return _this;
+            }
+            OrderDetailForm.formKey = 'Transaction.OrderDetail';
+            return OrderDetailForm;
+        }(Serenity.PrefixedContext));
+        Transaction.OrderDetailForm = OrderDetailForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var OrderDetailRow;
+        (function (OrderDetailRow) {
+            OrderDetailRow.idProperty = 'OrderDetailId';
+            OrderDetailRow.nameProperty = 'ProductBasePriceNumber';
+            OrderDetailRow.localTextPrefix = 'Transaction.OrderDetail';
+            OrderDetailRow.deletePermission = 'Administration:Transaction';
+            OrderDetailRow.insertPermission = 'Administration:Transaction';
+            OrderDetailRow.readPermission = 'Administration:Transaction';
+            OrderDetailRow.updatePermission = 'Administration:Transaction';
+        })(OrderDetailRow = Transaction.OrderDetailRow || (Transaction.OrderDetailRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var OrderDetailService;
+        (function (OrderDetailService) {
+            OrderDetailService.baseUrl = 'Transaction/OrderDetail';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                OrderDetailService[x] = function (r, s, o) {
+                    return Q.serviceRequest(OrderDetailService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(OrderDetailService = Transaction.OrderDetailService || (Transaction.OrderDetailService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var OrdersForm = /** @class */ (function (_super) {
+            __extends(OrdersForm, _super);
+            function OrdersForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!OrdersForm.init) {
+                    OrdersForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.IntegerEditor;
+                    var w3 = s.DecimalEditor;
+                    Q.initFormType(OrdersForm, [
+                        'OrderNumber', w0,
+                        'OrderDate', w1,
+                        'CustomerId', w2,
+                        'UserId', w2,
+                        'ProductTypeId', w2,
+                        'KmInUse', w2,
+                        'PaymentService', w3,
+                        'OrderStatus', w0,
+                        'InsertUserId', w2,
+                        'InsertDate', w1,
+                        'UpdateUserId', w2,
+                        'UpdateDate', w1,
+                        'IsActive', w2,
+                        'CompanyId', w2
+                    ]);
+                }
+                return _this;
+            }
+            OrdersForm.formKey = 'Transaction.Orders';
+            return OrdersForm;
+        }(Serenity.PrefixedContext));
+        Transaction.OrdersForm = OrdersForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var OrdersRow;
+        (function (OrdersRow) {
+            OrdersRow.idProperty = 'OrderId';
+            OrdersRow.nameProperty = 'OrderNumber';
+            OrdersRow.localTextPrefix = 'Transaction.Orders';
+            OrdersRow.deletePermission = 'Administration:Transaction';
+            OrdersRow.insertPermission = 'Administration:Transaction';
+            OrdersRow.readPermission = 'Administration:Transaction';
+            OrdersRow.updatePermission = 'Administration:Transaction';
+        })(OrdersRow = Transaction.OrdersRow || (Transaction.OrdersRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var OrdersService;
+        (function (OrdersService) {
+            OrdersService.baseUrl = 'Transaction/Orders';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                OrdersService[x] = function (r, s, o) {
+                    return Q.serviceRequest(OrdersService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(OrdersService = Transaction.OrdersService || (Transaction.OrdersService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
     (function (Transaction_1) {
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderDetailForm = /** @class */ (function (_super) {
+            __extends(PurchaseOrderDetailForm, _super);
+            function PurchaseOrderDetailForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!PurchaseOrderDetailForm.init) {
+                    PurchaseOrderDetailForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.DateEditor;
+                    Q.initFormType(PurchaseOrderDetailForm, [
+                        'PurchaseOrderId', w0,
+                        'ProductId', w0,
+                        'Quantity', w0,
+                        'ProductPriceId', w0,
+                        'ProductPriceNumber', w1,
+                        'Price', w2,
+                        'GrossAmount', w2,
+                        'Ppn', w2,
+                        'Total', w2,
+                        'InsertUserId', w0,
+                        'InsertDate', w3,
+                        'UpdateUserId', w0,
+                        'UpdateDate', w3,
+                        'IsActive', w0,
+                        'ReceiveOrderDetailId', w0,
+                        'ReceiveQty', w0,
+                        'BackOrderQty', w0,
+                        'CancellationDate', w3,
+                        'CancellationBy', w0,
+                        'DiscountRequest', w2,
+                        'SupportingDocumentDiscount', w1,
+                        'ApprovalStatusDiscount', w1,
+                        'CommentDiscount', w1
+                    ]);
+                }
+                return _this;
+            }
+            PurchaseOrderDetailForm.formKey = 'Transaction.PurchaseOrderDetail';
+            return PurchaseOrderDetailForm;
+        }(Serenity.PrefixedContext));
+        Transaction.PurchaseOrderDetailForm = PurchaseOrderDetailForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderDetailRow;
+        (function (PurchaseOrderDetailRow) {
+            PurchaseOrderDetailRow.idProperty = 'PurchaseOrderDetailId';
+            PurchaseOrderDetailRow.nameProperty = 'ProductPriceNumber';
+            PurchaseOrderDetailRow.localTextPrefix = 'Transaction.PurchaseOrderDetail';
+            PurchaseOrderDetailRow.deletePermission = 'Administration:Transaction';
+            PurchaseOrderDetailRow.insertPermission = 'Administration:Transaction';
+            PurchaseOrderDetailRow.readPermission = 'Administration:Transaction';
+            PurchaseOrderDetailRow.updatePermission = 'Administration:Transaction';
+        })(PurchaseOrderDetailRow = Transaction.PurchaseOrderDetailRow || (Transaction.PurchaseOrderDetailRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderDetailService;
+        (function (PurchaseOrderDetailService) {
+            PurchaseOrderDetailService.baseUrl = 'Transaction/PurchaseOrderDetail';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                PurchaseOrderDetailService[x] = function (r, s, o) {
+                    return Q.serviceRequest(PurchaseOrderDetailService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(PurchaseOrderDetailService = Transaction.PurchaseOrderDetailService || (Transaction.PurchaseOrderDetailService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderForm = /** @class */ (function (_super) {
+            __extends(PurchaseOrderForm, _super);
+            function PurchaseOrderForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!PurchaseOrderForm.init) {
+                    PurchaseOrderForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(PurchaseOrderForm, [
+                        'PurchaseOrderNumber', w0,
+                        'CompanyId', w1,
+                        'PurchaseOrderDate', w2,
+                        'OrderCategoryId', w1,
+                        'ProductTypeId', w1,
+                        'PickupPoint', w0,
+                        'PurchaseOrderStatus', w0,
+                        'InsertUserId', w1,
+                        'InsertDate', w2,
+                        'UpdateUserId', w1,
+                        'UpdateDate', w2,
+                        'IsActive', w1
+                    ]);
+                }
+                return _this;
+            }
+            PurchaseOrderForm.formKey = 'Transaction.PurchaseOrder';
+            return PurchaseOrderForm;
+        }(Serenity.PrefixedContext));
+        Transaction.PurchaseOrderForm = PurchaseOrderForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderRow;
+        (function (PurchaseOrderRow) {
+            PurchaseOrderRow.idProperty = 'PurchaseOrderId';
+            PurchaseOrderRow.nameProperty = 'PurchaseOrderNumber';
+            PurchaseOrderRow.localTextPrefix = 'Transaction.PurchaseOrder';
+            PurchaseOrderRow.deletePermission = 'Administration:Transaction';
+            PurchaseOrderRow.insertPermission = 'Administration:Transaction';
+            PurchaseOrderRow.readPermission = 'Administration:Transaction';
+            PurchaseOrderRow.updatePermission = 'Administration:Transaction';
+        })(PurchaseOrderRow = Transaction.PurchaseOrderRow || (Transaction.PurchaseOrderRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderService;
+        (function (PurchaseOrderService) {
+            PurchaseOrderService.baseUrl = 'Transaction/PurchaseOrder';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                PurchaseOrderService[x] = function (r, s, o) {
+                    return Q.serviceRequest(PurchaseOrderService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(PurchaseOrderService = Transaction.PurchaseOrderService || (Transaction.PurchaseOrderService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderDetailForm = /** @class */ (function (_super) {
+            __extends(ReceiveOrderDetailForm, _super);
+            function ReceiveOrderDetailForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ReceiveOrderDetailForm.init) {
+                    ReceiveOrderDetailForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.DecimalEditor;
+                    var w2 = s.BooleanEditor;
+                    var w3 = s.DateEditor;
+                    Q.initFormType(ReceiveOrderDetailForm, [
+                        'ReceiveOrderId', w0,
+                        'ProductId', w0,
+                        'PoQty', w0,
+                        'ReceiveQty', w0,
+                        'BackOrderQty', w0,
+                        'Price', w1,
+                        'ReceiveComplete', w2,
+                        'InsertUserId', w0,
+                        'InsertDate', w3,
+                        'UpdateUserId', w0,
+                        'UpdateDate', w3,
+                        'IsActive', w0
+                    ]);
+                }
+                return _this;
+            }
+            ReceiveOrderDetailForm.formKey = 'Transaction.ReceiveOrderDetail';
+            return ReceiveOrderDetailForm;
+        }(Serenity.PrefixedContext));
+        Transaction.ReceiveOrderDetailForm = ReceiveOrderDetailForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderDetailRow;
+        (function (ReceiveOrderDetailRow) {
+            ReceiveOrderDetailRow.idProperty = 'ReceiveOrderDetailId';
+            ReceiveOrderDetailRow.localTextPrefix = 'Transaction.ReceiveOrderDetail';
+            ReceiveOrderDetailRow.deletePermission = 'Administration:Transaction';
+            ReceiveOrderDetailRow.insertPermission = 'Administration:Transaction';
+            ReceiveOrderDetailRow.readPermission = 'Administration:Transaction';
+            ReceiveOrderDetailRow.updatePermission = 'Administration:Transaction';
+        })(ReceiveOrderDetailRow = Transaction.ReceiveOrderDetailRow || (Transaction.ReceiveOrderDetailRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderDetailService;
+        (function (ReceiveOrderDetailService) {
+            ReceiveOrderDetailService.baseUrl = 'Transaction/ReceiveOrderDetail';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ReceiveOrderDetailService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ReceiveOrderDetailService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ReceiveOrderDetailService = Transaction.ReceiveOrderDetailService || (Transaction.ReceiveOrderDetailService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderForm = /** @class */ (function (_super) {
+            __extends(ReceiveOrderForm, _super);
+            function ReceiveOrderForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ReceiveOrderForm.init) {
+                    ReceiveOrderForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(ReceiveOrderForm, [
+                        'ProductTypeId', w0,
+                        'ReceiveOrderNumber', w1,
+                        'PurchaseOrderId', w0,
+                        'ReceiveDate', w2,
+                        'ReceiveBy', w1,
+                        'AcknowledgeBy', w1,
+                        'ReceiveOrderStatus', w1,
+                        'InsertUserId', w0,
+                        'InsertDate', w2,
+                        'UpdateUserId', w0,
+                        'UpdateDate', w2,
+                        'IsActive', w0,
+                        'CompanyId', w0
+                    ]);
+                }
+                return _this;
+            }
+            ReceiveOrderForm.formKey = 'Transaction.ReceiveOrder';
+            return ReceiveOrderForm;
+        }(Serenity.PrefixedContext));
+        Transaction.ReceiveOrderForm = ReceiveOrderForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderRow;
+        (function (ReceiveOrderRow) {
+            ReceiveOrderRow.idProperty = 'ReceiveOrderId';
+            ReceiveOrderRow.nameProperty = 'ReceiveOrderNumber';
+            ReceiveOrderRow.localTextPrefix = 'Transaction.ReceiveOrder';
+            ReceiveOrderRow.deletePermission = 'Administration:Transaction';
+            ReceiveOrderRow.insertPermission = 'Administration:Transaction';
+            ReceiveOrderRow.readPermission = 'Administration:Transaction';
+            ReceiveOrderRow.updatePermission = 'Administration:Transaction';
+        })(ReceiveOrderRow = Transaction.ReceiveOrderRow || (Transaction.ReceiveOrderRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderService;
+        (function (ReceiveOrderService) {
+            ReceiveOrderService.baseUrl = 'Transaction/ReceiveOrder';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ReceiveOrderService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ReceiveOrderService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ReceiveOrderService = Transaction.ReceiveOrderService || (Transaction.ReceiveOrderService = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var SerialNumberUnitForm = /** @class */ (function (_super) {
+            __extends(SerialNumberUnitForm, _super);
+            function SerialNumberUnitForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SerialNumberUnitForm.init) {
+                    SerialNumberUnitForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.BooleanEditor;
+                    Q.initFormType(SerialNumberUnitForm, [
+                        'ReceiveOrderId', w0,
+                        'CategoryUnitId', w0,
+                        'SerialNumber', w1,
+                        'ManufactureYear', w1,
+                        'WarrantyNumber', w1,
+                        'Available', w2
+                    ]);
+                }
+                return _this;
+            }
+            SerialNumberUnitForm.formKey = 'Transaction.SerialNumberUnit';
+            return SerialNumberUnitForm;
+        }(Serenity.PrefixedContext));
+        Transaction.SerialNumberUnitForm = SerialNumberUnitForm;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var SerialNumberUnitRow;
+        (function (SerialNumberUnitRow) {
+            SerialNumberUnitRow.idProperty = 'SerialNumberUnitId';
+            SerialNumberUnitRow.nameProperty = 'SerialNumber';
+            SerialNumberUnitRow.localTextPrefix = 'Transaction.SerialNumberUnit';
+            SerialNumberUnitRow.deletePermission = 'Administration:General';
+            SerialNumberUnitRow.insertPermission = 'Administration:General';
+            SerialNumberUnitRow.readPermission = 'Administration:General';
+            SerialNumberUnitRow.updatePermission = 'Administration:General';
+        })(SerialNumberUnitRow = Transaction.SerialNumberUnitRow || (Transaction.SerialNumberUnitRow = {}));
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var SerialNumberUnitService;
+        (function (SerialNumberUnitService) {
+            SerialNumberUnitService.baseUrl = 'Transaction/SerialNumberUnit';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                SerialNumberUnitService[x] = function (r, s, o) {
+                    return Q.serviceRequest(SerialNumberUnitService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(SerialNumberUnitService = Transaction.SerialNumberUnitService || (Transaction.SerialNumberUnitService = {}));
     })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
@@ -3882,6 +4956,305 @@ var DIMSOnline;
 (function (DIMSOnline) {
     var Configuration;
     (function (Configuration) {
+        var ProductAlternativeDialog = /** @class */ (function (_super) {
+            __extends(ProductAlternativeDialog, _super);
+            function ProductAlternativeDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.ProductAlternativeForm(_this.idPrefix);
+                return _this;
+            }
+            ProductAlternativeDialog.prototype.getFormKey = function () { return Configuration.ProductAlternativeForm.formKey; };
+            ProductAlternativeDialog.prototype.getIdProperty = function () { return Configuration.ProductAlternativeRow.idProperty; };
+            ProductAlternativeDialog.prototype.getLocalTextPrefix = function () { return Configuration.ProductAlternativeRow.localTextPrefix; };
+            ProductAlternativeDialog.prototype.getService = function () { return Configuration.ProductAlternativeService.baseUrl; };
+            ProductAlternativeDialog.prototype.getDeletePermission = function () { return Configuration.ProductAlternativeRow.deletePermission; };
+            ProductAlternativeDialog.prototype.getInsertPermission = function () { return Configuration.ProductAlternativeRow.insertPermission; };
+            ProductAlternativeDialog.prototype.getUpdatePermission = function () { return Configuration.ProductAlternativeRow.updatePermission; };
+            ProductAlternativeDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductAlternativeDialog);
+            return ProductAlternativeDialog;
+        }(Serenity.EntityDialog));
+        Configuration.ProductAlternativeDialog = ProductAlternativeDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductAlternativeGrid = /** @class */ (function (_super) {
+            __extends(ProductAlternativeGrid, _super);
+            function ProductAlternativeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ProductAlternativeGrid.prototype.getColumnsKey = function () { return 'Configuration.ProductAlternative'; };
+            ProductAlternativeGrid.prototype.getDialogType = function () { return Configuration.ProductAlternativeDialog; };
+            ProductAlternativeGrid.prototype.getIdProperty = function () { return Configuration.ProductAlternativeRow.idProperty; };
+            ProductAlternativeGrid.prototype.getInsertPermission = function () { return Configuration.ProductAlternativeRow.insertPermission; };
+            ProductAlternativeGrid.prototype.getLocalTextPrefix = function () { return Configuration.ProductAlternativeRow.localTextPrefix; };
+            ProductAlternativeGrid.prototype.getService = function () { return Configuration.ProductAlternativeService.baseUrl; };
+            ProductAlternativeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductAlternativeGrid);
+            return ProductAlternativeGrid;
+        }(Serenity.EntityGrid));
+        Configuration.ProductAlternativeGrid = ProductAlternativeGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductBasePriceDialog = /** @class */ (function (_super) {
+            __extends(ProductBasePriceDialog, _super);
+            function ProductBasePriceDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.ProductBasePriceForm(_this.idPrefix);
+                return _this;
+            }
+            ProductBasePriceDialog.prototype.getFormKey = function () { return Configuration.ProductBasePriceForm.formKey; };
+            ProductBasePriceDialog.prototype.getIdProperty = function () { return Configuration.ProductBasePriceRow.idProperty; };
+            ProductBasePriceDialog.prototype.getLocalTextPrefix = function () { return Configuration.ProductBasePriceRow.localTextPrefix; };
+            ProductBasePriceDialog.prototype.getNameProperty = function () { return Configuration.ProductBasePriceRow.nameProperty; };
+            ProductBasePriceDialog.prototype.getService = function () { return Configuration.ProductBasePriceService.baseUrl; };
+            ProductBasePriceDialog.prototype.getDeletePermission = function () { return Configuration.ProductBasePriceRow.deletePermission; };
+            ProductBasePriceDialog.prototype.getInsertPermission = function () { return Configuration.ProductBasePriceRow.insertPermission; };
+            ProductBasePriceDialog.prototype.getUpdatePermission = function () { return Configuration.ProductBasePriceRow.updatePermission; };
+            ProductBasePriceDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductBasePriceDialog);
+            return ProductBasePriceDialog;
+        }(Serenity.EntityDialog));
+        Configuration.ProductBasePriceDialog = ProductBasePriceDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductBasePriceGrid = /** @class */ (function (_super) {
+            __extends(ProductBasePriceGrid, _super);
+            function ProductBasePriceGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ProductBasePriceGrid.prototype.getColumnsKey = function () { return 'Configuration.ProductBasePrice'; };
+            ProductBasePriceGrid.prototype.getDialogType = function () { return Configuration.ProductBasePriceDialog; };
+            ProductBasePriceGrid.prototype.getIdProperty = function () { return Configuration.ProductBasePriceRow.idProperty; };
+            ProductBasePriceGrid.prototype.getInsertPermission = function () { return Configuration.ProductBasePriceRow.insertPermission; };
+            ProductBasePriceGrid.prototype.getLocalTextPrefix = function () { return Configuration.ProductBasePriceRow.localTextPrefix; };
+            ProductBasePriceGrid.prototype.getService = function () { return Configuration.ProductBasePriceService.baseUrl; };
+            ProductBasePriceGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductBasePriceGrid);
+            return ProductBasePriceGrid;
+        }(Serenity.EntityGrid));
+        Configuration.ProductBasePriceGrid = ProductBasePriceGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductPriceDialog = /** @class */ (function (_super) {
+            __extends(ProductPriceDialog, _super);
+            function ProductPriceDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.ProductPriceForm(_this.idPrefix);
+                return _this;
+            }
+            ProductPriceDialog.prototype.getFormKey = function () { return Configuration.ProductPriceForm.formKey; };
+            ProductPriceDialog.prototype.getIdProperty = function () { return Configuration.ProductPriceRow.idProperty; };
+            ProductPriceDialog.prototype.getLocalTextPrefix = function () { return Configuration.ProductPriceRow.localTextPrefix; };
+            ProductPriceDialog.prototype.getNameProperty = function () { return Configuration.ProductPriceRow.nameProperty; };
+            ProductPriceDialog.prototype.getService = function () { return Configuration.ProductPriceService.baseUrl; };
+            ProductPriceDialog.prototype.getDeletePermission = function () { return Configuration.ProductPriceRow.deletePermission; };
+            ProductPriceDialog.prototype.getInsertPermission = function () { return Configuration.ProductPriceRow.insertPermission; };
+            ProductPriceDialog.prototype.getUpdatePermission = function () { return Configuration.ProductPriceRow.updatePermission; };
+            ProductPriceDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductPriceDialog);
+            return ProductPriceDialog;
+        }(Serenity.EntityDialog));
+        Configuration.ProductPriceDialog = ProductPriceDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductPriceGrid = /** @class */ (function (_super) {
+            __extends(ProductPriceGrid, _super);
+            function ProductPriceGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ProductPriceGrid.prototype.getColumnsKey = function () { return 'Configuration.ProductPrice'; };
+            ProductPriceGrid.prototype.getDialogType = function () { return Configuration.ProductPriceDialog; };
+            ProductPriceGrid.prototype.getIdProperty = function () { return Configuration.ProductPriceRow.idProperty; };
+            ProductPriceGrid.prototype.getInsertPermission = function () { return Configuration.ProductPriceRow.insertPermission; };
+            ProductPriceGrid.prototype.getLocalTextPrefix = function () { return Configuration.ProductPriceRow.localTextPrefix; };
+            ProductPriceGrid.prototype.getService = function () { return Configuration.ProductPriceService.baseUrl; };
+            ProductPriceGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductPriceGrid);
+            return ProductPriceGrid;
+        }(Serenity.EntityGrid));
+        Configuration.ProductPriceGrid = ProductPriceGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductTypeDialog = /** @class */ (function (_super) {
+            __extends(ProductTypeDialog, _super);
+            function ProductTypeDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.ProductTypeForm(_this.idPrefix);
+                return _this;
+            }
+            ProductTypeDialog.prototype.getFormKey = function () { return Configuration.ProductTypeForm.formKey; };
+            ProductTypeDialog.prototype.getIdProperty = function () { return Configuration.ProductTypeRow.idProperty; };
+            ProductTypeDialog.prototype.getLocalTextPrefix = function () { return Configuration.ProductTypeRow.localTextPrefix; };
+            ProductTypeDialog.prototype.getNameProperty = function () { return Configuration.ProductTypeRow.nameProperty; };
+            ProductTypeDialog.prototype.getService = function () { return Configuration.ProductTypeService.baseUrl; };
+            ProductTypeDialog.prototype.getDeletePermission = function () { return Configuration.ProductTypeRow.deletePermission; };
+            ProductTypeDialog.prototype.getInsertPermission = function () { return Configuration.ProductTypeRow.insertPermission; };
+            ProductTypeDialog.prototype.getUpdatePermission = function () { return Configuration.ProductTypeRow.updatePermission; };
+            ProductTypeDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductTypeDialog);
+            return ProductTypeDialog;
+        }(Serenity.EntityDialog));
+        Configuration.ProductTypeDialog = ProductTypeDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductTypeGrid = /** @class */ (function (_super) {
+            __extends(ProductTypeGrid, _super);
+            function ProductTypeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ProductTypeGrid.prototype.getColumnsKey = function () { return 'Configuration.ProductType'; };
+            ProductTypeGrid.prototype.getDialogType = function () { return Configuration.ProductTypeDialog; };
+            ProductTypeGrid.prototype.getIdProperty = function () { return Configuration.ProductTypeRow.idProperty; };
+            ProductTypeGrid.prototype.getInsertPermission = function () { return Configuration.ProductTypeRow.insertPermission; };
+            ProductTypeGrid.prototype.getLocalTextPrefix = function () { return Configuration.ProductTypeRow.localTextPrefix; };
+            ProductTypeGrid.prototype.getService = function () { return Configuration.ProductTypeService.baseUrl; };
+            ProductTypeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductTypeGrid);
+            return ProductTypeGrid;
+        }(Serenity.EntityGrid));
+        Configuration.ProductTypeGrid = ProductTypeGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsDialog = /** @class */ (function (_super) {
+            __extends(ProductsDialog, _super);
+            function ProductsDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.ProductsForm(_this.idPrefix);
+                return _this;
+            }
+            ProductsDialog.prototype.getFormKey = function () { return Configuration.ProductsForm.formKey; };
+            ProductsDialog.prototype.getIdProperty = function () { return Configuration.ProductsRow.idProperty; };
+            ProductsDialog.prototype.getLocalTextPrefix = function () { return Configuration.ProductsRow.localTextPrefix; };
+            ProductsDialog.prototype.getNameProperty = function () { return Configuration.ProductsRow.nameProperty; };
+            ProductsDialog.prototype.getService = function () { return Configuration.ProductsService.baseUrl; };
+            ProductsDialog.prototype.getDeletePermission = function () { return Configuration.ProductsRow.deletePermission; };
+            ProductsDialog.prototype.getInsertPermission = function () { return Configuration.ProductsRow.insertPermission; };
+            ProductsDialog.prototype.getUpdatePermission = function () { return Configuration.ProductsRow.updatePermission; };
+            ProductsDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductsDialog);
+            return ProductsDialog;
+        }(Serenity.EntityDialog));
+        Configuration.ProductsDialog = ProductsDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsGrid = /** @class */ (function (_super) {
+            __extends(ProductsGrid, _super);
+            function ProductsGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ProductsGrid.prototype.getColumnsKey = function () { return 'Configuration.Products'; };
+            ProductsGrid.prototype.getDialogType = function () { return Configuration.ProductsDialog; };
+            ProductsGrid.prototype.getIdProperty = function () { return Configuration.ProductsRow.idProperty; };
+            ProductsGrid.prototype.getInsertPermission = function () { return Configuration.ProductsRow.insertPermission; };
+            ProductsGrid.prototype.getLocalTextPrefix = function () { return Configuration.ProductsRow.localTextPrefix; };
+            ProductsGrid.prototype.getService = function () { return Configuration.ProductsService.baseUrl; };
+            ProductsGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductsGrid);
+            return ProductsGrid;
+        }(Serenity.EntityGrid));
+        Configuration.ProductsGrid = ProductsGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsLogDialog = /** @class */ (function (_super) {
+            __extends(ProductsLogDialog, _super);
+            function ProductsLogDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.ProductsLogForm(_this.idPrefix);
+                return _this;
+            }
+            ProductsLogDialog.prototype.getFormKey = function () { return Configuration.ProductsLogForm.formKey; };
+            ProductsLogDialog.prototype.getIdProperty = function () { return Configuration.ProductsLogRow.idProperty; };
+            ProductsLogDialog.prototype.getLocalTextPrefix = function () { return Configuration.ProductsLogRow.localTextPrefix; };
+            ProductsLogDialog.prototype.getNameProperty = function () { return Configuration.ProductsLogRow.nameProperty; };
+            ProductsLogDialog.prototype.getService = function () { return Configuration.ProductsLogService.baseUrl; };
+            ProductsLogDialog.prototype.getDeletePermission = function () { return Configuration.ProductsLogRow.deletePermission; };
+            ProductsLogDialog.prototype.getInsertPermission = function () { return Configuration.ProductsLogRow.insertPermission; };
+            ProductsLogDialog.prototype.getUpdatePermission = function () { return Configuration.ProductsLogRow.updatePermission; };
+            ProductsLogDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductsLogDialog);
+            return ProductsLogDialog;
+        }(Serenity.EntityDialog));
+        Configuration.ProductsLogDialog = ProductsLogDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var ProductsLogGrid = /** @class */ (function (_super) {
+            __extends(ProductsLogGrid, _super);
+            function ProductsLogGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ProductsLogGrid.prototype.getColumnsKey = function () { return 'Configuration.ProductsLog'; };
+            ProductsLogGrid.prototype.getDialogType = function () { return Configuration.ProductsLogDialog; };
+            ProductsLogGrid.prototype.getIdProperty = function () { return Configuration.ProductsLogRow.idProperty; };
+            ProductsLogGrid.prototype.getInsertPermission = function () { return Configuration.ProductsLogRow.insertPermission; };
+            ProductsLogGrid.prototype.getLocalTextPrefix = function () { return Configuration.ProductsLogRow.localTextPrefix; };
+            ProductsLogGrid.prototype.getService = function () { return Configuration.ProductsLogService.baseUrl; };
+            ProductsLogGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductsLogGrid);
+            return ProductsLogGrid;
+        }(Serenity.EntityGrid));
+        Configuration.ProductsLogGrid = ProductsLogGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
         var ProvinceDialog = /** @class */ (function (_super) {
             __extends(ProvinceDialog, _super);
             function ProvinceDialog() {
@@ -3926,6 +5299,106 @@ var DIMSOnline;
             return ProvinceGrid;
         }(Serenity.EntityGrid));
         Configuration.ProvinceGrid = ProvinceGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var SupplierDialog = /** @class */ (function (_super) {
+            __extends(SupplierDialog, _super);
+            function SupplierDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.SupplierForm(_this.idPrefix);
+                return _this;
+            }
+            SupplierDialog.prototype.getFormKey = function () { return Configuration.SupplierForm.formKey; };
+            SupplierDialog.prototype.getIdProperty = function () { return Configuration.SupplierRow.idProperty; };
+            SupplierDialog.prototype.getLocalTextPrefix = function () { return Configuration.SupplierRow.localTextPrefix; };
+            SupplierDialog.prototype.getNameProperty = function () { return Configuration.SupplierRow.nameProperty; };
+            SupplierDialog.prototype.getService = function () { return Configuration.SupplierService.baseUrl; };
+            SupplierDialog.prototype.getDeletePermission = function () { return Configuration.SupplierRow.deletePermission; };
+            SupplierDialog.prototype.getInsertPermission = function () { return Configuration.SupplierRow.insertPermission; };
+            SupplierDialog.prototype.getUpdatePermission = function () { return Configuration.SupplierRow.updatePermission; };
+            SupplierDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SupplierDialog);
+            return SupplierDialog;
+        }(Serenity.EntityDialog));
+        Configuration.SupplierDialog = SupplierDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var SupplierGrid = /** @class */ (function (_super) {
+            __extends(SupplierGrid, _super);
+            function SupplierGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SupplierGrid.prototype.getColumnsKey = function () { return 'Configuration.Supplier'; };
+            SupplierGrid.prototype.getDialogType = function () { return Configuration.SupplierDialog; };
+            SupplierGrid.prototype.getIdProperty = function () { return Configuration.SupplierRow.idProperty; };
+            SupplierGrid.prototype.getInsertPermission = function () { return Configuration.SupplierRow.insertPermission; };
+            SupplierGrid.prototype.getLocalTextPrefix = function () { return Configuration.SupplierRow.localTextPrefix; };
+            SupplierGrid.prototype.getService = function () { return Configuration.SupplierService.baseUrl; };
+            SupplierGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SupplierGrid);
+            return SupplierGrid;
+        }(Serenity.EntityGrid));
+        Configuration.SupplierGrid = SupplierGrid;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var UnitStockDialog = /** @class */ (function (_super) {
+            __extends(UnitStockDialog, _super);
+            function UnitStockDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Configuration.UnitStockForm(_this.idPrefix);
+                return _this;
+            }
+            UnitStockDialog.prototype.getFormKey = function () { return Configuration.UnitStockForm.formKey; };
+            UnitStockDialog.prototype.getIdProperty = function () { return Configuration.UnitStockRow.idProperty; };
+            UnitStockDialog.prototype.getLocalTextPrefix = function () { return Configuration.UnitStockRow.localTextPrefix; };
+            UnitStockDialog.prototype.getNameProperty = function () { return Configuration.UnitStockRow.nameProperty; };
+            UnitStockDialog.prototype.getService = function () { return Configuration.UnitStockService.baseUrl; };
+            UnitStockDialog.prototype.getDeletePermission = function () { return Configuration.UnitStockRow.deletePermission; };
+            UnitStockDialog.prototype.getInsertPermission = function () { return Configuration.UnitStockRow.insertPermission; };
+            UnitStockDialog.prototype.getUpdatePermission = function () { return Configuration.UnitStockRow.updatePermission; };
+            UnitStockDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UnitStockDialog);
+            return UnitStockDialog;
+        }(Serenity.EntityDialog));
+        Configuration.UnitStockDialog = UnitStockDialog;
+    })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Configuration;
+    (function (Configuration) {
+        var UnitStockGrid = /** @class */ (function (_super) {
+            __extends(UnitStockGrid, _super);
+            function UnitStockGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            UnitStockGrid.prototype.getColumnsKey = function () { return 'Configuration.UnitStock'; };
+            UnitStockGrid.prototype.getDialogType = function () { return Configuration.UnitStockDialog; };
+            UnitStockGrid.prototype.getIdProperty = function () { return Configuration.UnitStockRow.idProperty; };
+            UnitStockGrid.prototype.getInsertPermission = function () { return Configuration.UnitStockRow.insertPermission; };
+            UnitStockGrid.prototype.getLocalTextPrefix = function () { return Configuration.UnitStockRow.localTextPrefix; };
+            UnitStockGrid.prototype.getService = function () { return Configuration.UnitStockService.baseUrl; };
+            UnitStockGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UnitStockGrid);
+            return UnitStockGrid;
+        }(Serenity.EntityGrid));
+        Configuration.UnitStockGrid = UnitStockGrid;
     })(Configuration = DIMSOnline.Configuration || (DIMSOnline.Configuration = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 var DIMSOnline;
@@ -4277,6 +5750,355 @@ var DIMSOnline;
             return MovementStockGrid;
         }(Serenity.EntityGrid));
         Transaction.MovementStockGrid = MovementStockGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var OrderDetailDialog = /** @class */ (function (_super) {
+            __extends(OrderDetailDialog, _super);
+            function OrderDetailDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.OrderDetailForm(_this.idPrefix);
+                return _this;
+            }
+            OrderDetailDialog.prototype.getFormKey = function () { return Transaction.OrderDetailForm.formKey; };
+            OrderDetailDialog.prototype.getIdProperty = function () { return Transaction.OrderDetailRow.idProperty; };
+            OrderDetailDialog.prototype.getLocalTextPrefix = function () { return Transaction.OrderDetailRow.localTextPrefix; };
+            OrderDetailDialog.prototype.getNameProperty = function () { return Transaction.OrderDetailRow.nameProperty; };
+            OrderDetailDialog.prototype.getService = function () { return Transaction.OrderDetailService.baseUrl; };
+            OrderDetailDialog.prototype.getDeletePermission = function () { return Transaction.OrderDetailRow.deletePermission; };
+            OrderDetailDialog.prototype.getInsertPermission = function () { return Transaction.OrderDetailRow.insertPermission; };
+            OrderDetailDialog.prototype.getUpdatePermission = function () { return Transaction.OrderDetailRow.updatePermission; };
+            OrderDetailDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OrderDetailDialog);
+            return OrderDetailDialog;
+        }(Serenity.EntityDialog));
+        Transaction.OrderDetailDialog = OrderDetailDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var OrderDetailGrid = /** @class */ (function (_super) {
+            __extends(OrderDetailGrid, _super);
+            function OrderDetailGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OrderDetailGrid.prototype.getColumnsKey = function () { return 'Transaction.OrderDetail'; };
+            OrderDetailGrid.prototype.getDialogType = function () { return Transaction.OrderDetailDialog; };
+            OrderDetailGrid.prototype.getIdProperty = function () { return Transaction.OrderDetailRow.idProperty; };
+            OrderDetailGrid.prototype.getInsertPermission = function () { return Transaction.OrderDetailRow.insertPermission; };
+            OrderDetailGrid.prototype.getLocalTextPrefix = function () { return Transaction.OrderDetailRow.localTextPrefix; };
+            OrderDetailGrid.prototype.getService = function () { return Transaction.OrderDetailService.baseUrl; };
+            OrderDetailGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OrderDetailGrid);
+            return OrderDetailGrid;
+        }(Serenity.EntityGrid));
+        Transaction.OrderDetailGrid = OrderDetailGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var OrdersDialog = /** @class */ (function (_super) {
+            __extends(OrdersDialog, _super);
+            function OrdersDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.OrdersForm(_this.idPrefix);
+                return _this;
+            }
+            OrdersDialog.prototype.getFormKey = function () { return Transaction.OrdersForm.formKey; };
+            OrdersDialog.prototype.getIdProperty = function () { return Transaction.OrdersRow.idProperty; };
+            OrdersDialog.prototype.getLocalTextPrefix = function () { return Transaction.OrdersRow.localTextPrefix; };
+            OrdersDialog.prototype.getNameProperty = function () { return Transaction.OrdersRow.nameProperty; };
+            OrdersDialog.prototype.getService = function () { return Transaction.OrdersService.baseUrl; };
+            OrdersDialog.prototype.getDeletePermission = function () { return Transaction.OrdersRow.deletePermission; };
+            OrdersDialog.prototype.getInsertPermission = function () { return Transaction.OrdersRow.insertPermission; };
+            OrdersDialog.prototype.getUpdatePermission = function () { return Transaction.OrdersRow.updatePermission; };
+            OrdersDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OrdersDialog);
+            return OrdersDialog;
+        }(Serenity.EntityDialog));
+        Transaction.OrdersDialog = OrdersDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var OrdersGrid = /** @class */ (function (_super) {
+            __extends(OrdersGrid, _super);
+            function OrdersGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OrdersGrid.prototype.getColumnsKey = function () { return 'Transaction.Orders'; };
+            OrdersGrid.prototype.getDialogType = function () { return Transaction.OrdersDialog; };
+            OrdersGrid.prototype.getIdProperty = function () { return Transaction.OrdersRow.idProperty; };
+            OrdersGrid.prototype.getInsertPermission = function () { return Transaction.OrdersRow.insertPermission; };
+            OrdersGrid.prototype.getLocalTextPrefix = function () { return Transaction.OrdersRow.localTextPrefix; };
+            OrdersGrid.prototype.getService = function () { return Transaction.OrdersService.baseUrl; };
+            OrdersGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OrdersGrid);
+            return OrdersGrid;
+        }(Serenity.EntityGrid));
+        Transaction.OrdersGrid = OrdersGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderDialog = /** @class */ (function (_super) {
+            __extends(PurchaseOrderDialog, _super);
+            function PurchaseOrderDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.PurchaseOrderForm(_this.idPrefix);
+                return _this;
+            }
+            PurchaseOrderDialog.prototype.getFormKey = function () { return Transaction.PurchaseOrderForm.formKey; };
+            PurchaseOrderDialog.prototype.getIdProperty = function () { return Transaction.PurchaseOrderRow.idProperty; };
+            PurchaseOrderDialog.prototype.getLocalTextPrefix = function () { return Transaction.PurchaseOrderRow.localTextPrefix; };
+            PurchaseOrderDialog.prototype.getNameProperty = function () { return Transaction.PurchaseOrderRow.nameProperty; };
+            PurchaseOrderDialog.prototype.getService = function () { return Transaction.PurchaseOrderService.baseUrl; };
+            PurchaseOrderDialog.prototype.getDeletePermission = function () { return Transaction.PurchaseOrderRow.deletePermission; };
+            PurchaseOrderDialog.prototype.getInsertPermission = function () { return Transaction.PurchaseOrderRow.insertPermission; };
+            PurchaseOrderDialog.prototype.getUpdatePermission = function () { return Transaction.PurchaseOrderRow.updatePermission; };
+            PurchaseOrderDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PurchaseOrderDialog);
+            return PurchaseOrderDialog;
+        }(Serenity.EntityDialog));
+        Transaction.PurchaseOrderDialog = PurchaseOrderDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderGrid = /** @class */ (function (_super) {
+            __extends(PurchaseOrderGrid, _super);
+            function PurchaseOrderGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            PurchaseOrderGrid.prototype.getColumnsKey = function () { return 'Transaction.PurchaseOrder'; };
+            PurchaseOrderGrid.prototype.getDialogType = function () { return Transaction.PurchaseOrderDialog; };
+            PurchaseOrderGrid.prototype.getIdProperty = function () { return Transaction.PurchaseOrderRow.idProperty; };
+            PurchaseOrderGrid.prototype.getInsertPermission = function () { return Transaction.PurchaseOrderRow.insertPermission; };
+            PurchaseOrderGrid.prototype.getLocalTextPrefix = function () { return Transaction.PurchaseOrderRow.localTextPrefix; };
+            PurchaseOrderGrid.prototype.getService = function () { return Transaction.PurchaseOrderService.baseUrl; };
+            PurchaseOrderGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PurchaseOrderGrid);
+            return PurchaseOrderGrid;
+        }(Serenity.EntityGrid));
+        Transaction.PurchaseOrderGrid = PurchaseOrderGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderDetailDialog = /** @class */ (function (_super) {
+            __extends(PurchaseOrderDetailDialog, _super);
+            function PurchaseOrderDetailDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.PurchaseOrderDetailForm(_this.idPrefix);
+                return _this;
+            }
+            PurchaseOrderDetailDialog.prototype.getFormKey = function () { return Transaction.PurchaseOrderDetailForm.formKey; };
+            PurchaseOrderDetailDialog.prototype.getIdProperty = function () { return Transaction.PurchaseOrderDetailRow.idProperty; };
+            PurchaseOrderDetailDialog.prototype.getLocalTextPrefix = function () { return Transaction.PurchaseOrderDetailRow.localTextPrefix; };
+            PurchaseOrderDetailDialog.prototype.getNameProperty = function () { return Transaction.PurchaseOrderDetailRow.nameProperty; };
+            PurchaseOrderDetailDialog.prototype.getService = function () { return Transaction.PurchaseOrderDetailService.baseUrl; };
+            PurchaseOrderDetailDialog.prototype.getDeletePermission = function () { return Transaction.PurchaseOrderDetailRow.deletePermission; };
+            PurchaseOrderDetailDialog.prototype.getInsertPermission = function () { return Transaction.PurchaseOrderDetailRow.insertPermission; };
+            PurchaseOrderDetailDialog.prototype.getUpdatePermission = function () { return Transaction.PurchaseOrderDetailRow.updatePermission; };
+            PurchaseOrderDetailDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PurchaseOrderDetailDialog);
+            return PurchaseOrderDetailDialog;
+        }(Serenity.EntityDialog));
+        Transaction.PurchaseOrderDetailDialog = PurchaseOrderDetailDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var PurchaseOrderDetailGrid = /** @class */ (function (_super) {
+            __extends(PurchaseOrderDetailGrid, _super);
+            function PurchaseOrderDetailGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            PurchaseOrderDetailGrid.prototype.getColumnsKey = function () { return 'Transaction.PurchaseOrderDetail'; };
+            PurchaseOrderDetailGrid.prototype.getDialogType = function () { return Transaction.PurchaseOrderDetailDialog; };
+            PurchaseOrderDetailGrid.prototype.getIdProperty = function () { return Transaction.PurchaseOrderDetailRow.idProperty; };
+            PurchaseOrderDetailGrid.prototype.getInsertPermission = function () { return Transaction.PurchaseOrderDetailRow.insertPermission; };
+            PurchaseOrderDetailGrid.prototype.getLocalTextPrefix = function () { return Transaction.PurchaseOrderDetailRow.localTextPrefix; };
+            PurchaseOrderDetailGrid.prototype.getService = function () { return Transaction.PurchaseOrderDetailService.baseUrl; };
+            PurchaseOrderDetailGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PurchaseOrderDetailGrid);
+            return PurchaseOrderDetailGrid;
+        }(Serenity.EntityGrid));
+        Transaction.PurchaseOrderDetailGrid = PurchaseOrderDetailGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderDialog = /** @class */ (function (_super) {
+            __extends(ReceiveOrderDialog, _super);
+            function ReceiveOrderDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.ReceiveOrderForm(_this.idPrefix);
+                return _this;
+            }
+            ReceiveOrderDialog.prototype.getFormKey = function () { return Transaction.ReceiveOrderForm.formKey; };
+            ReceiveOrderDialog.prototype.getIdProperty = function () { return Transaction.ReceiveOrderRow.idProperty; };
+            ReceiveOrderDialog.prototype.getLocalTextPrefix = function () { return Transaction.ReceiveOrderRow.localTextPrefix; };
+            ReceiveOrderDialog.prototype.getNameProperty = function () { return Transaction.ReceiveOrderRow.nameProperty; };
+            ReceiveOrderDialog.prototype.getService = function () { return Transaction.ReceiveOrderService.baseUrl; };
+            ReceiveOrderDialog.prototype.getDeletePermission = function () { return Transaction.ReceiveOrderRow.deletePermission; };
+            ReceiveOrderDialog.prototype.getInsertPermission = function () { return Transaction.ReceiveOrderRow.insertPermission; };
+            ReceiveOrderDialog.prototype.getUpdatePermission = function () { return Transaction.ReceiveOrderRow.updatePermission; };
+            ReceiveOrderDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ReceiveOrderDialog);
+            return ReceiveOrderDialog;
+        }(Serenity.EntityDialog));
+        Transaction.ReceiveOrderDialog = ReceiveOrderDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderGrid = /** @class */ (function (_super) {
+            __extends(ReceiveOrderGrid, _super);
+            function ReceiveOrderGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ReceiveOrderGrid.prototype.getColumnsKey = function () { return 'Transaction.ReceiveOrder'; };
+            ReceiveOrderGrid.prototype.getDialogType = function () { return Transaction.ReceiveOrderDialog; };
+            ReceiveOrderGrid.prototype.getIdProperty = function () { return Transaction.ReceiveOrderRow.idProperty; };
+            ReceiveOrderGrid.prototype.getInsertPermission = function () { return Transaction.ReceiveOrderRow.insertPermission; };
+            ReceiveOrderGrid.prototype.getLocalTextPrefix = function () { return Transaction.ReceiveOrderRow.localTextPrefix; };
+            ReceiveOrderGrid.prototype.getService = function () { return Transaction.ReceiveOrderService.baseUrl; };
+            ReceiveOrderGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ReceiveOrderGrid);
+            return ReceiveOrderGrid;
+        }(Serenity.EntityGrid));
+        Transaction.ReceiveOrderGrid = ReceiveOrderGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderDetailDialog = /** @class */ (function (_super) {
+            __extends(ReceiveOrderDetailDialog, _super);
+            function ReceiveOrderDetailDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.ReceiveOrderDetailForm(_this.idPrefix);
+                return _this;
+            }
+            ReceiveOrderDetailDialog.prototype.getFormKey = function () { return Transaction.ReceiveOrderDetailForm.formKey; };
+            ReceiveOrderDetailDialog.prototype.getIdProperty = function () { return Transaction.ReceiveOrderDetailRow.idProperty; };
+            ReceiveOrderDetailDialog.prototype.getLocalTextPrefix = function () { return Transaction.ReceiveOrderDetailRow.localTextPrefix; };
+            ReceiveOrderDetailDialog.prototype.getService = function () { return Transaction.ReceiveOrderDetailService.baseUrl; };
+            ReceiveOrderDetailDialog.prototype.getDeletePermission = function () { return Transaction.ReceiveOrderDetailRow.deletePermission; };
+            ReceiveOrderDetailDialog.prototype.getInsertPermission = function () { return Transaction.ReceiveOrderDetailRow.insertPermission; };
+            ReceiveOrderDetailDialog.prototype.getUpdatePermission = function () { return Transaction.ReceiveOrderDetailRow.updatePermission; };
+            ReceiveOrderDetailDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ReceiveOrderDetailDialog);
+            return ReceiveOrderDetailDialog;
+        }(Serenity.EntityDialog));
+        Transaction.ReceiveOrderDetailDialog = ReceiveOrderDetailDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var ReceiveOrderDetailGrid = /** @class */ (function (_super) {
+            __extends(ReceiveOrderDetailGrid, _super);
+            function ReceiveOrderDetailGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ReceiveOrderDetailGrid.prototype.getColumnsKey = function () { return 'Transaction.ReceiveOrderDetail'; };
+            ReceiveOrderDetailGrid.prototype.getDialogType = function () { return Transaction.ReceiveOrderDetailDialog; };
+            ReceiveOrderDetailGrid.prototype.getIdProperty = function () { return Transaction.ReceiveOrderDetailRow.idProperty; };
+            ReceiveOrderDetailGrid.prototype.getInsertPermission = function () { return Transaction.ReceiveOrderDetailRow.insertPermission; };
+            ReceiveOrderDetailGrid.prototype.getLocalTextPrefix = function () { return Transaction.ReceiveOrderDetailRow.localTextPrefix; };
+            ReceiveOrderDetailGrid.prototype.getService = function () { return Transaction.ReceiveOrderDetailService.baseUrl; };
+            ReceiveOrderDetailGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ReceiveOrderDetailGrid);
+            return ReceiveOrderDetailGrid;
+        }(Serenity.EntityGrid));
+        Transaction.ReceiveOrderDetailGrid = ReceiveOrderDetailGrid;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var SerialNumberUnitDialog = /** @class */ (function (_super) {
+            __extends(SerialNumberUnitDialog, _super);
+            function SerialNumberUnitDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transaction.SerialNumberUnitForm(_this.idPrefix);
+                return _this;
+            }
+            SerialNumberUnitDialog.prototype.getFormKey = function () { return Transaction.SerialNumberUnitForm.formKey; };
+            SerialNumberUnitDialog.prototype.getIdProperty = function () { return Transaction.SerialNumberUnitRow.idProperty; };
+            SerialNumberUnitDialog.prototype.getLocalTextPrefix = function () { return Transaction.SerialNumberUnitRow.localTextPrefix; };
+            SerialNumberUnitDialog.prototype.getNameProperty = function () { return Transaction.SerialNumberUnitRow.nameProperty; };
+            SerialNumberUnitDialog.prototype.getService = function () { return Transaction.SerialNumberUnitService.baseUrl; };
+            SerialNumberUnitDialog.prototype.getDeletePermission = function () { return Transaction.SerialNumberUnitRow.deletePermission; };
+            SerialNumberUnitDialog.prototype.getInsertPermission = function () { return Transaction.SerialNumberUnitRow.insertPermission; };
+            SerialNumberUnitDialog.prototype.getUpdatePermission = function () { return Transaction.SerialNumberUnitRow.updatePermission; };
+            SerialNumberUnitDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SerialNumberUnitDialog);
+            return SerialNumberUnitDialog;
+        }(Serenity.EntityDialog));
+        Transaction.SerialNumberUnitDialog = SerialNumberUnitDialog;
+    })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
+})(DIMSOnline || (DIMSOnline = {}));
+var DIMSOnline;
+(function (DIMSOnline) {
+    var Transaction;
+    (function (Transaction) {
+        var SerialNumberUnitGrid = /** @class */ (function (_super) {
+            __extends(SerialNumberUnitGrid, _super);
+            function SerialNumberUnitGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SerialNumberUnitGrid.prototype.getColumnsKey = function () { return 'Transaction.SerialNumberUnit'; };
+            SerialNumberUnitGrid.prototype.getDialogType = function () { return Transaction.SerialNumberUnitDialog; };
+            SerialNumberUnitGrid.prototype.getIdProperty = function () { return Transaction.SerialNumberUnitRow.idProperty; };
+            SerialNumberUnitGrid.prototype.getInsertPermission = function () { return Transaction.SerialNumberUnitRow.insertPermission; };
+            SerialNumberUnitGrid.prototype.getLocalTextPrefix = function () { return Transaction.SerialNumberUnitRow.localTextPrefix; };
+            SerialNumberUnitGrid.prototype.getService = function () { return Transaction.SerialNumberUnitService.baseUrl; };
+            SerialNumberUnitGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SerialNumberUnitGrid);
+            return SerialNumberUnitGrid;
+        }(Serenity.EntityGrid));
+        Transaction.SerialNumberUnitGrid = SerialNumberUnitGrid;
     })(Transaction = DIMSOnline.Transaction || (DIMSOnline.Transaction = {}));
 })(DIMSOnline || (DIMSOnline = {}));
 //# sourceMappingURL=DIMSOnline.Web.js.map

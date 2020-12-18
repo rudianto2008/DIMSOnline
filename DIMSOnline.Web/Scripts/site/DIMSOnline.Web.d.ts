@@ -444,11 +444,6 @@ declare namespace DIMSOnline.Configuration {
 declare namespace DIMSOnline.Configuration {
     interface BinLocationForm {
         BinLocation: Serenity.StringEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        InsertDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        IsActive: Serenity.IntegerEditor;
     }
     class BinLocationForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -557,15 +552,10 @@ declare namespace DIMSOnline.Configuration {
 }
 declare namespace DIMSOnline.Configuration {
     interface CityForm {
+        IslandId: Serenity.LookupEditor;
+        ProvinceId: Serenity.LookupEditor;
         CityCode: Serenity.StringEditor;
-        ProvinceId: Serenity.IntegerEditor;
-        IslandId: Serenity.IntegerEditor;
         CityName: Serenity.StringEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        InsertDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        IsActive: Serenity.IntegerEditor;
     }
     class CityForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -579,6 +569,7 @@ declare namespace DIMSOnline.Configuration {
         CityCode?: string;
         ProvinceId?: number;
         IslandId?: number;
+        IslandIslandName?: string;
         CityName?: string;
         InsertUserId?: number;
         InsertDate?: string;
@@ -609,6 +600,7 @@ declare namespace DIMSOnline.Configuration {
             CityCode = "CityCode",
             ProvinceId = "ProvinceId",
             IslandId = "IslandId",
+            IslandIslandName = "IslandIslandName",
             CityName = "CityName",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
@@ -648,12 +640,12 @@ declare namespace DIMSOnline.Configuration {
 declare namespace DIMSOnline.Configuration {
     interface CompanyForm {
         CompanyName: Serenity.StringEditor;
-        Phone: Serenity.StringEditor;
-        ContactPerson: Serenity.StringEditor;
+        Address: Serenity.TextAreaEditor;
         ProvinceId: Serenity.LookupEditor;
         CityId: Serenity.LookupEditor;
-        Address: Serenity.StringEditor;
-        Logo: Serenity.StringEditor;
+        Phone: Serenity.StringEditor;
+        ContactPerson: Serenity.StringEditor;
+        Logo: Serenity.ImageUploadEditor;
     }
     class CompanyForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -681,6 +673,30 @@ declare namespace DIMSOnline.Configuration {
         DeleteUserId?: number;
         DeleteDate?: string;
         IsActive?: number;
+        IslandIslandCode?: string;
+        IslandIslandName?: string;
+        IslandInsertUserId?: number;
+        IslandInsertDate?: string;
+        IslandUpdateUserId?: number;
+        IslandUpdateDate?: string;
+        IslandIsActive?: number;
+        ProvinceProvinceCode?: string;
+        ProvinceIslandId?: number;
+        ProvinceProvinceName?: string;
+        ProvinceInsertUserId?: number;
+        ProvinceInsertDate?: string;
+        ProvinceUpdateUserId?: number;
+        ProvinceUpdateDate?: string;
+        ProvinceIsActive?: number;
+        CityCityCode?: string;
+        CityProvinceId?: number;
+        CityIslandId?: number;
+        CityCityName?: string;
+        CityInsertUserId?: number;
+        CityInsertDate?: string;
+        CityUpdateUserId?: number;
+        CityUpdateDate?: string;
+        CityIsActive?: number;
     }
     namespace CompanyRow {
         const idProperty = "CompanyId";
@@ -708,7 +724,31 @@ declare namespace DIMSOnline.Configuration {
             UpdateDate = "UpdateDate",
             DeleteUserId = "DeleteUserId",
             DeleteDate = "DeleteDate",
-            IsActive = "IsActive"
+            IsActive = "IsActive",
+            IslandIslandCode = "IslandIslandCode",
+            IslandIslandName = "IslandIslandName",
+            IslandInsertUserId = "IslandInsertUserId",
+            IslandInsertDate = "IslandInsertDate",
+            IslandUpdateUserId = "IslandUpdateUserId",
+            IslandUpdateDate = "IslandUpdateDate",
+            IslandIsActive = "IslandIsActive",
+            ProvinceProvinceCode = "ProvinceProvinceCode",
+            ProvinceIslandId = "ProvinceIslandId",
+            ProvinceProvinceName = "ProvinceProvinceName",
+            ProvinceInsertUserId = "ProvinceInsertUserId",
+            ProvinceInsertDate = "ProvinceInsertDate",
+            ProvinceUpdateUserId = "ProvinceUpdateUserId",
+            ProvinceUpdateDate = "ProvinceUpdateDate",
+            ProvinceIsActive = "ProvinceIsActive",
+            CityCityCode = "CityCityCode",
+            CityProvinceId = "CityProvinceId",
+            CityIslandId = "CityIslandId",
+            CityCityName = "CityCityName",
+            CityInsertUserId = "CityInsertUserId",
+            CityInsertDate = "CityInsertDate",
+            CityUpdateUserId = "CityUpdateUserId",
+            CityUpdateDate = "CityUpdateDate",
+            CityIsActive = "CityIsActive"
         }
     }
 }
@@ -734,28 +774,17 @@ declare namespace DIMSOnline.Configuration {
 declare namespace DIMSOnline.Configuration {
     interface CustomerForm {
         CustomerNumber: Serenity.StringEditor;
-        CompanyId: Serenity.IntegerEditor;
         CustomerName: Serenity.StringEditor;
-        ProvinceId: Serenity.IntegerEditor;
-        CityId: Serenity.IntegerEditor;
-        Address: Serenity.StringEditor;
-        Pic: Serenity.StringEditor;
-        IslandId: Serenity.IntegerEditor;
-        PostCode: Serenity.IntegerEditor;
-        Phone: Serenity.StringEditor;
-        ContactPerson: Serenity.StringEditor;
-        Fax: Serenity.StringEditor;
         BirthPlace: Serenity.StringEditor;
         BirthDate: Serenity.DateEditor;
-        Email: Serenity.StringEditor;
         Npwp: Serenity.StringEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        InsertDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        IsActive: Serenity.IntegerEditor;
-        DeleteUserId: Serenity.IntegerEditor;
-        DeleteDate: Serenity.DateEditor;
+        ContactPerson: Serenity.StringEditor;
+        Phone: Serenity.StringEditor;
+        Email: Serenity.StringEditor;
+        ProvinceId: Serenity.LookupEditor;
+        CityId: Serenity.LookupEditor;
+        Address: Serenity.StringEditor;
+        PostCode: Serenity.IntegerEditor;
     }
     class CustomerForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -956,8 +985,10 @@ declare namespace DIMSOnline.Configuration {
     }
     namespace IslandRow {
         const idProperty = "IslandId";
-        const nameProperty = "IslandCode";
+        const nameProperty = "IslandName";
         const localTextPrefix = "Configuration.Island";
+        const lookupKey = "LookupIsland";
+        function getLookup(): Q.Lookup<IslandRow>;
         const deletePermission = "Administration:Configuration";
         const insertPermission = "Administration:Configuration";
         const readPermission = "Administration:Configuration";
@@ -1048,11 +1079,6 @@ declare namespace DIMSOnline.Configuration {
     interface OrderCategoryForm {
         OrderCategoryName: Serenity.StringEditor;
         Description: Serenity.StringEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        InsertDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        IsActive: Serenity.IntegerEditor;
     }
     class OrderCategoryForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1109,6 +1135,601 @@ declare namespace DIMSOnline.Configuration {
     }
 }
 declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductAlternativeForm {
+        ProductId: Serenity.IntegerEditor;
+        ProductIdAlt: Serenity.IntegerEditor;
+        SeqNo: Serenity.IntegerEditor;
+        Combine: Serenity.BooleanEditor;
+    }
+    class ProductAlternativeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductAlternativeRow {
+        ProductAlternativeId?: number;
+        ProductId?: number;
+        ProductIdAlt?: number;
+        SeqNo?: number;
+        Combine?: boolean;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        ProductProductNumber?: string;
+        ProductModelName?: string;
+        ProductCategoryUnitId?: number;
+        ProductUnitStockId?: number;
+        ProductPartNumber?: string;
+        ProductProductTypeId?: number;
+        ProductMinimumStock?: number;
+        ProductContinued?: boolean;
+        ProductProductImage?: string;
+        ProductDescription?: string;
+        ProductBinLocationId?: number;
+        ProductInsertUserId?: number;
+        ProductInsertDate?: string;
+        ProductUpdateUserId?: number;
+        ProductUpdateDate?: string;
+        ProductIsActive?: number;
+        ProductStockQuantity?: number;
+    }
+    namespace ProductAlternativeRow {
+        const idProperty = "ProductAlternativeId";
+        const localTextPrefix = "Configuration.ProductAlternative";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            ProductAlternativeId = "ProductAlternativeId",
+            ProductId = "ProductId",
+            ProductIdAlt = "ProductIdAlt",
+            SeqNo = "SeqNo",
+            Combine = "Combine",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            ProductProductNumber = "ProductProductNumber",
+            ProductModelName = "ProductModelName",
+            ProductCategoryUnitId = "ProductCategoryUnitId",
+            ProductUnitStockId = "ProductUnitStockId",
+            ProductPartNumber = "ProductPartNumber",
+            ProductProductTypeId = "ProductProductTypeId",
+            ProductMinimumStock = "ProductMinimumStock",
+            ProductContinued = "ProductContinued",
+            ProductProductImage = "ProductProductImage",
+            ProductDescription = "ProductDescription",
+            ProductBinLocationId = "ProductBinLocationId",
+            ProductInsertUserId = "ProductInsertUserId",
+            ProductInsertDate = "ProductInsertDate",
+            ProductUpdateUserId = "ProductUpdateUserId",
+            ProductUpdateDate = "ProductUpdateDate",
+            ProductIsActive = "ProductIsActive",
+            ProductStockQuantity = "ProductStockQuantity"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace ProductAlternativeService {
+        const baseUrl = "Configuration/ProductAlternative";
+        function Create(request: Serenity.SaveRequest<ProductAlternativeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProductAlternativeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductAlternativeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductAlternativeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/ProductAlternative/Create",
+            Update = "Configuration/ProductAlternative/Update",
+            Delete = "Configuration/ProductAlternative/Delete",
+            Retrieve = "Configuration/ProductAlternative/Retrieve",
+            List = "Configuration/ProductAlternative/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductBasePriceForm {
+        ProductBasePriceNumber: Serenity.StringEditor;
+        ProductId: Serenity.IntegerEditor;
+        Price: Serenity.DecimalEditor;
+        ActualPrice: Serenity.DecimalEditor;
+        Continued: Serenity.BooleanEditor;
+    }
+    class ProductBasePriceForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductBasePriceRow {
+        ProductBasePriceId?: number;
+        ProductBasePriceNumber?: string;
+        ProductId?: number;
+        Price?: number;
+        ActualPrice?: number;
+        Continued?: boolean;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        ProductProductNumber?: string;
+        ProductModelName?: string;
+        ProductCategoryUnitId?: number;
+        ProductUnitStockId?: number;
+        ProductPartNumber?: string;
+        ProductProductTypeId?: number;
+        ProductMinimumStock?: number;
+        ProductContinued?: boolean;
+        ProductProductImage?: string;
+        ProductDescription?: string;
+        ProductBinLocationId?: number;
+        ProductInsertUserId?: number;
+        ProductInsertDate?: string;
+        ProductUpdateUserId?: number;
+        ProductUpdateDate?: string;
+        ProductIsActive?: number;
+        ProductStockQuantity?: number;
+    }
+    namespace ProductBasePriceRow {
+        const idProperty = "ProductBasePriceId";
+        const nameProperty = "ProductBasePriceNumber";
+        const localTextPrefix = "Configuration.ProductBasePrice";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            ProductBasePriceId = "ProductBasePriceId",
+            ProductBasePriceNumber = "ProductBasePriceNumber",
+            ProductId = "ProductId",
+            Price = "Price",
+            ActualPrice = "ActualPrice",
+            Continued = "Continued",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            ProductProductNumber = "ProductProductNumber",
+            ProductModelName = "ProductModelName",
+            ProductCategoryUnitId = "ProductCategoryUnitId",
+            ProductUnitStockId = "ProductUnitStockId",
+            ProductPartNumber = "ProductPartNumber",
+            ProductProductTypeId = "ProductProductTypeId",
+            ProductMinimumStock = "ProductMinimumStock",
+            ProductContinued = "ProductContinued",
+            ProductProductImage = "ProductProductImage",
+            ProductDescription = "ProductDescription",
+            ProductBinLocationId = "ProductBinLocationId",
+            ProductInsertUserId = "ProductInsertUserId",
+            ProductInsertDate = "ProductInsertDate",
+            ProductUpdateUserId = "ProductUpdateUserId",
+            ProductUpdateDate = "ProductUpdateDate",
+            ProductIsActive = "ProductIsActive",
+            ProductStockQuantity = "ProductStockQuantity"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace ProductBasePriceService {
+        const baseUrl = "Configuration/ProductBasePrice";
+        function Create(request: Serenity.SaveRequest<ProductBasePriceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProductBasePriceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductBasePriceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductBasePriceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/ProductBasePrice/Create",
+            Update = "Configuration/ProductBasePrice/Update",
+            Delete = "Configuration/ProductBasePrice/Delete",
+            Retrieve = "Configuration/ProductBasePrice/Retrieve",
+            List = "Configuration/ProductBasePrice/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductPriceForm {
+        ProductPriceNumber: Serenity.StringEditor;
+        ProductId: Serenity.IntegerEditor;
+        OrderCategoryId: Serenity.IntegerEditor;
+        Price: Serenity.DecimalEditor;
+        Continued: Serenity.BooleanEditor;
+    }
+    class ProductPriceForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductPriceRow {
+        ProductPriceId?: number;
+        ProductPriceNumber?: string;
+        ProductId?: number;
+        OrderCategoryId?: number;
+        Price?: number;
+        Continued?: boolean;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        ProductProductNumber?: string;
+        ProductModelName?: string;
+        ProductCategoryUnitId?: number;
+        ProductUnitStockId?: number;
+        ProductPartNumber?: string;
+        ProductProductTypeId?: number;
+        ProductMinimumStock?: number;
+        ProductContinued?: boolean;
+        ProductProductImage?: string;
+        ProductDescription?: string;
+        ProductBinLocationId?: number;
+        ProductInsertUserId?: number;
+        ProductInsertDate?: string;
+        ProductUpdateUserId?: number;
+        ProductUpdateDate?: string;
+        ProductIsActive?: number;
+        ProductStockQuantity?: number;
+        OrderCategoryOrderCategoryName?: string;
+        OrderCategoryDescription?: string;
+        OrderCategoryInsertUserId?: number;
+        OrderCategoryInsertDate?: string;
+        OrderCategoryUpdateUserId?: number;
+        OrderCategoryUpdateDate?: string;
+        OrderCategoryIsActive?: number;
+    }
+    namespace ProductPriceRow {
+        const idProperty = "ProductPriceId";
+        const nameProperty = "ProductPriceNumber";
+        const localTextPrefix = "Configuration.ProductPrice";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            ProductPriceId = "ProductPriceId",
+            ProductPriceNumber = "ProductPriceNumber",
+            ProductId = "ProductId",
+            OrderCategoryId = "OrderCategoryId",
+            Price = "Price",
+            Continued = "Continued",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            ProductProductNumber = "ProductProductNumber",
+            ProductModelName = "ProductModelName",
+            ProductCategoryUnitId = "ProductCategoryUnitId",
+            ProductUnitStockId = "ProductUnitStockId",
+            ProductPartNumber = "ProductPartNumber",
+            ProductProductTypeId = "ProductProductTypeId",
+            ProductMinimumStock = "ProductMinimumStock",
+            ProductContinued = "ProductContinued",
+            ProductProductImage = "ProductProductImage",
+            ProductDescription = "ProductDescription",
+            ProductBinLocationId = "ProductBinLocationId",
+            ProductInsertUserId = "ProductInsertUserId",
+            ProductInsertDate = "ProductInsertDate",
+            ProductUpdateUserId = "ProductUpdateUserId",
+            ProductUpdateDate = "ProductUpdateDate",
+            ProductIsActive = "ProductIsActive",
+            ProductStockQuantity = "ProductStockQuantity",
+            OrderCategoryOrderCategoryName = "OrderCategoryOrderCategoryName",
+            OrderCategoryDescription = "OrderCategoryDescription",
+            OrderCategoryInsertUserId = "OrderCategoryInsertUserId",
+            OrderCategoryInsertDate = "OrderCategoryInsertDate",
+            OrderCategoryUpdateUserId = "OrderCategoryUpdateUserId",
+            OrderCategoryUpdateDate = "OrderCategoryUpdateDate",
+            OrderCategoryIsActive = "OrderCategoryIsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace ProductPriceService {
+        const baseUrl = "Configuration/ProductPrice";
+        function Create(request: Serenity.SaveRequest<ProductPriceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProductPriceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductPriceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductPriceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/ProductPrice/Create",
+            Update = "Configuration/ProductPrice/Update",
+            Delete = "Configuration/ProductPrice/Delete",
+            Retrieve = "Configuration/ProductPrice/Retrieve",
+            List = "Configuration/ProductPrice/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductTypeForm {
+        ProductTypeName: Serenity.StringEditor;
+    }
+    class ProductTypeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductTypeRow {
+        ProductTypeId?: number;
+        ProductTypeName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+    }
+    namespace ProductTypeRow {
+        const idProperty = "ProductTypeId";
+        const nameProperty = "ProductTypeName";
+        const localTextPrefix = "Configuration.ProductType";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            ProductTypeId = "ProductTypeId",
+            ProductTypeName = "ProductTypeName",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace ProductTypeService {
+        const baseUrl = "Configuration/ProductType";
+        function Create(request: Serenity.SaveRequest<ProductTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProductTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/ProductType/Create",
+            Update = "Configuration/ProductType/Update",
+            Delete = "Configuration/ProductType/Delete",
+            Retrieve = "Configuration/ProductType/Retrieve",
+            List = "Configuration/ProductType/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductsForm {
+        ProductNumber: Serenity.StringEditor;
+        ModelName: Serenity.StringEditor;
+        CategoryUnitId: Serenity.IntegerEditor;
+        UnitStockId: Serenity.IntegerEditor;
+        PartNumber: Serenity.StringEditor;
+        ProductTypeId: Serenity.IntegerEditor;
+        MinimumStock: Serenity.IntegerEditor;
+        Continued: Serenity.BooleanEditor;
+        ProductImage: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        BinLocationId: Serenity.IntegerEditor;
+        StockQuantity: Serenity.IntegerEditor;
+    }
+    class ProductsForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductsLogForm {
+        ProductId: Serenity.IntegerEditor;
+        ModelName: Serenity.StringEditor;
+        UnitStock: Serenity.StringEditor;
+        PartNumber: Serenity.StringEditor;
+        ProductTypeId: Serenity.IntegerEditor;
+        Continued: Serenity.BooleanEditor;
+        ProductImage: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        BinLocation: Serenity.StringEditor;
+        OperationType: Serenity.IntegerEditor;
+        ChangingUserId: Serenity.IntegerEditor;
+        ValidFrom: Serenity.DateEditor;
+        ValidUntil: Serenity.DateEditor;
+    }
+    class ProductsLogForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductsLogRow {
+        ProductLogId?: number;
+        ProductId?: number;
+        ModelName?: string;
+        UnitStock?: string;
+        PartNumber?: string;
+        ProductTypeId?: number;
+        Continued?: boolean;
+        ProductImage?: string;
+        Description?: string;
+        BinLocation?: string;
+        OperationType?: number;
+        ChangingUserId?: number;
+        ValidFrom?: string;
+        ValidUntil?: string;
+    }
+    namespace ProductsLogRow {
+        const idProperty = "ProductLogId";
+        const nameProperty = "ModelName";
+        const localTextPrefix = "Configuration.ProductsLog";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            ProductLogId = "ProductLogId",
+            ProductId = "ProductId",
+            ModelName = "ModelName",
+            UnitStock = "UnitStock",
+            PartNumber = "PartNumber",
+            ProductTypeId = "ProductTypeId",
+            Continued = "Continued",
+            ProductImage = "ProductImage",
+            Description = "Description",
+            BinLocation = "BinLocation",
+            OperationType = "OperationType",
+            ChangingUserId = "ChangingUserId",
+            ValidFrom = "ValidFrom",
+            ValidUntil = "ValidUntil"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace ProductsLogService {
+        const baseUrl = "Configuration/ProductsLog";
+        function Create(request: Serenity.SaveRequest<ProductsLogRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProductsLogRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductsLogRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductsLogRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/ProductsLog/Create",
+            Update = "Configuration/ProductsLog/Update",
+            Delete = "Configuration/ProductsLog/Delete",
+            Retrieve = "Configuration/ProductsLog/Retrieve",
+            List = "Configuration/ProductsLog/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface ProductsRow {
+        ProductId?: number;
+        ProductNumber?: string;
+        ModelName?: string;
+        CategoryUnitId?: number;
+        UnitStockId?: number;
+        PartNumber?: string;
+        ProductTypeId?: number;
+        MinimumStock?: number;
+        Continued?: boolean;
+        ProductImage?: string;
+        Description?: string;
+        BinLocationId?: number;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        StockQuantity?: number;
+        CategoryUnitCategoryUnitName?: string;
+        CategoryUnitPricePerHour?: number;
+        UnitStock?: string;
+        UnitStockInsertUserId?: number;
+        UnitStockInsertDate?: string;
+        UnitStockUpdateUserId?: number;
+        UnitStockUpdateDate?: string;
+        UnitStockIsActive?: number;
+        ProductTypeProductTypeName?: string;
+        ProductTypeInsertUserId?: number;
+        ProductTypeInsertDate?: string;
+        ProductTypeUpdateUserId?: number;
+        ProductTypeUpdateDate?: string;
+        ProductTypeIsActive?: number;
+        BinLocation?: string;
+        BinLocationInsertUserId?: number;
+        BinLocationInsertDate?: string;
+        BinLocationUpdateUserId?: number;
+        BinLocationUpdateDate?: string;
+        BinLocationIsActive?: number;
+    }
+    namespace ProductsRow {
+        const idProperty = "ProductId";
+        const nameProperty = "ProductNumber";
+        const localTextPrefix = "Configuration.Products";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            ProductId = "ProductId",
+            ProductNumber = "ProductNumber",
+            ModelName = "ModelName",
+            CategoryUnitId = "CategoryUnitId",
+            UnitStockId = "UnitStockId",
+            PartNumber = "PartNumber",
+            ProductTypeId = "ProductTypeId",
+            MinimumStock = "MinimumStock",
+            Continued = "Continued",
+            ProductImage = "ProductImage",
+            Description = "Description",
+            BinLocationId = "BinLocationId",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            StockQuantity = "StockQuantity",
+            CategoryUnitCategoryUnitName = "CategoryUnitCategoryUnitName",
+            CategoryUnitPricePerHour = "CategoryUnitPricePerHour",
+            UnitStock = "UnitStock",
+            UnitStockInsertUserId = "UnitStockInsertUserId",
+            UnitStockInsertDate = "UnitStockInsertDate",
+            UnitStockUpdateUserId = "UnitStockUpdateUserId",
+            UnitStockUpdateDate = "UnitStockUpdateDate",
+            UnitStockIsActive = "UnitStockIsActive",
+            ProductTypeProductTypeName = "ProductTypeProductTypeName",
+            ProductTypeInsertUserId = "ProductTypeInsertUserId",
+            ProductTypeInsertDate = "ProductTypeInsertDate",
+            ProductTypeUpdateUserId = "ProductTypeUpdateUserId",
+            ProductTypeUpdateDate = "ProductTypeUpdateDate",
+            ProductTypeIsActive = "ProductTypeIsActive",
+            BinLocation = "BinLocation",
+            BinLocationInsertUserId = "BinLocationInsertUserId",
+            BinLocationInsertDate = "BinLocationInsertDate",
+            BinLocationUpdateUserId = "BinLocationUpdateUserId",
+            BinLocationUpdateDate = "BinLocationUpdateDate",
+            BinLocationIsActive = "BinLocationIsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace ProductsService {
+        const baseUrl = "Configuration/Products";
+        function Create(request: Serenity.SaveRequest<ProductsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProductsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/Products/Create",
+            Update = "Configuration/Products/Update",
+            Delete = "Configuration/Products/Delete",
+            Retrieve = "Configuration/Products/Retrieve",
+            List = "Configuration/Products/List"
+        }
+    }
 }
 declare namespace DIMSOnline.Configuration {
 }
@@ -1192,6 +1813,141 @@ declare namespace DIMSOnline.Configuration {
             Delete = "Configuration/Province/Delete",
             Retrieve = "Configuration/Province/Retrieve",
             List = "Configuration/Province/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+    interface SupplierForm {
+        SupplierName: Serenity.StringEditor;
+        Address: Serenity.StringEditor;
+        Phone: Serenity.StringEditor;
+        ContactName: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+    }
+    class SupplierForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface SupplierRow {
+        SupplierId?: number;
+        SupplierName?: string;
+        Address?: string;
+        Phone?: string;
+        ContactName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+    }
+    namespace SupplierRow {
+        const idProperty = "SupplierId";
+        const nameProperty = "SupplierName";
+        const localTextPrefix = "Configuration.Supplier";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            SupplierId = "SupplierId",
+            SupplierName = "SupplierName",
+            Address = "Address",
+            Phone = "Phone",
+            ContactName = "ContactName",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace SupplierService {
+        const baseUrl = "Configuration/Supplier";
+        function Create(request: Serenity.SaveRequest<SupplierRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SupplierRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SupplierRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SupplierRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/Supplier/Create",
+            Update = "Configuration/Supplier/Update",
+            Delete = "Configuration/Supplier/Delete",
+            Retrieve = "Configuration/Supplier/Retrieve",
+            List = "Configuration/Supplier/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+}
+declare namespace DIMSOnline.Configuration {
+    interface UnitStockForm {
+        UnitStock: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+    }
+    class UnitStockForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    interface UnitStockRow {
+        UnitStockId?: number;
+        UnitStock?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+    }
+    namespace UnitStockRow {
+        const idProperty = "UnitStockId";
+        const nameProperty = "UnitStock";
+        const localTextPrefix = "Configuration.UnitStock";
+        const deletePermission = "Administration:Configuration";
+        const insertPermission = "Administration:Configuration";
+        const readPermission = "Administration:Configuration";
+        const updatePermission = "Administration:Configuration";
+        const enum Fields {
+            UnitStockId = "UnitStockId",
+            UnitStock = "UnitStock",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    namespace UnitStockService {
+        const baseUrl = "Configuration/UnitStock";
+        function Create(request: Serenity.SaveRequest<UnitStockRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<UnitStockRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UnitStockRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UnitStockRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Configuration/UnitStock/Create",
+            Update = "Configuration/UnitStock/Update",
+            Delete = "Configuration/UnitStock/Delete",
+            Retrieve = "Configuration/UnitStock/Retrieve",
+            List = "Configuration/UnitStock/List"
         }
     }
 }
@@ -1562,6 +2318,1057 @@ declare namespace DIMSOnline.Transaction {
     }
 }
 declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+    interface OrderDetailForm {
+        OrderId: Serenity.IntegerEditor;
+        ProductId: Serenity.IntegerEditor;
+        OrderQty: Serenity.IntegerEditor;
+        Stock: Serenity.IntegerEditor;
+        ProductBasePriceId: Serenity.IntegerEditor;
+        ProductBasePriceNumber: Serenity.StringEditor;
+        OrderCategoryId: Serenity.IntegerEditor;
+        BasePrice: Serenity.DecimalEditor;
+        ActualPrice: Serenity.DecimalEditor;
+        GrossAmount: Serenity.DecimalEditor;
+        DiscountPercent: Serenity.IntegerEditor;
+        Discount: Serenity.DecimalEditor;
+        Total: Serenity.DecimalEditor;
+        Ppn: Serenity.DecimalEditor;
+        KmInUse: Serenity.IntegerEditor;
+        ServiceQuantity: Serenity.IntegerEditor;
+        SerialNumber: Serenity.StringEditor;
+        ManufactureYear: Serenity.StringEditor;
+        WarrantyNumber: Serenity.StringEditor;
+        ServiceUnitId: Serenity.IntegerEditor;
+        AsAlternativeItem: Serenity.BooleanEditor;
+        ParentItemId: Serenity.IntegerEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+        CancellationDate: Serenity.DateEditor;
+        CancellationBy: Serenity.IntegerEditor;
+    }
+    class OrderDetailForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface OrderDetailRow {
+        OrderDetailId?: number;
+        OrderId?: number;
+        ProductId?: number;
+        OrderQty?: number;
+        Stock?: number;
+        ProductBasePriceId?: number;
+        ProductBasePriceNumber?: string;
+        OrderCategoryId?: number;
+        BasePrice?: number;
+        ActualPrice?: number;
+        GrossAmount?: number;
+        DiscountPercent?: number;
+        Discount?: number;
+        Total?: number;
+        Ppn?: number;
+        KmInUse?: number;
+        ServiceQuantity?: number;
+        SerialNumber?: string;
+        ManufactureYear?: string;
+        WarrantyNumber?: string;
+        ServiceUnitId?: number;
+        AsAlternativeItem?: boolean;
+        ParentItemId?: number;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        CancellationDate?: string;
+        CancellationBy?: number;
+        OrderOrderNumber?: string;
+        OrderOrderDate?: string;
+        OrderCustomerId?: number;
+        OrderUserId?: number;
+        OrderProductTypeId?: number;
+        OrderKmInUse?: number;
+        OrderPaymentService?: number;
+        OrderOrderStatus?: string;
+        OrderInsertUserId?: number;
+        OrderInsertDate?: string;
+        OrderUpdateUserId?: number;
+        OrderUpdateDate?: string;
+        OrderIsActive?: number;
+        OrderCompanyId?: number;
+        ProductProductNumber?: string;
+        ProductModelName?: string;
+        ProductCategoryUnitId?: number;
+        ProductUnitStockId?: number;
+        ProductPartNumber?: string;
+        ProductProductTypeId?: number;
+        ProductMinimumStock?: number;
+        ProductContinued?: boolean;
+        ProductProductImage?: string;
+        ProductDescription?: string;
+        ProductBinLocationId?: number;
+        ProductInsertUserId?: number;
+        ProductInsertDate?: string;
+        ProductUpdateUserId?: number;
+        ProductUpdateDate?: string;
+        ProductIsActive?: number;
+        ProductStockQuantity?: number;
+    }
+    namespace OrderDetailRow {
+        const idProperty = "OrderDetailId";
+        const nameProperty = "ProductBasePriceNumber";
+        const localTextPrefix = "Transaction.OrderDetail";
+        const deletePermission = "Administration:Transaction";
+        const insertPermission = "Administration:Transaction";
+        const readPermission = "Administration:Transaction";
+        const updatePermission = "Administration:Transaction";
+        const enum Fields {
+            OrderDetailId = "OrderDetailId",
+            OrderId = "OrderId",
+            ProductId = "ProductId",
+            OrderQty = "OrderQty",
+            Stock = "Stock",
+            ProductBasePriceId = "ProductBasePriceId",
+            ProductBasePriceNumber = "ProductBasePriceNumber",
+            OrderCategoryId = "OrderCategoryId",
+            BasePrice = "BasePrice",
+            ActualPrice = "ActualPrice",
+            GrossAmount = "GrossAmount",
+            DiscountPercent = "DiscountPercent",
+            Discount = "Discount",
+            Total = "Total",
+            Ppn = "Ppn",
+            KmInUse = "KmInUse",
+            ServiceQuantity = "ServiceQuantity",
+            SerialNumber = "SerialNumber",
+            ManufactureYear = "ManufactureYear",
+            WarrantyNumber = "WarrantyNumber",
+            ServiceUnitId = "ServiceUnitId",
+            AsAlternativeItem = "AsAlternativeItem",
+            ParentItemId = "ParentItemId",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            CancellationDate = "CancellationDate",
+            CancellationBy = "CancellationBy",
+            OrderOrderNumber = "OrderOrderNumber",
+            OrderOrderDate = "OrderOrderDate",
+            OrderCustomerId = "OrderCustomerId",
+            OrderUserId = "OrderUserId",
+            OrderProductTypeId = "OrderProductTypeId",
+            OrderKmInUse = "OrderKmInUse",
+            OrderPaymentService = "OrderPaymentService",
+            OrderOrderStatus = "OrderOrderStatus",
+            OrderInsertUserId = "OrderInsertUserId",
+            OrderInsertDate = "OrderInsertDate",
+            OrderUpdateUserId = "OrderUpdateUserId",
+            OrderUpdateDate = "OrderUpdateDate",
+            OrderIsActive = "OrderIsActive",
+            OrderCompanyId = "OrderCompanyId",
+            ProductProductNumber = "ProductProductNumber",
+            ProductModelName = "ProductModelName",
+            ProductCategoryUnitId = "ProductCategoryUnitId",
+            ProductUnitStockId = "ProductUnitStockId",
+            ProductPartNumber = "ProductPartNumber",
+            ProductProductTypeId = "ProductProductTypeId",
+            ProductMinimumStock = "ProductMinimumStock",
+            ProductContinued = "ProductContinued",
+            ProductProductImage = "ProductProductImage",
+            ProductDescription = "ProductDescription",
+            ProductBinLocationId = "ProductBinLocationId",
+            ProductInsertUserId = "ProductInsertUserId",
+            ProductInsertDate = "ProductInsertDate",
+            ProductUpdateUserId = "ProductUpdateUserId",
+            ProductUpdateDate = "ProductUpdateDate",
+            ProductIsActive = "ProductIsActive",
+            ProductStockQuantity = "ProductStockQuantity"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    namespace OrderDetailService {
+        const baseUrl = "Transaction/OrderDetail";
+        function Create(request: Serenity.SaveRequest<OrderDetailRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OrderDetailRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Transaction/OrderDetail/Create",
+            Update = "Transaction/OrderDetail/Update",
+            Delete = "Transaction/OrderDetail/Delete",
+            Retrieve = "Transaction/OrderDetail/Retrieve",
+            List = "Transaction/OrderDetail/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+    interface OrdersForm {
+        OrderNumber: Serenity.StringEditor;
+        OrderDate: Serenity.DateEditor;
+        CustomerId: Serenity.IntegerEditor;
+        UserId: Serenity.IntegerEditor;
+        ProductTypeId: Serenity.IntegerEditor;
+        KmInUse: Serenity.IntegerEditor;
+        PaymentService: Serenity.DecimalEditor;
+        OrderStatus: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+        CompanyId: Serenity.IntegerEditor;
+    }
+    class OrdersForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface OrdersRow {
+        OrderId?: number;
+        OrderNumber?: string;
+        OrderDate?: string;
+        CustomerId?: number;
+        UserId?: number;
+        ProductTypeId?: number;
+        KmInUse?: number;
+        PaymentService?: number;
+        OrderStatus?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        CompanyId?: number;
+        CustomerCustomerNumber?: string;
+        CustomerCompanyId?: number;
+        CustomerCustomerName?: string;
+        CustomerProvinceId?: number;
+        CustomerCityId?: number;
+        CustomerAddress?: string;
+        CustomerPic?: string;
+        CustomerIslandId?: number;
+        CustomerPostCode?: number;
+        CustomerPhone?: string;
+        CustomerContactPerson?: string;
+        CustomerFax?: string;
+        CustomerBirthPlace?: string;
+        CustomerBirthDate?: string;
+        CustomerEmail?: string;
+        CustomerNpwp?: string;
+        CustomerInsertUserId?: number;
+        CustomerInsertDate?: string;
+        CustomerUpdateUserId?: number;
+        CustomerUpdateDate?: string;
+        CustomerIsActive?: number;
+        CustomerDeleteUserId?: number;
+        CustomerDeleteDate?: string;
+        CompanyCompanyName?: string;
+        CompanyAddress?: string;
+        CompanyFax?: string;
+        CompanyLogo?: string;
+        CompanyPhone?: string;
+        CompanyContactPerson?: string;
+        CompanyIslandId?: number;
+        CompanyProvinceId?: number;
+        CompanyCityId?: number;
+        CompanyOfficeType?: string;
+        CompanyInsertUserId?: number;
+        CompanyInsertDate?: string;
+        CompanyUpdateUserId?: number;
+        CompanyUpdateDate?: string;
+        CompanyDeleteUserId?: number;
+        CompanyDeleteDate?: string;
+        CompanyIsActive?: number;
+    }
+    namespace OrdersRow {
+        const idProperty = "OrderId";
+        const nameProperty = "OrderNumber";
+        const localTextPrefix = "Transaction.Orders";
+        const deletePermission = "Administration:Transaction";
+        const insertPermission = "Administration:Transaction";
+        const readPermission = "Administration:Transaction";
+        const updatePermission = "Administration:Transaction";
+        const enum Fields {
+            OrderId = "OrderId",
+            OrderNumber = "OrderNumber",
+            OrderDate = "OrderDate",
+            CustomerId = "CustomerId",
+            UserId = "UserId",
+            ProductTypeId = "ProductTypeId",
+            KmInUse = "KmInUse",
+            PaymentService = "PaymentService",
+            OrderStatus = "OrderStatus",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            CompanyId = "CompanyId",
+            CustomerCustomerNumber = "CustomerCustomerNumber",
+            CustomerCompanyId = "CustomerCompanyId",
+            CustomerCustomerName = "CustomerCustomerName",
+            CustomerProvinceId = "CustomerProvinceId",
+            CustomerCityId = "CustomerCityId",
+            CustomerAddress = "CustomerAddress",
+            CustomerPic = "CustomerPic",
+            CustomerIslandId = "CustomerIslandId",
+            CustomerPostCode = "CustomerPostCode",
+            CustomerPhone = "CustomerPhone",
+            CustomerContactPerson = "CustomerContactPerson",
+            CustomerFax = "CustomerFax",
+            CustomerBirthPlace = "CustomerBirthPlace",
+            CustomerBirthDate = "CustomerBirthDate",
+            CustomerEmail = "CustomerEmail",
+            CustomerNpwp = "CustomerNpwp",
+            CustomerInsertUserId = "CustomerInsertUserId",
+            CustomerInsertDate = "CustomerInsertDate",
+            CustomerUpdateUserId = "CustomerUpdateUserId",
+            CustomerUpdateDate = "CustomerUpdateDate",
+            CustomerIsActive = "CustomerIsActive",
+            CustomerDeleteUserId = "CustomerDeleteUserId",
+            CustomerDeleteDate = "CustomerDeleteDate",
+            CompanyCompanyName = "CompanyCompanyName",
+            CompanyAddress = "CompanyAddress",
+            CompanyFax = "CompanyFax",
+            CompanyLogo = "CompanyLogo",
+            CompanyPhone = "CompanyPhone",
+            CompanyContactPerson = "CompanyContactPerson",
+            CompanyIslandId = "CompanyIslandId",
+            CompanyProvinceId = "CompanyProvinceId",
+            CompanyCityId = "CompanyCityId",
+            CompanyOfficeType = "CompanyOfficeType",
+            CompanyInsertUserId = "CompanyInsertUserId",
+            CompanyInsertDate = "CompanyInsertDate",
+            CompanyUpdateUserId = "CompanyUpdateUserId",
+            CompanyUpdateDate = "CompanyUpdateDate",
+            CompanyDeleteUserId = "CompanyDeleteUserId",
+            CompanyDeleteDate = "CompanyDeleteDate",
+            CompanyIsActive = "CompanyIsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    namespace OrdersService {
+        const baseUrl = "Transaction/Orders";
+        function Create(request: Serenity.SaveRequest<OrdersRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OrdersRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OrdersRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OrdersRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Transaction/Orders/Create",
+            Update = "Transaction/Orders/Update",
+            Delete = "Transaction/Orders/Delete",
+            Retrieve = "Transaction/Orders/Retrieve",
+            List = "Transaction/Orders/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+    interface PurchaseOrderDetailForm {
+        PurchaseOrderId: Serenity.IntegerEditor;
+        ProductId: Serenity.IntegerEditor;
+        Quantity: Serenity.IntegerEditor;
+        ProductPriceId: Serenity.IntegerEditor;
+        ProductPriceNumber: Serenity.StringEditor;
+        Price: Serenity.DecimalEditor;
+        GrossAmount: Serenity.DecimalEditor;
+        Ppn: Serenity.DecimalEditor;
+        Total: Serenity.DecimalEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+        ReceiveOrderDetailId: Serenity.IntegerEditor;
+        ReceiveQty: Serenity.IntegerEditor;
+        BackOrderQty: Serenity.IntegerEditor;
+        CancellationDate: Serenity.DateEditor;
+        CancellationBy: Serenity.IntegerEditor;
+        DiscountRequest: Serenity.DecimalEditor;
+        SupportingDocumentDiscount: Serenity.StringEditor;
+        ApprovalStatusDiscount: Serenity.StringEditor;
+        CommentDiscount: Serenity.StringEditor;
+    }
+    class PurchaseOrderDetailForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface PurchaseOrderDetailRow {
+        PurchaseOrderDetailId?: number;
+        PurchaseOrderId?: number;
+        ProductId?: number;
+        Quantity?: number;
+        ProductPriceId?: number;
+        ProductPriceNumber?: string;
+        Price?: number;
+        GrossAmount?: number;
+        Ppn?: number;
+        Total?: number;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        ReceiveOrderDetailId?: number;
+        ReceiveQty?: number;
+        BackOrderQty?: number;
+        CancellationDate?: string;
+        CancellationBy?: number;
+        DiscountRequest?: number;
+        SupportingDocumentDiscount?: string;
+        ApprovalStatusDiscount?: string;
+        CommentDiscount?: string;
+        PurchaseOrderPurchaseOrderNumber?: string;
+        PurchaseOrderCompanyId?: number;
+        PurchaseOrderPurchaseOrderDate?: string;
+        PurchaseOrderOrderCategoryId?: number;
+        PurchaseOrderProductTypeId?: number;
+        PurchaseOrderPickupPoint?: string;
+        PurchaseOrderPurchaseOrderStatus?: string;
+        PurchaseOrderInsertUserId?: number;
+        PurchaseOrderInsertDate?: string;
+        PurchaseOrderUpdateUserId?: number;
+        PurchaseOrderUpdateDate?: string;
+        PurchaseOrderIsActive?: number;
+        ProductProductNumber?: string;
+        ProductModelName?: string;
+        ProductCategoryUnitId?: number;
+        ProductUnitStockId?: number;
+        ProductPartNumber?: string;
+        ProductProductTypeId?: number;
+        ProductMinimumStock?: number;
+        ProductContinued?: boolean;
+        ProductProductImage?: string;
+        ProductDescription?: string;
+        ProductBinLocationId?: number;
+        ProductInsertUserId?: number;
+        ProductInsertDate?: string;
+        ProductUpdateUserId?: number;
+        ProductUpdateDate?: string;
+        ProductIsActive?: number;
+        ProductStockQuantity?: number;
+        ProductPriceProductPriceNumber?: string;
+        ProductPriceProductId?: number;
+        ProductPriceOrderCategoryId?: number;
+        ProductPricePrice?: number;
+        ProductPriceContinued?: boolean;
+        ProductPriceInsertUserId?: number;
+        ProductPriceInsertDate?: string;
+        ProductPriceUpdateUserId?: number;
+        ProductPriceUpdateDate?: string;
+        ProductPriceIsActive?: number;
+    }
+    namespace PurchaseOrderDetailRow {
+        const idProperty = "PurchaseOrderDetailId";
+        const nameProperty = "ProductPriceNumber";
+        const localTextPrefix = "Transaction.PurchaseOrderDetail";
+        const deletePermission = "Administration:Transaction";
+        const insertPermission = "Administration:Transaction";
+        const readPermission = "Administration:Transaction";
+        const updatePermission = "Administration:Transaction";
+        const enum Fields {
+            PurchaseOrderDetailId = "PurchaseOrderDetailId",
+            PurchaseOrderId = "PurchaseOrderId",
+            ProductId = "ProductId",
+            Quantity = "Quantity",
+            ProductPriceId = "ProductPriceId",
+            ProductPriceNumber = "ProductPriceNumber",
+            Price = "Price",
+            GrossAmount = "GrossAmount",
+            Ppn = "Ppn",
+            Total = "Total",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            ReceiveOrderDetailId = "ReceiveOrderDetailId",
+            ReceiveQty = "ReceiveQty",
+            BackOrderQty = "BackOrderQty",
+            CancellationDate = "CancellationDate",
+            CancellationBy = "CancellationBy",
+            DiscountRequest = "DiscountRequest",
+            SupportingDocumentDiscount = "SupportingDocumentDiscount",
+            ApprovalStatusDiscount = "ApprovalStatusDiscount",
+            CommentDiscount = "CommentDiscount",
+            PurchaseOrderPurchaseOrderNumber = "PurchaseOrderPurchaseOrderNumber",
+            PurchaseOrderCompanyId = "PurchaseOrderCompanyId",
+            PurchaseOrderPurchaseOrderDate = "PurchaseOrderPurchaseOrderDate",
+            PurchaseOrderOrderCategoryId = "PurchaseOrderOrderCategoryId",
+            PurchaseOrderProductTypeId = "PurchaseOrderProductTypeId",
+            PurchaseOrderPickupPoint = "PurchaseOrderPickupPoint",
+            PurchaseOrderPurchaseOrderStatus = "PurchaseOrderPurchaseOrderStatus",
+            PurchaseOrderInsertUserId = "PurchaseOrderInsertUserId",
+            PurchaseOrderInsertDate = "PurchaseOrderInsertDate",
+            PurchaseOrderUpdateUserId = "PurchaseOrderUpdateUserId",
+            PurchaseOrderUpdateDate = "PurchaseOrderUpdateDate",
+            PurchaseOrderIsActive = "PurchaseOrderIsActive",
+            ProductProductNumber = "ProductProductNumber",
+            ProductModelName = "ProductModelName",
+            ProductCategoryUnitId = "ProductCategoryUnitId",
+            ProductUnitStockId = "ProductUnitStockId",
+            ProductPartNumber = "ProductPartNumber",
+            ProductProductTypeId = "ProductProductTypeId",
+            ProductMinimumStock = "ProductMinimumStock",
+            ProductContinued = "ProductContinued",
+            ProductProductImage = "ProductProductImage",
+            ProductDescription = "ProductDescription",
+            ProductBinLocationId = "ProductBinLocationId",
+            ProductInsertUserId = "ProductInsertUserId",
+            ProductInsertDate = "ProductInsertDate",
+            ProductUpdateUserId = "ProductUpdateUserId",
+            ProductUpdateDate = "ProductUpdateDate",
+            ProductIsActive = "ProductIsActive",
+            ProductStockQuantity = "ProductStockQuantity",
+            ProductPriceProductPriceNumber = "ProductPriceProductPriceNumber",
+            ProductPriceProductId = "ProductPriceProductId",
+            ProductPriceOrderCategoryId = "ProductPriceOrderCategoryId",
+            ProductPricePrice = "ProductPricePrice",
+            ProductPriceContinued = "ProductPriceContinued",
+            ProductPriceInsertUserId = "ProductPriceInsertUserId",
+            ProductPriceInsertDate = "ProductPriceInsertDate",
+            ProductPriceUpdateUserId = "ProductPriceUpdateUserId",
+            ProductPriceUpdateDate = "ProductPriceUpdateDate",
+            ProductPriceIsActive = "ProductPriceIsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    namespace PurchaseOrderDetailService {
+        const baseUrl = "Transaction/PurchaseOrderDetail";
+        function Create(request: Serenity.SaveRequest<PurchaseOrderDetailRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<PurchaseOrderDetailRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PurchaseOrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PurchaseOrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Transaction/PurchaseOrderDetail/Create",
+            Update = "Transaction/PurchaseOrderDetail/Update",
+            Delete = "Transaction/PurchaseOrderDetail/Delete",
+            Retrieve = "Transaction/PurchaseOrderDetail/Retrieve",
+            List = "Transaction/PurchaseOrderDetail/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface PurchaseOrderForm {
+        PurchaseOrderNumber: Serenity.StringEditor;
+        CompanyId: Serenity.IntegerEditor;
+        PurchaseOrderDate: Serenity.DateEditor;
+        OrderCategoryId: Serenity.IntegerEditor;
+        ProductTypeId: Serenity.IntegerEditor;
+        PickupPoint: Serenity.StringEditor;
+        PurchaseOrderStatus: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+    }
+    class PurchaseOrderForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface PurchaseOrderRow {
+        PurchaseOrderId?: number;
+        PurchaseOrderNumber?: string;
+        CompanyId?: number;
+        PurchaseOrderDate?: string;
+        OrderCategoryId?: number;
+        ProductTypeId?: number;
+        PickupPoint?: string;
+        PurchaseOrderStatus?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        CompanyCompanyName?: string;
+        CompanyAddress?: string;
+        CompanyFax?: string;
+        CompanyLogo?: string;
+        CompanyPhone?: string;
+        CompanyContactPerson?: string;
+        CompanyIslandId?: number;
+        CompanyProvinceId?: number;
+        CompanyCityId?: number;
+        CompanyOfficeType?: string;
+        CompanyInsertUserId?: number;
+        CompanyInsertDate?: string;
+        CompanyUpdateUserId?: number;
+        CompanyUpdateDate?: string;
+        CompanyDeleteUserId?: number;
+        CompanyDeleteDate?: string;
+        CompanyIsActive?: number;
+        ProductTypeProductTypeName?: string;
+        ProductTypeInsertUserId?: number;
+        ProductTypeInsertDate?: string;
+        ProductTypeUpdateUserId?: number;
+        ProductTypeUpdateDate?: string;
+        ProductTypeIsActive?: number;
+    }
+    namespace PurchaseOrderRow {
+        const idProperty = "PurchaseOrderId";
+        const nameProperty = "PurchaseOrderNumber";
+        const localTextPrefix = "Transaction.PurchaseOrder";
+        const deletePermission = "Administration:Transaction";
+        const insertPermission = "Administration:Transaction";
+        const readPermission = "Administration:Transaction";
+        const updatePermission = "Administration:Transaction";
+        const enum Fields {
+            PurchaseOrderId = "PurchaseOrderId",
+            PurchaseOrderNumber = "PurchaseOrderNumber",
+            CompanyId = "CompanyId",
+            PurchaseOrderDate = "PurchaseOrderDate",
+            OrderCategoryId = "OrderCategoryId",
+            ProductTypeId = "ProductTypeId",
+            PickupPoint = "PickupPoint",
+            PurchaseOrderStatus = "PurchaseOrderStatus",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            CompanyCompanyName = "CompanyCompanyName",
+            CompanyAddress = "CompanyAddress",
+            CompanyFax = "CompanyFax",
+            CompanyLogo = "CompanyLogo",
+            CompanyPhone = "CompanyPhone",
+            CompanyContactPerson = "CompanyContactPerson",
+            CompanyIslandId = "CompanyIslandId",
+            CompanyProvinceId = "CompanyProvinceId",
+            CompanyCityId = "CompanyCityId",
+            CompanyOfficeType = "CompanyOfficeType",
+            CompanyInsertUserId = "CompanyInsertUserId",
+            CompanyInsertDate = "CompanyInsertDate",
+            CompanyUpdateUserId = "CompanyUpdateUserId",
+            CompanyUpdateDate = "CompanyUpdateDate",
+            CompanyDeleteUserId = "CompanyDeleteUserId",
+            CompanyDeleteDate = "CompanyDeleteDate",
+            CompanyIsActive = "CompanyIsActive",
+            ProductTypeProductTypeName = "ProductTypeProductTypeName",
+            ProductTypeInsertUserId = "ProductTypeInsertUserId",
+            ProductTypeInsertDate = "ProductTypeInsertDate",
+            ProductTypeUpdateUserId = "ProductTypeUpdateUserId",
+            ProductTypeUpdateDate = "ProductTypeUpdateDate",
+            ProductTypeIsActive = "ProductTypeIsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    namespace PurchaseOrderService {
+        const baseUrl = "Transaction/PurchaseOrder";
+        function Create(request: Serenity.SaveRequest<PurchaseOrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<PurchaseOrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PurchaseOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PurchaseOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Transaction/PurchaseOrder/Create",
+            Update = "Transaction/PurchaseOrder/Update",
+            Delete = "Transaction/PurchaseOrder/Delete",
+            Retrieve = "Transaction/PurchaseOrder/Retrieve",
+            List = "Transaction/PurchaseOrder/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+    interface ReceiveOrderDetailForm {
+        ReceiveOrderId: Serenity.IntegerEditor;
+        ProductId: Serenity.IntegerEditor;
+        PoQty: Serenity.IntegerEditor;
+        ReceiveQty: Serenity.IntegerEditor;
+        BackOrderQty: Serenity.IntegerEditor;
+        Price: Serenity.DecimalEditor;
+        ReceiveComplete: Serenity.BooleanEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+    }
+    class ReceiveOrderDetailForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface ReceiveOrderDetailRow {
+        ReceiveOrderDetailId?: number;
+        ReceiveOrderId?: number;
+        ProductId?: number;
+        PoQty?: number;
+        ReceiveQty?: number;
+        BackOrderQty?: number;
+        Price?: number;
+        ReceiveComplete?: boolean;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        ReceiveOrderProductTypeId?: number;
+        ReceiveOrderReceiveOrderNumber?: string;
+        ReceiveOrderPurchaseOrderId?: number;
+        ReceiveOrderReceiveDate?: string;
+        ReceiveOrderReceiveBy?: string;
+        ReceiveOrderAcknowledgeBy?: string;
+        ReceiveOrderReceiveOrderStatus?: string;
+        ReceiveOrderInsertUserId?: number;
+        ReceiveOrderInsertDate?: string;
+        ReceiveOrderUpdateUserId?: number;
+        ReceiveOrderUpdateDate?: string;
+        ReceiveOrderIsActive?: number;
+        ReceiveOrderCompanyId?: number;
+        ProductProductNumber?: string;
+        ProductModelName?: string;
+        ProductCategoryUnitId?: number;
+        ProductUnitStockId?: number;
+        ProductPartNumber?: string;
+        ProductProductTypeId?: number;
+        ProductMinimumStock?: number;
+        ProductContinued?: boolean;
+        ProductProductImage?: string;
+        ProductDescription?: string;
+        ProductBinLocationId?: number;
+        ProductInsertUserId?: number;
+        ProductInsertDate?: string;
+        ProductUpdateUserId?: number;
+        ProductUpdateDate?: string;
+        ProductIsActive?: number;
+        ProductStockQuantity?: number;
+    }
+    namespace ReceiveOrderDetailRow {
+        const idProperty = "ReceiveOrderDetailId";
+        const localTextPrefix = "Transaction.ReceiveOrderDetail";
+        const deletePermission = "Administration:Transaction";
+        const insertPermission = "Administration:Transaction";
+        const readPermission = "Administration:Transaction";
+        const updatePermission = "Administration:Transaction";
+        const enum Fields {
+            ReceiveOrderDetailId = "ReceiveOrderDetailId",
+            ReceiveOrderId = "ReceiveOrderId",
+            ProductId = "ProductId",
+            PoQty = "PoQty",
+            ReceiveQty = "ReceiveQty",
+            BackOrderQty = "BackOrderQty",
+            Price = "Price",
+            ReceiveComplete = "ReceiveComplete",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            ReceiveOrderProductTypeId = "ReceiveOrderProductTypeId",
+            ReceiveOrderReceiveOrderNumber = "ReceiveOrderReceiveOrderNumber",
+            ReceiveOrderPurchaseOrderId = "ReceiveOrderPurchaseOrderId",
+            ReceiveOrderReceiveDate = "ReceiveOrderReceiveDate",
+            ReceiveOrderReceiveBy = "ReceiveOrderReceiveBy",
+            ReceiveOrderAcknowledgeBy = "ReceiveOrderAcknowledgeBy",
+            ReceiveOrderReceiveOrderStatus = "ReceiveOrderReceiveOrderStatus",
+            ReceiveOrderInsertUserId = "ReceiveOrderInsertUserId",
+            ReceiveOrderInsertDate = "ReceiveOrderInsertDate",
+            ReceiveOrderUpdateUserId = "ReceiveOrderUpdateUserId",
+            ReceiveOrderUpdateDate = "ReceiveOrderUpdateDate",
+            ReceiveOrderIsActive = "ReceiveOrderIsActive",
+            ReceiveOrderCompanyId = "ReceiveOrderCompanyId",
+            ProductProductNumber = "ProductProductNumber",
+            ProductModelName = "ProductModelName",
+            ProductCategoryUnitId = "ProductCategoryUnitId",
+            ProductUnitStockId = "ProductUnitStockId",
+            ProductPartNumber = "ProductPartNumber",
+            ProductProductTypeId = "ProductProductTypeId",
+            ProductMinimumStock = "ProductMinimumStock",
+            ProductContinued = "ProductContinued",
+            ProductProductImage = "ProductProductImage",
+            ProductDescription = "ProductDescription",
+            ProductBinLocationId = "ProductBinLocationId",
+            ProductInsertUserId = "ProductInsertUserId",
+            ProductInsertDate = "ProductInsertDate",
+            ProductUpdateUserId = "ProductUpdateUserId",
+            ProductUpdateDate = "ProductUpdateDate",
+            ProductIsActive = "ProductIsActive",
+            ProductStockQuantity = "ProductStockQuantity"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    namespace ReceiveOrderDetailService {
+        const baseUrl = "Transaction/ReceiveOrderDetail";
+        function Create(request: Serenity.SaveRequest<ReceiveOrderDetailRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ReceiveOrderDetailRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ReceiveOrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ReceiveOrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Transaction/ReceiveOrderDetail/Create",
+            Update = "Transaction/ReceiveOrderDetail/Update",
+            Delete = "Transaction/ReceiveOrderDetail/Delete",
+            Retrieve = "Transaction/ReceiveOrderDetail/Retrieve",
+            List = "Transaction/ReceiveOrderDetail/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface ReceiveOrderForm {
+        ProductTypeId: Serenity.IntegerEditor;
+        ReceiveOrderNumber: Serenity.StringEditor;
+        PurchaseOrderId: Serenity.IntegerEditor;
+        ReceiveDate: Serenity.DateEditor;
+        ReceiveBy: Serenity.StringEditor;
+        AcknowledgeBy: Serenity.StringEditor;
+        ReceiveOrderStatus: Serenity.StringEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        IsActive: Serenity.IntegerEditor;
+        CompanyId: Serenity.IntegerEditor;
+    }
+    class ReceiveOrderForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface ReceiveOrderRow {
+        ReceiveOrderId?: number;
+        ProductTypeId?: number;
+        ReceiveOrderNumber?: string;
+        PurchaseOrderId?: number;
+        ReceiveDate?: string;
+        ReceiveBy?: string;
+        AcknowledgeBy?: string;
+        ReceiveOrderStatus?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+        IsActive?: number;
+        CompanyId?: number;
+        PurchaseOrderPurchaseOrderNumber?: string;
+        PurchaseOrderCompanyId?: number;
+        PurchaseOrderPurchaseOrderDate?: string;
+        PurchaseOrderOrderCategoryId?: number;
+        PurchaseOrderProductTypeId?: number;
+        PurchaseOrderPickupPoint?: string;
+        PurchaseOrderPurchaseOrderStatus?: string;
+        PurchaseOrderInsertUserId?: number;
+        PurchaseOrderInsertDate?: string;
+        PurchaseOrderUpdateUserId?: number;
+        PurchaseOrderUpdateDate?: string;
+        PurchaseOrderIsActive?: number;
+        CompanyCompanyName?: string;
+        CompanyAddress?: string;
+        CompanyFax?: string;
+        CompanyLogo?: string;
+        CompanyPhone?: string;
+        CompanyContactPerson?: string;
+        CompanyIslandId?: number;
+        CompanyProvinceId?: number;
+        CompanyCityId?: number;
+        CompanyOfficeType?: string;
+        CompanyInsertUserId?: number;
+        CompanyInsertDate?: string;
+        CompanyUpdateUserId?: number;
+        CompanyUpdateDate?: string;
+        CompanyDeleteUserId?: number;
+        CompanyDeleteDate?: string;
+        CompanyIsActive?: number;
+    }
+    namespace ReceiveOrderRow {
+        const idProperty = "ReceiveOrderId";
+        const nameProperty = "ReceiveOrderNumber";
+        const localTextPrefix = "Transaction.ReceiveOrder";
+        const deletePermission = "Administration:Transaction";
+        const insertPermission = "Administration:Transaction";
+        const readPermission = "Administration:Transaction";
+        const updatePermission = "Administration:Transaction";
+        const enum Fields {
+            ReceiveOrderId = "ReceiveOrderId",
+            ProductTypeId = "ProductTypeId",
+            ReceiveOrderNumber = "ReceiveOrderNumber",
+            PurchaseOrderId = "PurchaseOrderId",
+            ReceiveDate = "ReceiveDate",
+            ReceiveBy = "ReceiveBy",
+            AcknowledgeBy = "AcknowledgeBy",
+            ReceiveOrderStatus = "ReceiveOrderStatus",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate",
+            IsActive = "IsActive",
+            CompanyId = "CompanyId",
+            PurchaseOrderPurchaseOrderNumber = "PurchaseOrderPurchaseOrderNumber",
+            PurchaseOrderCompanyId = "PurchaseOrderCompanyId",
+            PurchaseOrderPurchaseOrderDate = "PurchaseOrderPurchaseOrderDate",
+            PurchaseOrderOrderCategoryId = "PurchaseOrderOrderCategoryId",
+            PurchaseOrderProductTypeId = "PurchaseOrderProductTypeId",
+            PurchaseOrderPickupPoint = "PurchaseOrderPickupPoint",
+            PurchaseOrderPurchaseOrderStatus = "PurchaseOrderPurchaseOrderStatus",
+            PurchaseOrderInsertUserId = "PurchaseOrderInsertUserId",
+            PurchaseOrderInsertDate = "PurchaseOrderInsertDate",
+            PurchaseOrderUpdateUserId = "PurchaseOrderUpdateUserId",
+            PurchaseOrderUpdateDate = "PurchaseOrderUpdateDate",
+            PurchaseOrderIsActive = "PurchaseOrderIsActive",
+            CompanyCompanyName = "CompanyCompanyName",
+            CompanyAddress = "CompanyAddress",
+            CompanyFax = "CompanyFax",
+            CompanyLogo = "CompanyLogo",
+            CompanyPhone = "CompanyPhone",
+            CompanyContactPerson = "CompanyContactPerson",
+            CompanyIslandId = "CompanyIslandId",
+            CompanyProvinceId = "CompanyProvinceId",
+            CompanyCityId = "CompanyCityId",
+            CompanyOfficeType = "CompanyOfficeType",
+            CompanyInsertUserId = "CompanyInsertUserId",
+            CompanyInsertDate = "CompanyInsertDate",
+            CompanyUpdateUserId = "CompanyUpdateUserId",
+            CompanyUpdateDate = "CompanyUpdateDate",
+            CompanyDeleteUserId = "CompanyDeleteUserId",
+            CompanyDeleteDate = "CompanyDeleteDate",
+            CompanyIsActive = "CompanyIsActive"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    namespace ReceiveOrderService {
+        const baseUrl = "Transaction/ReceiveOrder";
+        function Create(request: Serenity.SaveRequest<ReceiveOrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ReceiveOrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ReceiveOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ReceiveOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Transaction/ReceiveOrder/Create",
+            Update = "Transaction/ReceiveOrder/Update",
+            Delete = "Transaction/ReceiveOrder/Delete",
+            Retrieve = "Transaction/ReceiveOrder/Retrieve",
+            List = "Transaction/ReceiveOrder/List"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+}
+declare namespace DIMSOnline.Transaction {
+    interface SerialNumberUnitForm {
+        ReceiveOrderId: Serenity.IntegerEditor;
+        CategoryUnitId: Serenity.IntegerEditor;
+        SerialNumber: Serenity.StringEditor;
+        ManufactureYear: Serenity.StringEditor;
+        WarrantyNumber: Serenity.StringEditor;
+        Available: Serenity.BooleanEditor;
+    }
+    class SerialNumberUnitForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    interface SerialNumberUnitRow {
+        SerialNumberUnitId?: number;
+        ReceiveOrderId?: number;
+        CategoryUnitId?: number;
+        SerialNumber?: string;
+        ManufactureYear?: string;
+        WarrantyNumber?: string;
+        Available?: boolean;
+        ReceiveOrderProductTypeId?: number;
+        ReceiveOrderReceiveOrderNumber?: string;
+        ReceiveOrderPurchaseOrderId?: number;
+        ReceiveOrderReceiveDate?: string;
+        ReceiveOrderReceiveBy?: string;
+        ReceiveOrderAcknowledgeBy?: string;
+        ReceiveOrderReceiveOrderStatus?: string;
+        ReceiveOrderInsertUserId?: number;
+        ReceiveOrderInsertDate?: string;
+        ReceiveOrderUpdateUserId?: number;
+        ReceiveOrderUpdateDate?: string;
+        ReceiveOrderIsActive?: number;
+        ReceiveOrderCompanyId?: number;
+    }
+    namespace SerialNumberUnitRow {
+        const idProperty = "SerialNumberUnitId";
+        const nameProperty = "SerialNumber";
+        const localTextPrefix = "Transaction.SerialNumberUnit";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            SerialNumberUnitId = "SerialNumberUnitId",
+            ReceiveOrderId = "ReceiveOrderId",
+            CategoryUnitId = "CategoryUnitId",
+            SerialNumber = "SerialNumber",
+            ManufactureYear = "ManufactureYear",
+            WarrantyNumber = "WarrantyNumber",
+            Available = "Available",
+            ReceiveOrderProductTypeId = "ReceiveOrderProductTypeId",
+            ReceiveOrderReceiveOrderNumber = "ReceiveOrderReceiveOrderNumber",
+            ReceiveOrderPurchaseOrderId = "ReceiveOrderPurchaseOrderId",
+            ReceiveOrderReceiveDate = "ReceiveOrderReceiveDate",
+            ReceiveOrderReceiveBy = "ReceiveOrderReceiveBy",
+            ReceiveOrderAcknowledgeBy = "ReceiveOrderAcknowledgeBy",
+            ReceiveOrderReceiveOrderStatus = "ReceiveOrderReceiveOrderStatus",
+            ReceiveOrderInsertUserId = "ReceiveOrderInsertUserId",
+            ReceiveOrderInsertDate = "ReceiveOrderInsertDate",
+            ReceiveOrderUpdateUserId = "ReceiveOrderUpdateUserId",
+            ReceiveOrderUpdateDate = "ReceiveOrderUpdateDate",
+            ReceiveOrderIsActive = "ReceiveOrderIsActive",
+            ReceiveOrderCompanyId = "ReceiveOrderCompanyId"
+        }
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    namespace SerialNumberUnitService {
+        const baseUrl = "Transaction/SerialNumberUnit";
+        function Create(request: Serenity.SaveRequest<SerialNumberUnitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SerialNumberUnitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SerialNumberUnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SerialNumberUnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Transaction/SerialNumberUnit/Create",
+            Update = "Transaction/SerialNumberUnit/Update",
+            Delete = "Transaction/SerialNumberUnit/Delete",
+            Retrieve = "Transaction/SerialNumberUnit/Retrieve",
+            List = "Transaction/SerialNumberUnit/List"
+        }
+    }
 }
 declare namespace DIMSOnline.Administration {
     class LanguageDialog extends Serenity.EntityDialog<LanguageRow, any> {
@@ -2187,6 +3994,149 @@ declare namespace DIMSOnline.Configuration {
     }
 }
 declare namespace DIMSOnline.Configuration {
+    class ProductAlternativeDialog extends Serenity.EntityDialog<ProductAlternativeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProductAlternativeForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductAlternativeGrid extends Serenity.EntityGrid<ProductAlternativeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProductAlternativeDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductBasePriceDialog extends Serenity.EntityDialog<ProductBasePriceRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProductBasePriceForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductBasePriceGrid extends Serenity.EntityGrid<ProductBasePriceRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProductBasePriceDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductPriceDialog extends Serenity.EntityDialog<ProductPriceRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProductPriceForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductPriceGrid extends Serenity.EntityGrid<ProductPriceRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProductPriceDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductTypeDialog extends Serenity.EntityDialog<ProductTypeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProductTypeForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductTypeGrid extends Serenity.EntityGrid<ProductTypeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProductTypeDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductsDialog extends Serenity.EntityDialog<ProductsRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProductsForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductsGrid extends Serenity.EntityGrid<ProductsRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProductsDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductsLogDialog extends Serenity.EntityDialog<ProductsLogRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProductsLogForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class ProductsLogGrid extends Serenity.EntityGrid<ProductsLogRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProductsLogDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
     class ProvinceDialog extends Serenity.EntityDialog<ProvinceRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -2203,6 +4153,54 @@ declare namespace DIMSOnline.Configuration {
     class ProvinceGrid extends Serenity.EntityGrid<ProvinceRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof ProvinceDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class SupplierDialog extends Serenity.EntityDialog<SupplierRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: SupplierForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class SupplierGrid extends Serenity.EntityGrid<SupplierRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SupplierDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class UnitStockDialog extends Serenity.EntityDialog<UnitStockRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: UnitStockForm;
+    }
+}
+declare namespace DIMSOnline.Configuration {
+    class UnitStockGrid extends Serenity.EntityGrid<UnitStockRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof UnitStockDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;
@@ -2287,6 +4285,173 @@ declare namespace DIMSOnline.Transaction {
     class MovementStockGrid extends Serenity.EntityGrid<MovementStockRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof MovementStockDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class OrderDetailDialog extends Serenity.EntityDialog<OrderDetailRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: OrderDetailForm;
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class OrderDetailGrid extends Serenity.EntityGrid<OrderDetailRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OrderDetailDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class OrdersDialog extends Serenity.EntityDialog<OrdersRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: OrdersForm;
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class OrdersGrid extends Serenity.EntityGrid<OrdersRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OrdersDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class PurchaseOrderDialog extends Serenity.EntityDialog<PurchaseOrderRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: PurchaseOrderForm;
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class PurchaseOrderGrid extends Serenity.EntityGrid<PurchaseOrderRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PurchaseOrderDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class PurchaseOrderDetailDialog extends Serenity.EntityDialog<PurchaseOrderDetailRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: PurchaseOrderDetailForm;
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class PurchaseOrderDetailGrid extends Serenity.EntityGrid<PurchaseOrderDetailRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PurchaseOrderDetailDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class ReceiveOrderDialog extends Serenity.EntityDialog<ReceiveOrderRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ReceiveOrderForm;
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class ReceiveOrderGrid extends Serenity.EntityGrid<ReceiveOrderRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ReceiveOrderDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class ReceiveOrderDetailDialog extends Serenity.EntityDialog<ReceiveOrderDetailRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ReceiveOrderDetailForm;
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class ReceiveOrderDetailGrid extends Serenity.EntityGrid<ReceiveOrderDetailRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ReceiveOrderDetailDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class SerialNumberUnitDialog extends Serenity.EntityDialog<SerialNumberUnitRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: SerialNumberUnitForm;
+    }
+}
+declare namespace DIMSOnline.Transaction {
+    class SerialNumberUnitGrid extends Serenity.EntityGrid<SerialNumberUnitRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SerialNumberUnitDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;

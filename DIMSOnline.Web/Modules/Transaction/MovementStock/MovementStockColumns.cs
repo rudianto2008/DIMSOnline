@@ -21,10 +21,5 @@ namespace DIMSOnline.Transaction.Columns
         [EditLink]
         public String MovementStockNumber { get; set; }
         public String Description { get; set; }
-        public Int16 InsertUserId { get; set; }
-        public DateTime InsertDate { get; set; }
-        public Int16 UpdateUserId { get; set; }
-        public DateTime UpdateDate { get; set; }
-        public Int16 IsActive { get; set; }
     }
 }

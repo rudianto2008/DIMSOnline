@@ -1135,7 +1135,31 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.PermissionKeys.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductAlternativeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductBasePriceColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductPriceColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductsColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductsLogColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductTypeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProvinceColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.SupplierColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.UnitStockColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
@@ -1147,7 +1171,28 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Transaction.MovementStockColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.OrderDetailColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.OrdersColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PermissionKeys.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PurchaseOrderColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PurchaseOrderDetailColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ReceiveOrderColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ReceiveOrderDetailColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.SerialNumberUnitColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Configuration\Company\CompanyDialog.ts" />
@@ -1845,6 +1890,186 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Configuration.OrderCategoryForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\Products\ProductsIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\Products\ProductsDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\Products\ProductsGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductsForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductPriceRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductPriceService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\ProductPrice\ProductPriceIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductPrice\ProductPriceDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductPrice\ProductPriceGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductPriceForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductBasePriceRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductBasePriceService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\ProductBasePrice\ProductBasePriceIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductBasePrice\ProductBasePriceDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductBasePrice\ProductBasePriceGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductBasePriceForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductTypeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductTypeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\ProductType\ProductTypeIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductType\ProductTypeDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductType\ProductTypeGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductTypeForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductAlternativeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductAlternativeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\ProductAlternative\ProductAlternativeIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductAlternative\ProductAlternativeDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductAlternative\ProductAlternativeGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductAlternativeForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductsLogRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductsLogService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\ProductsLog\ProductsLogIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductsLog\ProductsLogDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\ProductsLog\ProductsLogGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.ProductsLogForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PurchaseOrderRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PurchaseOrderService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\PurchaseOrder\PurchaseOrderIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\PurchaseOrder\PurchaseOrderDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\PurchaseOrder\PurchaseOrderGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PurchaseOrderForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PurchaseOrderDetailRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PurchaseOrderDetailService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\PurchaseOrderDetail\PurchaseOrderDetailIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\PurchaseOrderDetail\PurchaseOrderDetailDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\PurchaseOrderDetail\PurchaseOrderDetailGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.PurchaseOrderDetailForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.OrdersRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.OrdersService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\Orders\OrdersIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\Orders\OrdersDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\Orders\OrdersGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.OrdersForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.OrderDetailRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.OrderDetailService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\OrderDetail\OrderDetailIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\OrderDetail\OrderDetailDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\OrderDetail\OrderDetailGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.OrderDetailForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ReceiveOrderRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ReceiveOrderService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\ReceiveOrder\ReceiveOrderIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\ReceiveOrder\ReceiveOrderDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\ReceiveOrder\ReceiveOrderGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ReceiveOrderForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ReceiveOrderDetailRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ReceiveOrderDetailService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\ReceiveOrderDetail\ReceiveOrderDetailIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\ReceiveOrderDetail\ReceiveOrderDetailDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\ReceiveOrderDetail\ReceiveOrderDetailGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.ReceiveOrderDetailForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.SupplierRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.SupplierService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\Supplier\SupplierIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\Supplier\SupplierDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\Supplier\SupplierGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.SupplierForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.UnitStockRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.UnitStockService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Configuration\UnitStock\UnitStockIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Configuration\UnitStock\UnitStockDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\UnitStock\UnitStockGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Configuration.UnitStockForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.SerialNumberUnitRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.SerialNumberUnitService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Transaction.SerialNumberUnitForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2048,6 +2273,96 @@
     <Compile Include="Modules\Configuration\OrderCategory\OrderCategoryPage.cs" />
     <Compile Include="Modules\Configuration\OrderCategory\OrderCategoryColumns.cs" />
     <Compile Include="Modules\Configuration\OrderCategory\OrderCategoryForm.cs" />
+    <Compile Include="Modules\Configuration\Products\ProductsRow.cs" />
+    <Compile Include="Modules\Configuration\Products\ProductsRepository.cs" />
+    <Compile Include="Modules\Configuration\Products\ProductsEndpoint.cs" />
+    <Compile Include="Modules\Configuration\Products\ProductsPage.cs" />
+    <Compile Include="Modules\Configuration\Products\ProductsColumns.cs" />
+    <Compile Include="Modules\Configuration\Products\ProductsForm.cs" />
+    <Compile Include="Modules\Configuration\ProductPrice\ProductPriceRow.cs" />
+    <Compile Include="Modules\Configuration\ProductPrice\ProductPriceRepository.cs" />
+    <Compile Include="Modules\Configuration\ProductPrice\ProductPriceEndpoint.cs" />
+    <Compile Include="Modules\Configuration\ProductPrice\ProductPricePage.cs" />
+    <Compile Include="Modules\Configuration\ProductPrice\ProductPriceColumns.cs" />
+    <Compile Include="Modules\Configuration\ProductPrice\ProductPriceForm.cs" />
+    <Compile Include="Modules\Configuration\ProductBasePrice\ProductBasePriceRow.cs" />
+    <Compile Include="Modules\Configuration\ProductBasePrice\ProductBasePriceRepository.cs" />
+    <Compile Include="Modules\Configuration\ProductBasePrice\ProductBasePriceEndpoint.cs" />
+    <Compile Include="Modules\Configuration\ProductBasePrice\ProductBasePricePage.cs" />
+    <Compile Include="Modules\Configuration\ProductBasePrice\ProductBasePriceColumns.cs" />
+    <Compile Include="Modules\Configuration\ProductBasePrice\ProductBasePriceForm.cs" />
+    <Compile Include="Modules\Configuration\ProductType\ProductTypeRow.cs" />
+    <Compile Include="Modules\Configuration\ProductType\ProductTypeRepository.cs" />
+    <Compile Include="Modules\Configuration\ProductType\ProductTypeEndpoint.cs" />
+    <Compile Include="Modules\Configuration\ProductType\ProductTypePage.cs" />
+    <Compile Include="Modules\Configuration\ProductType\ProductTypeColumns.cs" />
+    <Compile Include="Modules\Configuration\ProductType\ProductTypeForm.cs" />
+    <Compile Include="Modules\Configuration\ProductAlternative\ProductAlternativeRow.cs" />
+    <Compile Include="Modules\Configuration\ProductAlternative\ProductAlternativeRepository.cs" />
+    <Compile Include="Modules\Configuration\ProductAlternative\ProductAlternativeEndpoint.cs" />
+    <Compile Include="Modules\Configuration\ProductAlternative\ProductAlternativePage.cs" />
+    <Compile Include="Modules\Configuration\ProductAlternative\ProductAlternativeColumns.cs" />
+    <Compile Include="Modules\Configuration\ProductAlternative\ProductAlternativeForm.cs" />
+    <Compile Include="Modules\Configuration\ProductsLog\ProductsLogRow.cs" />
+    <Compile Include="Modules\Configuration\ProductsLog\ProductsLogRepository.cs" />
+    <Compile Include="Modules\Configuration\ProductsLog\ProductsLogEndpoint.cs" />
+    <Compile Include="Modules\Configuration\ProductsLog\ProductsLogPage.cs" />
+    <Compile Include="Modules\Configuration\ProductsLog\ProductsLogColumns.cs" />
+    <Compile Include="Modules\Configuration\ProductsLog\ProductsLogForm.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrder\PurchaseOrderRow.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrder\PurchaseOrderRepository.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrder\PurchaseOrderEndpoint.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrder\PurchaseOrderPage.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrder\PurchaseOrderColumns.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrder\PurchaseOrderForm.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrderDetail\PurchaseOrderDetailRow.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrderDetail\PurchaseOrderDetailRepository.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrderDetail\PurchaseOrderDetailEndpoint.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrderDetail\PurchaseOrderDetailPage.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrderDetail\PurchaseOrderDetailColumns.cs" />
+    <Compile Include="Modules\Transaction\PurchaseOrderDetail\PurchaseOrderDetailForm.cs" />
+    <Compile Include="Modules\Transaction\Orders\OrdersRow.cs" />
+    <Compile Include="Modules\Transaction\Orders\OrdersRepository.cs" />
+    <Compile Include="Modules\Transaction\Orders\OrdersEndpoint.cs" />
+    <Compile Include="Modules\Transaction\Orders\OrdersPage.cs" />
+    <Compile Include="Modules\Transaction\Orders\OrdersColumns.cs" />
+    <Compile Include="Modules\Transaction\Orders\OrdersForm.cs" />
+    <Compile Include="Modules\Transaction\OrderDetail\OrderDetailRow.cs" />
+    <Compile Include="Modules\Transaction\OrderDetail\OrderDetailRepository.cs" />
+    <Compile Include="Modules\Transaction\OrderDetail\OrderDetailEndpoint.cs" />
+    <Compile Include="Modules\Transaction\OrderDetail\OrderDetailPage.cs" />
+    <Compile Include="Modules\Transaction\OrderDetail\OrderDetailColumns.cs" />
+    <Compile Include="Modules\Transaction\OrderDetail\OrderDetailForm.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrder\ReceiveOrderRow.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrder\ReceiveOrderRepository.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrder\ReceiveOrderEndpoint.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrder\ReceiveOrderPage.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrder\ReceiveOrderColumns.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrder\ReceiveOrderForm.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrderDetail\ReceiveOrderDetailRow.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrderDetail\ReceiveOrderDetailRepository.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrderDetail\ReceiveOrderDetailEndpoint.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrderDetail\ReceiveOrderDetailPage.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrderDetail\ReceiveOrderDetailColumns.cs" />
+    <Compile Include="Modules\Transaction\ReceiveOrderDetail\ReceiveOrderDetailForm.cs" />
+    <Compile Include="Modules\Configuration\Supplier\SupplierRow.cs" />
+    <Compile Include="Modules\Configuration\Supplier\SupplierRepository.cs" />
+    <Compile Include="Modules\Configuration\Supplier\SupplierEndpoint.cs" />
+    <Compile Include="Modules\Configuration\Supplier\SupplierPage.cs" />
+    <Compile Include="Modules\Configuration\Supplier\SupplierColumns.cs" />
+    <Compile Include="Modules\Configuration\Supplier\SupplierForm.cs" />
+    <Compile Include="Modules\Configuration\UnitStock\UnitStockRow.cs" />
+    <Compile Include="Modules\Configuration\UnitStock\UnitStockRepository.cs" />
+    <Compile Include="Modules\Configuration\UnitStock\UnitStockEndpoint.cs" />
+    <Compile Include="Modules\Configuration\UnitStock\UnitStockPage.cs" />
+    <Compile Include="Modules\Configuration\UnitStock\UnitStockColumns.cs" />
+    <Compile Include="Modules\Configuration\UnitStock\UnitStockForm.cs" />
+    <Compile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitRow.cs" />
+    <Compile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitRepository.cs" />
+    <Compile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitEndpoint.cs" />
+    <Compile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitPage.cs" />
+    <Compile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitColumns.cs" />
+    <Compile Include="Modules\Transaction\SerialNumberUnit\SerialNumberUnitForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

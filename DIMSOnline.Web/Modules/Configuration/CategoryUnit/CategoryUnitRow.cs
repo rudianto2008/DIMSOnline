@@ -29,7 +29,7 @@ namespace DIMSOnline.Configuration.Entities
             set { Fields.CategoryUnitName[this] = value; }
         }
 
-        [DisplayName("Price Per Hour"), Size(19), Scale(4)]
+        [DisplayName("Price Per Hour"), Size(19), DisplayFormat("#,##0.00"), AlignRight]
         public Decimal? PricePerHour
         {
             get { return Fields.PricePerHour[this]; }

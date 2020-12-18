@@ -84,9 +84,49 @@ namespace MVC
                 public const string OrderCategoryIndex = "~/Modules/Configuration/OrderCategory/OrderCategoryIndex.cshtml";
             }
 
+            public static class ProductAlternative
+            {
+                public const string ProductAlternativeIndex = "~/Modules/Configuration/ProductAlternative/ProductAlternativeIndex.cshtml";
+            }
+
+            public static class ProductBasePrice
+            {
+                public const string ProductBasePriceIndex = "~/Modules/Configuration/ProductBasePrice/ProductBasePriceIndex.cshtml";
+            }
+
+            public static class ProductPrice
+            {
+                public const string ProductPriceIndex = "~/Modules/Configuration/ProductPrice/ProductPriceIndex.cshtml";
+            }
+
+            public static class Products
+            {
+                public const string ProductsIndex = "~/Modules/Configuration/Products/ProductsIndex.cshtml";
+            }
+
+            public static class ProductsLog
+            {
+                public const string ProductsLogIndex = "~/Modules/Configuration/ProductsLog/ProductsLogIndex.cshtml";
+            }
+
+            public static class ProductType
+            {
+                public const string ProductTypeIndex = "~/Modules/Configuration/ProductType/ProductTypeIndex.cshtml";
+            }
+
             public static class Province
             {
                 public const string ProvinceIndex = "~/Modules/Configuration/Province/ProvinceIndex.cshtml";
+            }
+
+            public static class Supplier
+            {
+                public const string SupplierIndex = "~/Modules/Configuration/Supplier/SupplierIndex.cshtml";
+            }
+
+            public static class UnitStock
+            {
+                public const string UnitStockIndex = "~/Modules/Configuration/UnitStock/UnitStockIndex.cshtml";
             }
         }
 
@@ -150,6 +190,41 @@ namespace MVC
             public static class MovementStock
             {
                 public const string MovementStockIndex = "~/Modules/Transaction/MovementStock/MovementStockIndex.cshtml";
+            }
+
+            public static class OrderDetail
+            {
+                public const string OrderDetailIndex = "~/Modules/Transaction/OrderDetail/OrderDetailIndex.cshtml";
+            }
+
+            public static class Orders
+            {
+                public const string OrdersIndex = "~/Modules/Transaction/Orders/OrdersIndex.cshtml";
+            }
+
+            public static class PurchaseOrder
+            {
+                public const string PurchaseOrderIndex = "~/Modules/Transaction/PurchaseOrder/PurchaseOrderIndex.cshtml";
+            }
+
+            public static class PurchaseOrderDetail
+            {
+                public const string PurchaseOrderDetailIndex = "~/Modules/Transaction/PurchaseOrderDetail/PurchaseOrderDetailIndex.cshtml";
+            }
+
+            public static class ReceiveOrder
+            {
+                public const string ReceiveOrderIndex = "~/Modules/Transaction/ReceiveOrder/ReceiveOrderIndex.cshtml";
+            }
+
+            public static class ReceiveOrderDetail
+            {
+                public const string ReceiveOrderDetailIndex = "~/Modules/Transaction/ReceiveOrderDetail/ReceiveOrderDetailIndex.cshtml";
+            }
+
+            public static class SerialNumberUnit
+            {
+                public const string SerialNumberUnitIndex = "~/Modules/Transaction/SerialNumberUnit/SerialNumberUnitIndex.cshtml";
             }
         }
     }

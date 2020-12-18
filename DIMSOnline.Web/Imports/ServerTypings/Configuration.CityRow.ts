@@ -4,6 +4,7 @@
         CityCode?: string;
         ProvinceId?: number;
         IslandId?: number;
+        IslandIslandName?: string;
         CityName?: string;
         InsertUserId?: number;
         InsertDate?: string;
@@ -39,6 +40,7 @@
             CityCode = "CityCode",
             ProvinceId = "ProvinceId",
             IslandId = "IslandId",
+            IslandIslandName = "IslandIslandName",
             CityName = "CityName",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
